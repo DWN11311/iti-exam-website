@@ -4,14 +4,100 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Exam</title>
-        <!-- <link rel="stylesheet" href="/src/styles/output.css" /> -->
+        <link rel="stylesheet" href="/src/styles/output.css" />
         <link rel="stylesheet" href="/src/styles/input.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     </head>
     <body>
         <div class="flex gap-5 mx-8 mt-5">
-            <div class="w-[20%] bg-blue-500 rounded-lg">Test</div>
-            <div class="w-[80%] bg-red-500 rounded-lg p-4">Test</div>
+            <div class="w-[30%] bg-blue-500 rounded-lg">Test</div>
+            <div class="w-[70%] rounded-lg p-4">
+                <div class="flex items-center justify-between text-4xl">
+                    <span class="text-4xl">HTML & CSS Exam</span>
+                    <span>30:00</span>
+                </div>
+                <hr class="bg-black" />
+                <div class="text-primary-400">
+                    Question
+                    <span class="current-question">1</span>
+                    of
+                    <span class="total-questions"></span>
+                </div>
+                <p class="text-3xl font-bold question">
+                    This is a very bad Question
+                </p>
+                <div class="answers">
+                    <div
+                        class="flex justify-between p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
+                    >
+                        <span class="text-xl">Answer</span>
+                        <input type="radio" class="w-8" name="answer" />
+                    </div>
+                    <div
+                        class="flex justify-between p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
+                    >
+                        <span class="text-xl">Answer</span>
+                        <input type="radio" class="w-8" name="answer" />
+                    </div>
+                    <div
+                        class="flex justify-between p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
+                    >
+                        <span class="text-xl">Answer</span>
+                        <input type="radio" class="w-8" name="answer" />
+                    </div>
+                    <div
+                        class="flex justify-between p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
+                    >
+                        <span class="text-xl">Answer</span>
+                        <input type="radio" class="w-8" name="answer" />
+                    </div>
+                </div>
+                <div class="flex justify-between mt-5">
+                    <button class="previous">Previous</button>
+                    <button
+                        class="flex items-center justify-center gap-1 px-10 py-4 text-2xl text-white transition rounded-lg active:bg-primary-400 hover:bg-primary-600 group bg-primary-700"
+                    >
+                        Next
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="24"
+                            viewBox="0 0 22 24"
+                            fill="none"
+                            class="group-hover:text-red-500"
+                        >
+                            <g clip-path="url(#clip0_103_24)">
+                                <path
+                                    d="M3.94666 20.96L11.4133 12L3.94666 3.03999"
+                                    stroke="white"
+                                    stroke-width="2.98667"
+                                    stroke-miterlimit="10"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M11.4133 20.96L18.88 12L11.4133 3.03999"
+                                    stroke="white"
+                                    stroke-width="2.98667"
+                                    stroke-miterlimit="10"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_103_24">
+                                    <rect
+                                        width="20.9067"
+                                        height="23.8933"
+                                        fill="white"
+                                        transform="translate(0.959991 0.0533295)"
+                                    />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
