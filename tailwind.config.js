@@ -1,9 +1,76 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    // content: ["./src/**/*.{html,js}"], // Adjust the paths based on your project structure
-    content: ["./**/*.{html,js}"], // Adjust the paths based on your project structure
-    theme: {
-        extend: {},
+  content: ["./**/*.{html,js}"], // Adjust the paths based on your project structure
+  theme: {
+    extend: {
+      colors: {
+        text: {
+          50: "#0e0712",
+          100: "#1b0f24",
+          200: "#371d49",
+          300: "#522c6d",
+          400: "#6d3a92",
+          500: "#8949b6",
+          600: "#a06dc5",
+          700: "#b892d3",
+          800: "#d0b6e2",
+          900: "#e7dbf0",
+          950: "#f3edf8",
+        },
+        background: {
+          50: "#0e0613",
+          100: "#1d0d26",
+          200: "#3a194d",
+          300: "#572673",
+          400: "#743399",
+          500: "#9140bf",
+          600: "#a766cc",
+          700: "#bd8cd9",
+          800: "#d3b3e6",
+          900: "#e9d9f2",
+          950: "#f4ecf9",
+        },
+        primary: {
+          50: "#0e001a",
+          100: "#1c0033",
+          200: "#380066",
+          300: "#540099",
+          400: "#7000cc",
+          500: "#8c00ff",
+          600: "#a333ff",
+          700: "#ba66ff",
+          800: "#d199ff",
+          900: "#e8ccff",
+          950: "#f4e5ff",
+        },
+        secondary: {
+          50: "#0e0316",
+          100: "#1b062d",
+          200: "#370c5a",
+          300: "#521287",
+          400: "#6e18b4",
+          500: "#891fe0",
+          600: "#a14be7",
+          700: "#b878ed",
+          800: "#d0a5f3",
+          900: "#e7d2f9",
+          950: "#f3e9fc",
+        },
+        accent: {
+          50: "#0e0218",
+          100: "#1c0330",
+          200: "#37075f",
+          300: "#530a8f",
+          400: "#6f0dbf",
+          500: "#8b11ee",
+          600: "#a240f2",
+          700: "#b970f5",
+          800: "#d0a0f8",
+          900: "#e8cffc",
+          950: "#f3e7fd",
+        },
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };
