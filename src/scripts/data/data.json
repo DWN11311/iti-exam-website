@@ -1,0 +1,226 @@
+{
+  "id": "1",
+  "title": "CSS HTML & JS Exam",
+  "questions": [
+    {
+      "id": "1",
+      "title": "What does HTML stand for?",
+      "answers": [
+        { "id": "a1", "content": "Hyper Text Markup Language" },
+        { "id": "a2", "content": "Home Tool Markup Language" },
+        { "id": "a3", "content": "Hyperlinks and Text Markup Language" },
+        { "id": "a4", "content": "Hyper Text Makeup Language" }
+      ],
+      "correctAnswerId": "a1"
+    },
+    {
+      "id": "2",
+      "title": "What is the correct HTML element for inserting a line break?",
+      "answers": [
+        { "id": "a1", "content": "<break>" },
+        { "id": "a2", "content": "<lb>" },
+        { "id": "a3", "content": "<br>" },
+        { "id": "a4", "content": "<line>" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "3",
+      "title": "Which CSS property controls the text size?",
+      "answers": [
+        { "id": "a1", "content": "font-size" },
+        { "id": "a2", "content": "text-size" },
+        { "id": "a3", "content": "size" },
+        { "id": "a4", "content": "font-weight" }
+      ],
+      "correctAnswerId": "a1"
+    },
+    {
+      "id": "4",
+      "title": "Which HTML element is used for the largest heading?",
+      "answers": [
+        { "id": "a1", "content": "<h6>" },
+        { "id": "a2", "content": "<heading>" },
+        { "id": "a3", "content": "<h1>" },
+        { "id": "a4", "content": "<head>" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "5",
+      "title": "What is the correct CSS syntax to change the background color to blue?",
+      "answers": [
+        { "id": "a1", "content": "background-color: blue;" },
+        { "id": "a2", "content": "bgcolor: blue;" },
+        { "id": "a3", "content": "color: blue;" },
+        { "id": "a4", "content": "background: blue;" }
+      ],
+      "correctAnswerId": "a1"
+    },
+    {
+      "id": "6",
+      "title": "How do you create a function in JavaScript?",
+      "answers": [
+        { "id": "a1", "content": "function = myFunction()" },
+        { "id": "a2", "content": "function myFunction()" },
+        { "id": "a3", "content": "myFunction function()" },
+        { "id": "a4", "content": "create myFunction()" }
+      ],
+      "correctAnswerId": "a2"
+    },
+    {
+      "id": "7",
+      "title": "Which HTML element is used to define a JavaScript script?",
+      "answers": [
+        { "id": "a1", "content": "<js>" },
+        { "id": "a2", "content": "<javascript>" },
+        { "id": "a3", "content": "<script>" },
+        { "id": "a4", "content": "<code>" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "8",
+      "title": "What is the correct HTML element for the smallest heading?",
+      "answers": [
+        { "id": "a1", "content": "<heading>" },
+        { "id": "a2", "content": "<h6>" },
+        { "id": "a3", "content": "<head>" },
+        { "id": "a4", "content": "<small>" }
+      ],
+      "correctAnswerId": "a2"
+    },
+    {
+      "id": "9",
+      "title": "How do you add a comment in CSS?",
+      "answers": [
+        { "id": "a1", "content": "// this is a comment" },
+        { "id": "a2", "content": "# this is a comment" },
+        { "id": "a3", "content": "/* this is a comment */" },
+        { "id": "a4", "content": "<!-- this is a comment -->" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "10",
+      "title": "Inside which HTML element do we put the JavaScript?",
+      "answers": [
+        { "id": "a1", "content": "<scripting>" },
+        { "id": "a2", "content": "<js>" },
+        { "id": "a3", "content": "<script>" },
+        { "id": "a4", "content": "<javascript>" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "11",
+      "title": "Which of the following is the correct syntax for referring to an external script?",
+      "answers": [
+        { "id": "a1", "content": "<script src='script.js'>" },
+        { "id": "a2", "content": "<script href='script.js'>" },
+        { "id": "a3", "content": "<script link='script.js'>" },
+        { "id": "a4", "content": "<script file='script.js'>" }
+      ],
+      "correctAnswerId": "a1"
+    },
+    {
+      "id": "12",
+      "title": "Which property is used to change the font of an element?",
+      "answers": [
+        { "id": "a1", "content": "font-family" },
+        { "id": "a2", "content": "font-style" },
+        { "id": "a3", "content": "font-size" },
+        { "id": "a4", "content": "font-weight" }
+      ],
+      "correctAnswerId": "a1"
+    },
+    {
+      "id": "13",
+      "title": "How do you make a list that lists items with numbers?",
+      "answers": [
+        { "id": "a1", "content": "<ul>" },
+        { "id": "a2", "content": "<list>" },
+        { "id": "a3", "content": "<ol>" },
+        { "id": "a4", "content": "<li>" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "14",
+      "title": "What is the correct JavaScript syntax to write 'Hello World'?",
+      "answers": [
+        { "id": "a1", "content": "write('Hello World')" },
+        { "id": "a2", "content": "console.log('Hello World')" },
+        { "id": "a3", "content": "document.write('Hello World')" },
+        { "id": "a4", "content": "print('Hello World')" }
+      ],
+      "correctAnswerId": "a2"
+    },
+    {
+      "id": "15",
+      "title": "Which property is used to align text in CSS?",
+      "answers": [
+        { "id": "a1", "content": "align" },
+        { "id": "a2", "content": "text-align" },
+        { "id": "a3", "content": "text-align-center" },
+        { "id": "a4", "content": "text-style" }
+      ],
+      "correctAnswerId": "a2"
+    },
+    {
+      "id": "16",
+      "title": "How can you make a numbered list in HTML?",
+      "answers": [
+        { "id": "a1", "content": "<ul>" },
+        { "id": "a2", "content": "<ol>" },
+        { "id": "a3", "content": "<dl>" },
+        { "id": "a4", "content": "<numbered>" }
+      ],
+      "correctAnswerId": "a2"
+    },
+    {
+      "id": "17",
+      "title": "Which is the correct way to declare a variable in JavaScript?",
+      "answers": [
+        { "id": "a1", "content": "v myVariable;" },
+        { "id": "a2", "content": "var myVariable;" },
+        { "id": "a3", "content": "variable myVariable;" },
+        { "id": "a4", "content": "let variable;" }
+      ],
+      "correctAnswerId": "a2"
+    },
+    {
+      "id": "18",
+      "title": "What does CSS stand for?",
+      "answers": [
+        { "id": "a1", "content": "Computer Style Sheets" },
+        { "id": "a2", "content": "Creative Style Sheets" },
+        { "id": "a3", "content": "Cascading Style Sheets" },
+        { "id": "a4", "content": "Colorful Style Sheets" }
+      ],
+      "correctAnswerId": "a3"
+    },
+    {
+      "id": "19",
+      "title": "How do you insert a comment in HTML?",
+      "answers": [
+        { "id": "a1", "content": "<!-- This is a comment -->" },
+        { "id": "a2", "content": "// This is a comment" },
+        { "id": "a3", "content": "# This is a comment" },
+        { "id": "a4", "content": "/* This is a comment */" }
+      ],
+      "correctAnswerId": "a1"
+    },
+    {
+      "id": "20",
+      "title": "Which event occurs when the user clicks on an HTML element?",
+      "answers": [
+        { "id": "a1", "content": "onchange" },
+        { "id": "a2", "content": "onmouseclick" },
+        { "id": "a3", "content": "onclick" },
+        { "id": "a4", "content": "onmouseover" }
+      ],
+      "correctAnswerId": "a3"
+    }
+  ]
+}

@@ -3,7 +3,11 @@ import { db } from "../main.js";
 class User {
   constructor(firstName, lastName, email, password) {
     const findRes = User.find(email);
-    if (findRes) throw new Error("User already exists");
+    console.log(findRes);
+
+    // Validate if user exists
+    if (findRes) throw new Error("Email already registered");
+
     this.email = email;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -11,8 +15,6 @@ class User {
   }
 
   static add(user) {
-    console.log(user);
-
     let users = db.get("users");
     if (users) {
       users.push(user);
@@ -27,7 +29,7 @@ class User {
     const users = db.get("users");
     if (users) {
       let result = users.filter((user) => {
-        user.email === email;
+        return user.email === email;
       });
       if (!result.length) {
         return null;
@@ -44,10 +46,3 @@ class User {
     return null;
   }
 }
-
-let u = new User("Ahmed", "Mohamed", "mohamed@email.com", "password");
-// console.log(u);
-
-// console.log(db.get("users"));
-
-User.add(u);

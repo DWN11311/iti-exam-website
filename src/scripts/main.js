@@ -3,8 +3,7 @@ export const db = {
     try {
       return JSON.parse(localStorage[key]);
     } catch {
-      console.error("Could not find data with given key");
-      return undefined;
+      return null;
     }
   },
   set(key, value) {
@@ -21,8 +20,23 @@ export function generateId() {
   return localStorage.idCounter++;
 }
 
-// get
-// [{}, {}]
+export function validate(regex, inputWrapper, errorMessage) {
+  if (!regex.test(inputWrapper[0].value)) {
+    inputWrapper[1].innerText = errorMessage;
+    inputWrapper.classList.add("invalid");
+  }
+  inputWrapper.classList.remove("invalid");
+}
 
-// set
-// [{}, {}]
+export function shuffle(array) {
+  let originalArray = [...array];
+  let shuffledArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let randomIndex = Math.floor(Math.random() * originalArray.length);
+    shuffledArray.push(originalArray[randomIndex]);
+    originalArray.splice(randomIndex, 1);
+  }
+
+  return shuffledArray;
+}
