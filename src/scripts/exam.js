@@ -61,7 +61,7 @@ document.body.addEventListener("keydown", function (e) {
         previousQuestion();
     }
     if (e.key === "f" || e.key === "F") {
-        flagQuestion(currentQuestion);
+        toggleFlagQuestion(currentQuestion);
     }
 });
 
@@ -76,7 +76,11 @@ document.querySelector("body").addEventListener("click", (e) => {
         previousQuestion();
     }
     if (e.target.classList.contains("question-btn")) {
+        currentQuestion = e.target.getAttribute("data-question-number");
         changeQuestion(e.target.getAttribute("data-question-number"));
+    }
+    if (e.target.id === "flag-question") {
+        toggleFlagQuestion(currentQuestion);
     }
 });
 
@@ -95,8 +99,10 @@ function previousQuestion() {
     }
 }
 
-function flagQuestion(questionNumber) {
-    console.log("Flag", questionNumber);
+function toggleFlagQuestion(questionNumber) {
+    const questionBtn = document
+        .querySelector(`button[data-question-number="${questionNumber}"]`)
+        .classList.toggle("flag");
 }
 
 function changeQuestion(questionNumber) {
@@ -143,7 +149,7 @@ function changeQuestion(questionNumber) {
     });
 
     document
-        .querySelector('button[data-question-number="' + questionNumber + '"]')
+        .querySelector(`button[data-question-number="${questionNumber}"]`)
         .classList.add("bg-green-500");
 }
 
@@ -160,7 +166,8 @@ function displayQuestionsButtons() {
             "rounded-lg",
             "after:animate-bounce",
             "transition-colors",
-            "question-btn"
+            "question-btn",
+            "box-border"
         );
         button.innerText = i + 1;
         button.setAttribute("data-question-number", i + 1);
