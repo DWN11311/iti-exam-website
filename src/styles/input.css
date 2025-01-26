@@ -5,7 +5,6 @@
 
 body {
     margin: 0;
-    box-sizing: border-box;
 }
 
 * {
@@ -54,4 +53,11 @@ body {
             )
             center / var(--dot-space) var(--dot-space),
         var(--dot-color);
+}
+.activate-flag {
+    background-color: #dc2626;
+    color: white;
+}
+.activate-flag svg {
+    transform: translateY(-0.125rem);
 }
