@@ -1,5 +1,61 @@
+import { shuffle } from "./main.js";
+
 let currentQuestion = 1;
 let exam = {};
+
+let flagBtn = document.getElementById("flag-question");
+let nextBtn = document.getElementById("next-btn");
+nextBtn.addEventListener("click", nextQuestion);
+let previousBtn = document.getElementById("previous-btn");
+previousBtn.addEventListener("click", previousQuestion);
+flagBtn.addEventListener("click", () => {
+    toggleFlagQuestion(currentQuestion);
+    updateFlagButton();
+});
+document.getElementById("questions-btns").addEventListener("click", (e) => {
+    if (e.target.classList.contains("question-btn")) {
+        currentQuestion = parseInt(
+            e.target.getAttribute("data-question-number")
+        );
+        changeQuestion(currentQuestion);
+    }
+});
+document.querySelector(".answers").addEventListener("click", (e) => {
+    const answerElement = e.target.closest(".answer");
+    if (answerElement) {
+        const radio = answerElement.querySelector('input[type="radio"]');
+        if (radio) {
+            radio.checked = true;
+        }
+        exam.questions[currentQuestion - 1].userAnswer =
+            e.target.getAttribute("data-answer-id");
+        document
+            .querySelector(`button[data-question-number="${currentQuestion}"]`)
+            .classList.add("bg-green-500");
+        trackExamProgress();
+    }
+});
+
+document.getElementById("fullscreen").addEventListener("click", function () {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+        document.exitFullscreen();
+    }
+});
+
+document.body.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") {
+        nextQuestion();
+    }
+    if (e.key === "ArrowLeft") {
+        previousQuestion();
+    }
+    if (e.code === "KeyF") {
+        toggleFlagQuestion(currentQuestion);
+        updateFlagButton();
+    }
+});
 
 async function getExam() {
     const url = "/src/scripts/data/data.json";
@@ -8,17 +64,28 @@ async function getExam() {
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
-        const json = await response.json();
-
-        exam = json;
+        const data = await response.json();
+        exam = shuffleExam(data);
+        document.getElementById("exam-title").innerText = exam.title;
         displayQuestionsButtons();
         timer(exam.examDuration);
         changeQuestion(1);
-    } catch (error) {
-        console.error(error.message);
+    } finally {
     }
+    //  catch (error) {
+    //     console.error(error.message);
+    // }
 }
 getExam();
+
+function shuffleExam(exam) {
+    let questions = [...exam.questions];
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].answers = shuffle(questions[i].answers);
+    }
+    exam.questions = shuffle(questions);
+    return exam;
+}
 
 function timer(examDurationInSeconds) {
     const timer = document.getElementById("timer");
@@ -40,51 +107,11 @@ function timer(examDurationInSeconds) {
         examDurationInSeconds--;
         if (examDurationInSeconds === -1) {
             clearInterval(interval);
-            console.log("ended");
+            console.log("time out");
+            window.location.href = "/fail.html";
         }
     }, 1000);
 }
-
-document.getElementById("fullscreen").addEventListener("click", function () {
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else if (document.exitFullscreen) {
-        document.exitFullscreen();
-    }
-});
-
-document.body.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowRight") {
-        nextQuestion();
-    }
-    if (e.key === "ArrowLeft") {
-        previousQuestion();
-    }
-    if (e.key === "f" || e.key === "F") {
-        toggleFlagQuestion(currentQuestion);
-    }
-});
-
-document.querySelector("body").addEventListener("click", (e) => {
-    if (e.target.classList.contains("answer")) {
-        e.target.children[0].checked = true;
-    }
-    if (e.target.id === "next-btn") {
-        nextQuestion();
-    }
-    if (e.target.id === "previous-btn") {
-        previousQuestion();
-    }
-    if (e.target.classList.contains("question-btn")) {
-        currentQuestion = e.target.getAttribute("data-question-number");
-        changeQuestion(e.target.getAttribute("data-question-number"));
-    }
-    if (e.target.id === "flag-question") {
-        toggleFlagQuestion(currentQuestion);
-    }
-});
-
-// function goToQuestion(questionNumber) {}
 
 function nextQuestion() {
     if (currentQuestion < exam.questions.length) {
@@ -100,13 +127,27 @@ function previousQuestion() {
 }
 
 function toggleFlagQuestion(questionNumber) {
-    const questionBtn = document
+    let index = questionNumber - 1;
+    document
         .querySelector(`button[data-question-number="${questionNumber}"]`)
         .classList.toggle("flag");
+    exam.questions[index].isFlagged = !exam.questions[index].isFlagged;
+    updateFlagButton();
 }
 
 function changeQuestion(questionNumber) {
     const questionIndex = questionNumber - 1;
+    if (currentQuestion === 1) {
+        previousBtn.disabled = true;
+    } else {
+        previousBtn.disabled = false;
+    }
+    if (currentQuestion === exam.questions.length) {
+        nextBtn.disabled = true;
+    } else {
+        nextBtn.disabled = false;
+    }
+    updateFlagButton();
     document.getElementById("current-question").innerText = questionNumber;
     document.getElementById("total-questions").innerText =
         exam.questions.length;
@@ -135,22 +176,32 @@ function changeQuestion(questionNumber) {
         radio.type = "radio";
         radio.classList.add("w-5", "h-5", "mr-3");
         radio.name = "answer";
-        answer.appendChild(radio);
         const span = document.createElement("span");
         span.innerText = question.answers[i].content;
+        answer.setAttribute("data-answer-id", question.answers[i].id);
+        span.setAttribute("data-answer-id", question.answers[i].id);
+        radio.setAttribute("data-answer-id", question.answers[i].id);
+        answer.appendChild(radio);
         answer.appendChild(span);
         answers.appendChild(answer);
     }
+
+    const userAnswer = exam.questions[currentQuestion - 1]?.userAnswer;
+    if (userAnswer) {
+        document.querySelector(
+            `input[type="radio"][data-answer-id="${userAnswer}"]`
+        ).checked = true;
+    }
+
     const questionBtns = document.querySelectorAll(".question-btn");
 
     questionBtns.forEach((button, i) => {
-        console.log();
-        button.classList.remove("bg-green-500");
+        button.classList.remove("ring-[3px]", "ring-primary-500");
     });
 
     document
         .querySelector(`button[data-question-number="${questionNumber}"]`)
-        .classList.add("bg-green-500");
+        .classList.add("ring-[3px]", "ring-primary-500");
 }
 
 function displayQuestionsButtons() {
@@ -159,18 +210,61 @@ function displayQuestionsButtons() {
         button.classList.add(
             "relative",
             "w-16",
+            "h-10",
             "py-2",
+            "flex",
+            "justify-center",
+            "items-center",
             "text-center",
             "text-white",
             "bg-gray-400",
+            "hover:opacity-70",
+            "active:opacity-95",
             "rounded-lg",
             "after:animate-bounce",
-            "transition-colors",
+            "transition-all",
             "question-btn",
-            "box-border"
+            "focus:outline-none"
         );
         button.innerText = i + 1;
         button.setAttribute("data-question-number", i + 1);
         document.getElementById("questions-btns").appendChild(button);
+    }
+}
+
+function updateFlagButton() {
+    if (exam.questions[currentQuestion - 1].isFlagged) {
+        flagBtn.classList.add("activate-flag");
+    } else {
+        flagBtn.classList.remove("activate-flag");
+    }
+}
+
+let answeredQuestion = [];
+function trackExamProgress() {
+    if (!answeredQuestion.includes(currentQuestion)) {
+        answeredQuestion.push(currentQuestion);
+        renderProgressUI(answeredQuestion.length);
+    }
+}
+
+function renderProgressUI(answeredQuestionsCount) {
+    let totalQuestions = exam.questions.length;
+    let answeredQuestionsPercentage = parseInt(
+        (answeredQuestionsCount / totalQuestions) * 100
+    );
+    document.getElementById("answered-questions").innerText =
+        answeredQuestionsCount;
+    document.getElementById("remining-questions").innerText = totalQuestions;
+    document.getElementById(
+        "progress-percentage"
+    ).innerText = `${answeredQuestionsPercentage}%`;
+    document.getElementById(
+        "progress-bar"
+    ).style.maxWidth = `${answeredQuestionsPercentage}%`;
+    if (answeredQuestionsCount === totalQuestions) {
+        document
+            .getElementById("sumbit-exam-btn")
+            .classList.add("animate-pulse");
     }
 }
