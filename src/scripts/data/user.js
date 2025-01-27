@@ -1,6 +1,6 @@
 import { db } from "../main.js";
 
-class User {
+export class User {
   constructor(firstName, lastName, email, password) {
     const findRes = User.find(email);
     console.log(findRes);
@@ -42,7 +42,10 @@ class User {
 
   static auth(email, password) {
     const user = User.find(email);
-    if (user.password === password) return user;
+    if (user.password === password) {
+      localStorage["currentUser"] = user.email;
+      return user.email;
+    }
     return null;
   }
 }
