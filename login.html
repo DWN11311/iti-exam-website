@@ -21,7 +21,7 @@
   </head>
   <body class="font-[Inter] text-text-50">
     <div
-      class="h-screen w-full flex items-center justify-center bg-background-950 relative"
+      class="min-h-screen w-full flex items-center justify-center bg-background-950 relative py-4"
     >
       <img
         src="src/images/register/background.webp"
@@ -29,22 +29,46 @@
         alt=""
       />
       <div
-        class="w-full lg:w-[80%] xl:w-[60%] z-10 relative flex rounded-xl shadow-2xl mx-8"
+        class="w-full lg:w-[80%] xl:w-[60%] z-10 relative flex rounded-xl shadow-2xl mx-8 min-h-[75vh]"
       >
         <div
-          class="md:w-[30%] rounded-l-xl backdrop-blur-md bg-opacity-10 bg-background-900 hidden md:block"
+          class="md:w-[30%] rounded-l-xl backdrop-blur-md bg-opacity-10 bg-background-900 hidden md:flex flex-col gap-8 justify-center md:p-8 text-text-900"
         >
-          <h1>aaa</h1>
+          <h1 class="text-2xl font-bold mb-4">Lorem Ipsum</h1>
+          <div>
+            <h3 class="text-lg font-semibold">Take Exams Effortlessly</h3>
+            <p class="text-text-800">
+              test your knowledge with just a few clicks.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Track Your Progress Instantly</h3>
+            <p class="text-text-800">
+              Get real-time results and performance insights.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Your Exam Journey Starts Here</h3>
+            <p class="text-text-800">
+              Join us today to explore smarter testing.
+            </p>
+          </div>
         </div>
         <div
-          class="bg-background-900 grow flex flex-col items-center justify-center py-12 rounded-xl md:rounded-r-xl md:rounded-l-none"
+          class="bg-background-900 grow flex flex-col items-center justify-center py-12 rounded-xl md:rounded-r-xl md:rounded-l-none p-2"
         >
           <div
             class="flex flex-col justify-center w-[90%] sm:w-[80%] md:w-[60%]"
           >
-            <h1 class="mb-4 text-3xl font-bold">Lorem Ipsum</h1>
-            <p class="mb-4">
+            <h1 class="mb-4 text-3xl font-bold text-text-300">Lorem Ipsum</h1>
+            <p class="mb-2 text-text-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="mb-2 bg-accent-800 text-text-400 rounded-md p-2">
+              <i
+                class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+              ></i
+              >Email or password might be incorrect
             </p>
             <div class="relative w-full my-2">
               <!-- <span class="text-text-200 px-4 my-1 block">Email</span> -->
@@ -77,21 +101,33 @@
                 ><i class="fa-solid fa-lock"></i
               ></span>
             </div>
-            <label for="remember-me" class="self-start">
-              <input type="checkbox" name="remember-me" id="" />
-              Remember me
-            </label>
+            <div class="checkbox-wrapper-46 pl-2 m-1">
+              <input class="inp-cbx" id="cbx-46" type="checkbox" />
+              <label class="cbx" for="cbx-46"
+                ><span>
+                  <svg width="12px" height="10px" viewbox="0 0 12 10">
+                    <polyline
+                      points="1.5 6 4.5 9 10.5 1"
+                    ></polyline></svg></span
+                ><span class="text-text-300">Remember me</span>
+              </label>
+            </div>
             <button
-              class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg hover:bg-primary-700"
+              class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg hover:bg-primary-700 group"
             >
-              Login <i class="fa-solid fa-arrow-right pl-2"></i>
+              Login
+              <i
+                class="fa-solid fa-arrow-right pl-2 group-hover:translate-x-2 transition-transform"
+              ></i>
             </button>
             <p
-              class="self-center my-8 font-bold flex gap-4 items-center after:w-32 after:h-1 after:bg-primary-800 after:content-[' '] after:rounded-full before:w-32 before:h-1 before:bg-primary-800 before:content-[' '] before:rounded-full"
+              class="self-center my-8 font-bold text-text-300 flex gap-4 items-center after:w-24 md:after:w-32 after:h-1 after:bg-primary-800 after:content-[' '] after:rounded-full before:w-24 md:before:w-32 before:h-1 before:bg-primary-800 before:content-[' '] before:rounded-full"
             >
-              Or
+              or
             </p>
-            <a href="" class="self-center underline text-secondary-400"
+            <a
+              href="register.html"
+              class="self-center underline text-secondary-400 hover:text-text-600"
               >Create a new account</a
             >
           </div>
