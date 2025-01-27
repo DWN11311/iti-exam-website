@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Exam</title>
         <link rel="stylesheet" href="/src/styles/output.css" />
-        <link rel="stylesheet" href="/src/styles/input.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- <link rel="stylesheet" href="/src/styles/input.css" /> -->
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     </head>
     <body>
         <nav
-            class="flex items-center justify-between h-20 px-5 border-2 border-b-primary-700 drop-shadow-lg"
+            class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
         >
             <div class="flex gap-3">
                 <svg
@@ -27,11 +27,13 @@
                         d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
                     />
                 </svg>
-                <span class="text-2xl font-semibold">HTML & CSS Exam</span>
+                <span id="exam-title" class="text-2xl font-semibold"
+                    >CSS HTML & JS Exam</span
+                >
             </div>
-            <div class="flex gap-5">
+            <div class="flex items-center gap-5">
                 <div
-                    class="flex gap-3 px-3 py-2 bg-gray-200 rounded-xl drop-shadow-md"
+                    class="flex gap-4 px-3 py-2 bg-gray-200 rounded-xl drop-shadow-md"
                 >
                     <svg
                         xmlns:svg="http://www.w3.org/2000/svg"
@@ -60,89 +62,89 @@
                             />
                         </g>
                     </svg>
-                    <span class="timer">45:00</span>
+                    <span id="timer" class="font-bold w-14">--:--</span>
                 </div>
                 <button
+                    id="sumbit-exam-btn"
                     class="px-3 py-2 text-white rounded-xl bg-primary-600 drop-shadow-md"
                 >
                     Submit Exam
                 </button>
+                <button id="fullscreen">
+                    <svg
+                        width="30px"
+                        height="30px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z"
+                                fill="#0F0F0F"
+                            ></path>
+                            <path
+                                d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z"
+                                fill="#0F0F0F"
+                            ></path>
+                            <path
+                                d="M4 21H8C8.55228 21 9 21.4477 9 22C9 22.5523 8.55228 23 8 23H4C2.34315 23 1 21.6569 1 20V16C1 15.4477 1.44772 15 2 15C2.55228 15 3 15.4477 3 16V20C3 20.5523 3.44772 21 4 21Z"
+                                fill="#0F0F0F"
+                            ></path>
+                            <path
+                                d="M1 8C1 8.55228 1.44772 9 2 9C2.55228 9 3 8.55228 3 8L3 4C3 3.44772 3.44772 3 4 3H8C8.55228 3 9 2.55228 9 2C9 1.44772 8.55228 1 8 1H4C2.34315 1 1 2.34315 1 4V8Z"
+                                fill="#0F0F0F"
+                            ></path>
+                        </g>
+                    </svg>
+                </button>
             </div>
         </nav>
-        <div class="flex">
+        <div class="flex flex-col-reverse md:flex-row">
             <div
-                class="w-96 b h-[calc(100vh-80px)] drop-shadow-xl border-r-2 border-r-gray-300 p-3"
+                class="md:w-96 b md:h-[calc(100vh-84px)] drop-shadow-xl md:border-r-2 border-r-gray-300 p-3"
             >
                 <div
                     class="px-3 py-4 transition bg-gray-100 border-2 border-gray-200 rounded-xl hover:bg-gray-200 hover:border-gray-300"
                 >
                     <div class="flex justify-between">
                         <p>Progress</p>
-                        <p>20%</p>
+                        <p id="progress-percentage">0%</p>
                     </div>
-                    <div class="relative w-full h-2 mt-3 bg-gray-300">
+                    <div
+                        class="relative w-full h-2 mt-3 transition-all bg-gray-300 rounded-xl"
+                    >
                         <div
-                            data-width="50%"
-                            class="absolute bottom-0 left-0 w-5 h-full rounded-xl dynamic-width bg-primary-500"
+                            id="progress-bar"
+                            class="absolute bottom-0 left-0 w-full h-full transition-all max-w-0 rounded-xl bg-primary-500"
                         ></div>
                     </div>
-                    <div class="mt-3 text-gray-600">
-                        6 of 20 questions complete
+                    <div class="flex justify-between mt-3 text-gray-600">
+                        <div>
+                            <span id="answered-questions">0</span> Complete
+                        </div>
+                        <div>
+                            <span id="remining-questions">20</span> Remining
+                        </div>
                     </div>
                 </div>
                 <div class="mt-5">
                     <p>Questions</p>
-                    <div class="flex flex-wrap gap-3 mt-3">
-                        <button
+                    <div
+                        id="questions-btns"
+                        class="flex flex-wrap justify-center gap-3 mt-3 md:justify-start"
+                    >
+                        <!-- <button
                             class="relative w-16 py-2 text-center text-white bg-green-400 rounded-lg flag after:animate-bounce"
                         >
                             1
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg flag after:animate-bounce"
-                        >
-                            2
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce animate-pulse"
-                        >
-                            3
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce"
-                        >
-                            4
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce flag"
-                        >
-                            5
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce"
-                        >
-                            6
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce"
-                        >
-                            7
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce"
-                        >
-                            8
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce"
-                        >
-                            9
-                        </button>
-                        <button
-                            class="relative w-16 py-2 text-center text-white bg-gray-500 rounded-lg after:animate-bounce"
-                        >
-                            10
-                        </button>
+                        </button> -->
                     </div>
                 </div>
                 <div
@@ -267,105 +269,98 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full p-4 bg-gray-100">
-                <div class="flex items-center justify-between">
-                    <div class="text-2xl font-bold text-primary-400">
-                        Question
-                        <span class="current-question">1</span>
-                        of
-                        <span class="total-questions">20</span>
-                    </div>
-                    <button
-                        class="flex gap-2 px-3 py-2 bg-gray-200 border border-gray-400 rounded-xl drop-shadow-md hover:bg-red-600 group hover:text-white"
+            <div class="flex justify-center w-full p-4 pt-16 exam-background">
+                <div class="w-full lg:w-2/3">
+                    <div
+                        class="flex flex-col items-center justify-between gap-3 sm:gap-0 sm:flex-row"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="transition-transform size-6 group-hover:-translate-y-0.5"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"
-                            />
-                        </svg>
-                        Flag Question
-                    </button>
-                </div>
-                <div class="p-5 mt-8 bg-white rounded-xl">
-                    <p class="font-bold question">
-                        This is a very bad Question
-                    </p>
-                    <div class="answers">
-                        <div
-                            class="flex p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
-                        >
-                            <input type="radio" class="w-8" name="answer" />
-                            <span>Answer</span>
+                        <div class="text-2xl font-bold text-primary-400">
+                            Question
+                            <span id="current-question">1</span>
+                            of
+                            <span id="total-questions">20</span>
                         </div>
-                        <div
-                            class="flex p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
+                        <button
+                            id="flag-question"
+                            class="flex gap-2 px-3 py-2 bg-gray-200 border border-gray-400 rounded-xl drop-shadow-md hover:bg-red-600 active:bg-red-700 group hover:text-white"
                         >
-                            <input type="radio" class="w-8" name="answer" />
-                            <span class="text-xl">Answer</span>
-                        </div>
-                        <div
-                            class="flex p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
-                        >
-                            <input type="radio" class="w-8" name="answer" />
-                            <span class="text-xl">Answer</span>
-                        </div>
-                        <div
-                            class="flex p-3 mt-5 border border-black answer bg-primary-900 rounded-xl"
-                        >
-                            <input type="radio" class="w-8" name="answer" />
-                            <span class="text-xl">Answer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-between mt-5">
-                    <button
-                        class="flex items-center justify-center gap-1 py-4 text-white transition rounded-lg px-7 group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            class="transition size-6 group-hover:-translate-x-1"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
-                        Previous
-                    </button>
-                    <button
-                        class="flex items-center justify-center gap-1 px-10 py-4 text-white transition rounded-lg group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
-                    >
-                        Next
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="white"
-                            class="transition size-6 group-hover:translate-x-1"
-                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="transition-transform size-6 group-hover:-translate-y-0.5"
                             >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                            />
-                        </svg>
-                    </button>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"
+                                />
+                            </svg>
+                            Flag Question
+                        </button>
+                    </div>
+                    <div class="p-5 mt-8 bg-white drop-shadow-2xl rounded-xl">
+                        <p class="font-bold question"></p>
+                        <div class="answers">
+                            <!-- <button
+                                class="flex items-center w-full p-3 mt-5 transition-colors border border-black answer bg-primary-900 rounded-xl hover:bg-primary-800 active:bg-primary-700"
+                            >
+                                <input
+                                    type="radio"
+                                    class="w-5 h-5 mr-3"
+                                    name="answer"
+                                />
+                                <span>Answer</span>
+                            </button> -->
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-5">
+                        <button
+                            id="previous-btn"
+                            class="flex items-center justify-center gap-1 py-4 text-white transition rounded-lg px-7 disabled:bg-gray-300 disabled:cursor-not-allowed group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="transition size-6 group-hover:-translate-x-1"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+                            Previous
+                        </button>
+                        <button
+                            id="next-btn"
+                            class="flex items-center justify-center gap-1 px-10 py-4 text-white transition rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
+                        >
+                            Next
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="white"
+                                class="transition size-6 group-hover:translate-x-1"
+                            >
+                                >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                                />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+        <script type="module" src="./src/scripts/main.js"></script>
+        <script type="module" src="./src/scripts/exam.js"></script>
     </body>
 </html>

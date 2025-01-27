@@ -3,13 +3,11 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-body {
-  margin: 0;
-  box-sizing: border-box;
-}
 
 * {
-  font-family: "Inter", serif;
+    font-family: "Inter", serif;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .input-wrapper.invalid input {
@@ -113,4 +111,29 @@ body {
   50% {
     transform: scale(0.9);
   }
+}
+.exam-background {
+    --dot-bg: white;
+    --dot-color: black;
+    --dot-size: 1px;
+    --dot-space: 22px;
+    background: linear-gradient(
+                90deg,
+                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+                transparent 1%
+            )
+            center / var(--dot-space) var(--dot-space),
+        linear-gradient(
+                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+                transparent 1%
+            )
+            center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
+}
+.activate-flag {
+    background-color: #dc2626;
+    color: white;
+}
+.activate-flag svg {
+    transform: translateY(-0.125rem);
 }
