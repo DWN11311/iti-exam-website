@@ -1,8 +1,44 @@
+import { User } from "./data/user.js";
 const registerForm = document.querySelector("#register-form");
+const submitBtn = document.querySelector('button[type="submit"]');
+
 registerForm.addEventListener("submit", function (e) {
+  if (checkFormValidation()) {
+    try {
+      const user = new User(
+        registerForm["fname"].value,
+        registerForm["lname"].value,
+        registerForm["email"].value,
+        registerForm["password"].value
+      );
+      User.add(user);
+      User.auth(registerForm["email"].value, registerForm["password"].value);
+      window.location = "index.html";
+    } catch {
+      const alreadyExists = document.querySelector("#already-exists");
+      alreadyExists.classList.remove("hidden");
+      alreadyExists.classList.add("block");
+    }
+  }
   e.preventDefault();
 });
 registerForm.reset();
+
+function checkFormValidation() {
+  if (
+    fnameValid &&
+    lnameValid &&
+    emailValid &&
+    passwordValid &&
+    confirmPasswordValid
+  ) {
+    submitBtn.removeAttribute("disabled");
+    return true;
+  } else {
+    submitBtn.setAttribute("disabled", "true");
+    return false;
+  }
+}
 
 const lettersOnlyRegex = /^[a-zA-Z]+$/;
 const noSpacesRegex = /^\S*$/;
@@ -74,6 +110,7 @@ registerForm["fname"].addEventListener("input", function () {
     { tagId: "fname-spaces-tag", regex: noSpacesRegex },
     { tagId: "fname-length-tag", regex: minLengthRegex },
   ]);
+  checkFormValidation();
 });
 
 registerForm["fname"].addEventListener("blur", () =>
@@ -88,6 +125,7 @@ registerForm["lname"].addEventListener("input", function () {
     { tagId: "lname-spaces-tag", regex: noSpacesRegex },
     { tagId: "lname-length-tag", regex: minLengthRegex },
   ]);
+  checkFormValidation();
 });
 
 registerForm["lname"].addEventListener("blur", () =>
@@ -102,6 +140,7 @@ registerForm["email"].addEventListener("input", function () {
     { tagId: "email-dot-tag", regex: hasDotRegex },
     { tagId: "email-spaces-tag", regex: noSpacesRegex },
   ]);
+  checkFormValidation();
 });
 
 registerForm["email"].addEventListener("blur", () =>
@@ -119,6 +158,7 @@ registerForm["password"].addEventListener("input", function () {
     { tagId: "pw-special-tag", regex: specialCharRegex },
     { tagId: "pw-spaces-tag", regex: noSpacesRegex },
   ]);
+  checkFormValidation();
 });
 
 registerForm["password"].addEventListener("blur", () =>
@@ -139,6 +179,7 @@ registerForm["confirm-password"].addEventListener("input", function () {
     tagIcon.classList.add("bg-red-200", "text-red-500", "fa-xmark");
     confirmPasswordValid = false;
   }
+  checkFormValidation();
 });
 
 registerForm["confirm-password"].addEventListener("blur", () =>
@@ -162,5 +203,3 @@ togglePasswordBtn.addEventListener("click", function () {
   togglePasswordBtn.classList.toggle("text-primary-500");
   passwordVisible = !passwordVisible;
 });
-
-// Validate name

@@ -65,7 +65,10 @@
             <p class="mb-2 text-text-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <p class="mb-4 bg-accent-800 text-text-400 rounded-md p-2 hidden">
+            <p
+              id="already-exists"
+              class="mb-4 bg-accent-800 text-text-400 rounded-md p-2 hidden"
+            >
               <i
                 class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
               ></i
@@ -242,6 +245,7 @@
               ></span>
               <button
                 id="toggle-password-btn"
+                type="button"
                 class="absolute right-2 top-3.5 p-1 w-8 h-8 border-primary-900 text-primary-800 flex items-center justify-center"
               >
                 <i class="fa-solid fa-eye-slash"></i>
@@ -335,17 +339,18 @@
 
             <button
               type="submit"
-              class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg hover:bg-primary-700 group"
+              disabled
+              class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg hover:bg-primary-700 group disabled:bg-primary-800"
             >
               Register
               <i
-                class="fa-solid fa-arrow-right pl-2 group-hover:translate-x-2 transition-transform"
+                class="fa-solid fa-arrow-right pl-2 enabled:group-hover:translate-x-2 transition-transform"
               ></i>
             </button>
           </div>
         </form>
       </div>
     </div>
-    <script src="src/scripts/register.js"></script>
+    <script type="module" src="src/scripts/register.js"></script>
   </body>
 </html>
