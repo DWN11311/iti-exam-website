@@ -3,11 +3,10 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-
 * {
-    font-family: "Inter", serif;
-    box-sizing: border-box;
-    margin: 0;
+  font-family: "Inter", serif;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .input-wrapper.invalid input {
@@ -113,62 +112,62 @@
   }
 }
 .exam-background {
-    --dot-bg: white;
-    --dot-color: black;
-    --dot-size: 1px;
-    --dot-space: 22px;
-    background: linear-gradient(
-                90deg,
-                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-                transparent 1%
-            )
-            center / var(--dot-space) var(--dot-space),
-        linear-gradient(
-                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-                transparent 1%
-            )
-            center / var(--dot-space) var(--dot-space),
-        var(--dot-color);
+  --dot-bg: white;
+  --dot-color: black;
+  --dot-size: 1px;
+  --dot-space: 22px;
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
 }
 .activate-flag {
-    background-color: #dc2626;
-    color: white;
+  background-color: #dc2626;
+  color: white;
 }
 .activate-flag svg {
-    transform: translateY(-0.125rem);
+  transform: translateY(-0.125rem);
 }
 
 .wave {
-    animation-name: wave-animation;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    transform-origin: 70% 70%;
-    display: inline-block;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
 }
 
 @keyframes wave-animation {
-    0% {
-        transform: rotate(0deg);
-    }
-    10% {
-        transform: rotate(14deg);
-    } /* The following five values can be played with to make the waving more or less extreme */
-    20% {
-        transform: rotate(-8deg);
-    }
-    30% {
-        transform: rotate(14deg);
-    }
-    40% {
-        transform: rotate(-4deg);
-    }
-    50% {
-        transform: rotate(10deg);
-    }
-    60% {
-        transform: rotate(0deg);
-    } /* Reset for the last half to pause */
-    100% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
 }
