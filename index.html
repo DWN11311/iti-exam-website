@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="src/styles/output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div class="flex flex-col h-screen">
-      <nav
-        class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
-      >
-        <div class="flex gap-3">
-          <i class="text-3xl fa-solid fa-clipboard"></i>
-          <span id="exam-title" class="text-2xl font-semibold"
-            >Exam Website</span
-          >
-        </div>
-        <div class="flex items-center gap-5">
-          <div>Welcome, <span id="nav-name"></span></div>
-          <button class="relative group">
-            <i
-              class="text-3xl transition fa-regular fa-circle-user hover:text-primary-500"
-            ></i>
-            <div
-              id="logout-btn"
-              class="absolute hidden m-2 overflow-hidden duration-500 bg-white border-2 border-gray-500 rounded-lg -right-2 group-hover:block -bottom-12"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="src/styles/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <div class="flex flex-col h-screen">
+            <nav
+                class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
             >
-              <div
-                class="flex items-center gap-2 p-2 transition hover:bg-red-300"
-              >
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <div>Logout</div>
-              </div>
-            </div>
-          </button>
-        </div>
-      </nav>
-      <div class="flex flex-grow">
-        <!-- <aside
+                <div class="flex gap-3">
+                    <i class="text-3xl fa-solid fa-clipboard"></i>
+                    <span id="exam-title" class="text-2xl font-semibold"
+                        >Exam Website</span
+                    >
+                </div>
+                <div class="flex items-center gap-5">
+                    <div>Welcome, <span id="nav-name"></span></div>
+                    <button class="relative group">
+                        <i
+                            class="text-3xl transition fa-regular fa-circle-user hover:text-primary-500"
+                        ></i>
+                        <div
+                            id="logout-btn"
+                            class="absolute hidden m-2 overflow-hidden duration-500 bg-white border-2 border-gray-500 rounded-lg -right-2 group-hover:block -bottom-12"
+                        >
+                            <div
+                                class="flex items-center gap-2 p-2 transition hover:bg-red-300"
+                            >
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <div>Logout</div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+            <div class="flex flex-grow">
+                <!-- <aside
                     class="p-3 w-96 drop-shadow-xl md:border-r-2 border-r-gray-300"
                 >
                     <div class="flex flex-col gap-5 text-2xl">
@@ -86,45 +86,45 @@
                         </button>
                     </div>
                 </aside> -->
-        <!-- #f3f4f6 -->
-        <main class="w-full bg-[#eff1f3] p-7">
-          <div class="p-6 bg-white rounded-xl drop-shadow-xl">
-            <h1 class="text-4xl font-bold">
-              Welcome Back, <span id="hero-name"></span>!
-              <span class="wave">👋</span>
-            </h1>
-            <p class="mt-3">Here's your exam overview</p>
-          </div>
-          <p class="text-3xl font-bold my-7">Your Upcoming Exams</p>
-          <div
-            id="exams-container"
-            class="flex flex-col justify-between gap-10 md:flex-row"
-          ></div>
-          <p class="text-3xl font-bold my-7">Your Recent Exams</p>
-          <div id="no-recent-exams">
-            <p
-              class="text-center text-lg font-semibold bg-white m-2 p-2 rounded-xl shadow-lg"
-            >
-              You haven't taken any exams yet. Start your first one now and
-              track your progress!
-            </p>
-          </div>
-          <div
-            id="recent-exams"
-            class="hidden w-full overflow-hidden rounded-xl"
-          >
-            <!-- Header -->
-            <div
-              class="flex w-full font-bold bg-white border-b border-gray-300"
-            >
-              <div class="flex-1 p-2">Exam</div>
-              <div class="flex-1 p-2">Date</div>
-              <div class="flex-1 p-2">Grade</div>
-              <div class="flex-1 p-2">Status</div>
-            </div>
+                <!-- #f3f4f6 -->
+                <main class="w-full bg-[#eff1f3] p-7">
+                    <div class="p-6 bg-white rounded-xl drop-shadow-xl">
+                        <h1 class="text-4xl font-bold">
+                            Welcome Back, <span id="hero-name"></span>!
+                            <span class="wave">👋</span>
+                        </h1>
+                        <p class="mt-3">Here's your exam overview</p>
+                    </div>
+                    <p class="text-3xl font-bold my-7">Your Upcoming Exams</p>
+                    <div
+                        id="exams-container"
+                        class="flex flex-col justify-between gap-10 md:flex-row"
+                    ></div>
+                    <p class="text-3xl font-bold my-7">Your Recent Exams</p>
+                    <div id="no-recent-exams">
+                        <p
+                            class="p-2 m-2 text-lg font-semibold text-center bg-white shadow-lg rounded-xl"
+                        >
+                            You haven't taken any exams yet. Start your first
+                            one now and track your progress!
+                        </p>
+                    </div>
+                    <div
+                        id="recent-exams"
+                        class="hidden w-full overflow-hidden rounded-xl"
+                    >
+                        <!-- Header -->
+                        <div
+                            class="flex w-full font-bold bg-white border-b border-gray-300"
+                        >
+                            <div class="flex-1 p-2">Exam</div>
+                            <div class="flex-1 p-2">Date</div>
+                            <div class="flex-1 p-2">Grade</div>
+                            <div class="flex-1 p-2">Status</div>
+                        </div>
 
-            <!-- Rows -->
-            <!-- <div class="flex w-full bg-white border-b border-gray-200">
+                        <!-- Rows -->
+                        <!-- <div class="flex w-full bg-white border-b border-gray-200">
               <div class="flex-1 p-2">CSS HTML & JS</div>
               <div class="flex-1 p-2">25/1/2025</div>
               <div class="flex-1 p-2">90/100</div>
@@ -134,11 +134,11 @@
                 >
               </div>
             </div> -->
-          </div>
-        </main>
-      </div>
-    </div>
-    <script type="module" src="src/scripts/main.js"></script>
-    <script type="module" src="src/scripts/index.js"></script>
-  </body>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script type="module" src="src/scripts/main.js"></script>
+        <script type="module" src="src/scripts/index.js"></script>
+    </body>
 </html>

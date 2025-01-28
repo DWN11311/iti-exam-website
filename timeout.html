@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timeout</title>
+        <link rel="stylesheet" href="src/styles/output.css" />
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    </head>
+    <body class="bg-[#f9fafb]">
+        <nav
+            class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
+        >
+            <a href="index.html" class="flex gap-3">
+                <i class="text-3xl fa-solid fa-clipboard"></i>
+                <span id="exam-title" class="text-2xl font-semibold"
+                    >Exam Website</span
+                >
+            </a>
+            <div class="flex items-center gap-5">
+                <div>Welcome, <span id="nav-name"></span></div>
+                <button class="relative group">
+                    <i
+                        class="text-3xl transition fa-regular fa-circle-user hover:text-primary-500"
+                    ></i>
+                    <div
+                        id="logout-btn"
+                        class="absolute hidden m-2 overflow-hidden duration-500 bg-white border-2 border-gray-500 rounded-lg -right-2 group-hover:block -bottom-12"
+                    >
+                        <div
+                            class="flex items-center gap-2 p-2 transition hover:bg-red-300"
+                        >
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <div>Logout</div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </nav>
+        <div class="flex items-center justify-center">
+            <div class="flex flex-col items-center p-8">
+                <lord-icon
+                    src="https://cdn.lordicon.com/sgtmgpft.json"
+                    trigger="loop"
+                    class="size-36"
+                >
+                </lord-icon>
+                <h1 class="text-5xl font-bold">Time's Up!</h1>
+                <p class="text-center w-96 text-bold">
+                    Unfortunately, your responses were not saved as the time
+                    limit was reached.
+                </p>
+                <a
+                    href="index.html"
+                    class="w-full p-3 mt-5 text-center text-white rounded-xl bg-primary-500 hover:bg-primary-400 active:bg-primary-300"
+                    >Return To Dashboard</a
+                >
+            </div>
+        </div>
+        <script type="module" src="src/scripts/main.js"></script>
+    </body>
+</html>

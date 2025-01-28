@@ -17,7 +17,8 @@ body {
 
 a:hover,
 button:hover,
-input[type="radio"]:hover + label {
+input[type="radio"]:hover + label,
+input[type="radio"]:hover {
     cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 stroke-linejoin%3D%22round%22 d%3D%22M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z%22/%3E%3C/svg%3E")
             0 0,
         auto;
