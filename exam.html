@@ -5,6 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Exam</title>
         <link rel="stylesheet" href="/src/styles/output.css" />
+        <link rel="stylesheet" href="src/styles/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <!-- <link rel="stylesheet" href="/src/styles/input.css" /> -->
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     </head>
@@ -106,6 +120,143 @@
                 </button>
             </div>
         </nav>
+
+        <div
+            id="confirm-modal"
+            class="fixed top-0 z-10 items-center justify-center hidden w-full h-screen bg-black bg-opacity-40"
+        >
+            <div class="w-1/3 bg-white rounded-xl shadow-xl min-w-[300px]">
+                <div class="p-4 text-lg font-bold border-b">
+                    <i
+                        class="mx-2 text-xl fa-solid fa-triangle-exclamation text-primary-500"
+                    ></i
+                    >Warning!
+                </div>
+                <div class="p-4">
+                    <p>
+                        You have
+                        <b
+                            ><span id="confirm-unanswered"></span> unanswered
+                            questions</b
+                        >
+                        and
+                        <b>
+                            <span id="confirm-flagged"></span> flagged
+                            question</b
+                        >
+                    </p>
+                    <p>Are you sure you want to submit?</p>
+                </div>
+                <div class="flex justify-end p-4 space-x-2">
+                    <button
+                        class="px-4 py-2 text-white rounded confirm-button bg-primary-500 hover:bg-primary-600"
+                    >
+                        Confirm Submit
+                    </button>
+                    <button
+                        class="px-4 py-2 text-white bg-gray-500 rounded cancel-button hover:bg-gray-600"
+                    >
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            id="loader"
+            class="fixed top-0 z-10 flex items-center justify-center w-full h-screen bg-black bg-opacity-40"
+        >
+            <div
+                class="flex items-center justify-center w-32 h-32 bg-white rounded-xl"
+            >
+                <svg
+                    class="w-24 animate-spin"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="xMidYMid"
+                    width="200"
+                    height="200"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    style="
+                        shape-rendering: auto;
+                        display: block;
+                        background-position-x: 0%;
+                        background-position-y: 0%;
+                        background-size: auto;
+                        background-origin: padding-box;
+                        background-clip: border-box;
+                        fill: rgb(0, 0, 0);
+                        stroke: none;
+                        transform: none;
+                        opacity: 1;
+                    "
+                >
+                    <g
+                        style="
+                            fill: rgb(0, 0, 0);
+                            stroke: none;
+                            transform: none;
+                            opacity: 1;
+                        "
+                    >
+                        <circle
+                            stroke-linecap="round"
+                            fill="none"
+                            stroke-dasharray="50.26548245743669 50.26548245743669"
+                            stroke="#8c00ff"
+                            stroke-width="8"
+                            r="32"
+                            cy="50"
+                            cx="50"
+                            transform="matrix(1,0,0,1,0,0)"
+                            style="
+                                fill: none;
+                                stroke: rgb(140, 0, 255);
+                                transform: matrix(1, 0, 0, 1, 0, 0);
+                                opacity: 1;
+                            "
+                        ></circle>
+                        <g
+                            style="
+                                fill: rgb(0, 0, 0);
+                                stroke: none;
+                                transform: none;
+                                opacity: 1;
+                            "
+                        ></g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div
+            id="error-modal"
+            class="fixed top-0 z-10 items-center justify-center hidden w-full h-screen bg-black bg-opacity-40"
+        >
+            <div class="w-1/3 bg-white shadow-xl rounded-xl">
+                <div class="p-4 text-lg font-bold border-b">
+                    <i
+                        class="mx-2 text-xl fa-solid fa-triangle-exclamation text-primary-500"
+                    ></i>
+                    Error
+                </div>
+                <div class="p-4">
+                    <p>Failed to load exam</p>
+                    <p>
+                        Status: <span id="status"></span>, Message:<span
+                            id="message"
+                        ></span>
+                    </p>
+                </div>
+                <div class="flex justify-end p-4 space-x-2">
+                    <button
+                        class="px-4 py-2 text-white rounded reload-btn bg-primary-500 hover:bg-primary-600"
+                    >
+                        Reload
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="flex flex-col-reverse md:flex-row">
             <div
                 class="md:w-96 b md:h-[calc(100vh-84px)] drop-shadow-xl md:border-r-2 border-r-gray-300 p-3"
