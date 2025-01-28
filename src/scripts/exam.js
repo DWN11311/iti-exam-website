@@ -1,4 +1,21 @@
-import { shuffle } from "./main.js";
+import { shuffle, checkAuth } from "./main.js";
+import { User } from "./data/user.js";
+import { ExamAttempt } from "./data/examAttempt.js";
+
+checkAuth();
+
+const user = User.find(localStorage["currentUser"]);
+
+// Redirect user back to dashboard if exam already performed
+let params = new URLSearchParams(document.location.search);
+let examId = Number(params.get("examId"));
+user.examAttempts.forEach((examAttempt) => {
+  if (examAttempt.examId == examId) {
+    console.log("fired?");
+
+    window.location = "index.html";
+  }
+});
 
 let currentQuestion = 1;
 let exam = {};
@@ -71,16 +88,20 @@ async function getExam() {
         const data = await response.json();
         const examIndex = data.exams.findIndex((exam) => exam.id === examId);
 
-        exam = shuffleExam(data.exams[examIndex]);
-        document.getElementById("exam-title").innerText = exam.title;
-        displayQuestionsButtons();
-        timer(exam.examDuration);
-        changeQuestion(1);
-    } finally {
-    }
-    //  catch (error) {
-    //     console.error(error.message);
-    // }
+
+    exam = shuffleExam(data.exams[examIndex]);
+    document.getElementById("exam-title").innerText = exam.title;
+    displayQuestionsButtons();
+    timer(exam.examDuration);
+    changeQuestion(1);
+  } finally {
+    document.getElementById("remining-questions").innerText =
+      exam.questions.length;
+  }
+  //  catch (error) {
+  //     console.error(error.message);
+  // }
+
 }
 getExam();
 
@@ -93,12 +114,17 @@ function shuffleExam(exam) {
     return exam;
 }
 
+let attemptDuration;
 function timer(examDurationInSeconds) {
     const timer = document.getElementById("timer");
 
-    const interval = setInterval(() => {
-        const remainingMinutes = Math.floor(examDurationInSeconds / 60);
-        const remainingSeconds = examDurationInSeconds % 60;
+
+  const interval = setInterval(() => {
+    const remainingMinutes = Math.floor(examDurationInSeconds / 60);
+    const remainingSeconds = examDurationInSeconds % 60;
+    attemptDuration =
+      exam.examDuration - (remainingMinutes * 60 + remainingSeconds);
+
 
         timer.innerText = `${
             remainingMinutes < 10 ? "0" : ""
@@ -110,13 +136,14 @@ function timer(examDurationInSeconds) {
             timer.classList.toggle("text-red-500");
         }
 
-        examDurationInSeconds--;
-        if (examDurationInSeconds === -1) {
-            clearInterval(interval);
-            console.log("time out");
-            window.location.href = "/fail.html";
-        }
-    }, 1000);
+
+    examDurationInSeconds--;
+    if (examDurationInSeconds === -1) {
+      addUserExamAttempt(0, true);
+      window.location.href = "/timeout.html";
+    }
+  }, 1000);
+
 }
 
 function nextQuestion() {
@@ -255,42 +282,49 @@ function trackExamProgress() {
 }
 
 function renderProgressUI(answeredQuestionsCount) {
-    let totalQuestions = exam.questions.length;
-    let answeredQuestionsPercentage = parseInt(
-        (answeredQuestionsCount / totalQuestions) * 100
-    );
-    document.getElementById("answered-questions").innerText =
-        answeredQuestionsCount;
-    document.getElementById("remining-questions").innerText = totalQuestions;
-    document.getElementById(
-        "progress-percentage"
-    ).innerText = `${answeredQuestionsPercentage}%`;
-    document.getElementById(
-        "progress-bar"
-    ).style.maxWidth = `${answeredQuestionsPercentage}%`;
-    if (answeredQuestionsCount === totalQuestions) {
-        document
-            .getElementById("sumbit-exam-btn")
-            .classList.add("animate-pulse");
-    }
+
+  let totalQuestions = exam.questions.length;
+  let answeredQuestionsPercentage = parseInt(
+    (answeredQuestionsCount / totalQuestions) * 100
+  );
+  document.getElementById("answered-questions").innerText =
+    answeredQuestionsCount;
+  document.getElementById("remining-questions").innerText =
+    totalQuestions - answeredQuestionsCount;
+  document.getElementById(
+    "progress-percentage"
+  ).innerText = `${answeredQuestionsPercentage}%`;
+  document.getElementById(
+    "progress-bar"
+  ).style.maxWidth = `${answeredQuestionsPercentage}%`;
+  if (answeredQuestionsCount === totalQuestions) {
+    document.getElementById("sumbit-exam-btn").classList.add("animate-pulse");
+  }
+
 }
 
 // Exam submitting event
 const confirmModal = document.querySelector("#confirm-modal");
 document
-    .querySelector("#sumbit-exam-btn")
-    .addEventListener("click", function () {
-        const hasFlaggedQuestion = document.querySelector(".flag");
-        if (
-            exam.questions.length !== answeredQuestion.length ||
-            hasFlaggedQuestion
-        ) {
-            confirmModal.classList.remove("hidden");
-            confirmModal.classList.add("flex");
-        } else {
-            submitExam();
-        }
-    });
+
+  .querySelector("#sumbit-exam-btn")
+  .addEventListener("click", function () {
+    const hasFlaggedQuestion = document.querySelector(".flag");
+    if (
+      exam.questions.length !== answeredQuestion.length ||
+      hasFlaggedQuestion
+    ) {
+      document.querySelector("#confirm-unanswered").innerText =
+        exam.questions.length - answeredQuestion.length;
+      document.querySelector("#confirm-flagged").innerText =
+        document.querySelectorAll(".flag").length;
+      confirmModal.classList.remove("hidden");
+      confirmModal.classList.add("flex");
+    } else {
+      submitExam();
+    }
+  });
+
 
 // Confirm modal
 confirmModal
@@ -326,5 +360,34 @@ function submitExam() {
         exam.questions.length - correctAnswerCount - unansweredCount
     );
 
-    window.location = "result.html?" + params.toString();
+
+  // push exam attempt to user on submit
+  addUserExamAttempt(score, false);
+
+  window.location.href = "result.html?" + params.toString();
+}
+
+// timeOut is a boolean to know whether the exam attempt was a timeout or a normal submit
+function addUserExamAttempt(score, timedOut) {
+  let status;
+  if (timedOut) {
+    status = "Timedout";
+  } else if (score < 60) {
+    status = "Failed";
+  } else {
+    status = "Passed";
+  }
+
+  const examAttempt = new ExamAttempt(
+    exam.id,
+    exam.title,
+    score,
+    status,
+    attemptDuration
+  );
+
+  console.log(examAttempt);
+
+  User.addExamAttempt(localStorage["currentUser"], examAttempt);
+
 }

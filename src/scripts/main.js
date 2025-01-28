@@ -51,3 +51,10 @@ export async function loadExams() {
         throw new Error(error);
     }
 }
+
+// call this method at the beginning of JS files to make the page inaccessible
+export function checkAuth() {
+  if (!localStorage["currentUser"]) {
+    window.location = "login.html";
+  }
+}

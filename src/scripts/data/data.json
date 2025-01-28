@@ -4,7 +4,7 @@
       "id": "1",
       "title": "CSS HTML & JS Exam 2",
       "description": "This exam tests your foundational knowledge of HTML, CSS, and JavaScript. It covers basic concepts such as HTML structure, CSS styling, and JavaScript syntax.",
-      "examDuration": 300,
+      "examDuration": 60,
       "questions": [
         {
           "id": "1",
