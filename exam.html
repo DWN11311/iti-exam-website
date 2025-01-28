@@ -155,6 +155,73 @@
     </div>
 
     <div
+      id="loader"
+      class="w-full flex items-center justify-center bg-black bg-opacity-40 z-10 top-0 h-screen fixed"
+    >
+      <div
+        class="bg-white w-32 h-32 flex items-center justify-center rounded-xl"
+      >
+        <svg
+          class="animate-spin w-24"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+          width="200"
+          height="200"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          style="
+            shape-rendering: auto;
+            display: block;
+            background-position-x: 0%;
+            background-position-y: 0%;
+            background-size: auto;
+            background-origin: padding-box;
+            background-clip: border-box;
+            fill: rgb(0, 0, 0);
+            stroke: none;
+            transform: none;
+            opacity: 1;
+          "
+        >
+          <g
+            style="
+              fill: rgb(0, 0, 0);
+              stroke: none;
+              transform: none;
+              opacity: 1;
+            "
+          >
+            <circle
+              stroke-linecap="round"
+              fill="none"
+              stroke-dasharray="50.26548245743669 50.26548245743669"
+              stroke="#8c00ff"
+              stroke-width="8"
+              r="32"
+              cy="50"
+              cx="50"
+              transform="matrix(1,0,0,1,0,0)"
+              style="
+                fill: none;
+                stroke: rgb(140, 0, 255);
+                transform: matrix(1, 0, 0, 1, 0, 0);
+                opacity: 1;
+              "
+            ></circle>
+            <g
+              style="
+                fill: rgb(0, 0, 0);
+                stroke: none;
+                transform: none;
+                opacity: 1;
+              "
+            ></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div
       id="error-modal"
       class="w-full h-screen fixed bg-black bg-opacity-40 z-10 top-0 hidden items-center justify-center"
     >
@@ -168,14 +235,14 @@
         <div class="p-4">
           <p>Failed to load exam</p>
           <p>
-            <span id="status"></span>Status:<span id="error-message"
-              >Message</span
-            >
+            Status: <span id="status"></span>, Message:<span
+              id="message"
+            ></span>
           </p>
         </div>
         <div class="flex justify-end p-4 space-x-2">
           <button
-            class="confirm-button bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600"
+            class="reload-btn bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600"
           >
             Reload
           </button>
