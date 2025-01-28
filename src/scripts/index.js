@@ -115,7 +115,7 @@ if (user.examAttempts.length > 0) {
     <div class="flex-1 p-2">${attempt.date}</div>
     <div class="flex-1 p-2">${attempt.grade}</div>
     <div class="flex-1 p-2">
-    <span class="p-1 text-xs text-white bg-green-400 rounded-xl">${attempt.status}</span>`;
+    <span class="p-1 text-xs text-white bg-green-500 rounded-xl">${attempt.status}</span>`;
 
     recentExamsContainer.append(row);
   });

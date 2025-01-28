@@ -16,22 +16,23 @@ document.querySelector("#logout-btn").addEventListener("click", function () {
     window.location = "login.html";
 });
 
-console.log(user);
-
 const queryString = document.location.search;
 const urlParams = new URLSearchParams(queryString);
-let date = new Date();
-var currentDate = date.toLocaleDateString("en-GB");
-document.getElementById("date").innerText = currentDate;
+
+document.getElementById("date").innerText = user.examAttempts.filter(
+    (exam) => exam.examId === urlParams.get("examId")
+)[0].date;
 
 function numbersAnimation(number, targetElemnt, delay, suffix = "") {
     let count = 0;
-    const interval = setInterval(() => {
-        if (count === +number) {
-            clearInterval(interval);
-        }
-        targetElemnt.innerText = `${count++}${suffix}`;
-    }, delay);
+    setTimeout(() => {
+        const interval = setInterval(() => {
+            if (count === +number) {
+                clearInterval(interval);
+            }
+            targetElemnt.innerText = `${count++}${suffix}`;
+        }, delay);
+    }, 600);
 }
 
 numbersAnimation(
@@ -44,19 +45,19 @@ numbersAnimation(
 numbersAnimation(
     urlParams.get("correctAnswers"),
     document.getElementById("correct-answers"),
-    100
+    150
 );
 
 numbersAnimation(
     urlParams.get("incorrectAnswers"),
     document.getElementById("wrong-answers"),
-    100
+    150
 );
 
 numbersAnimation(
     urlParams.get("unanswered"),
     document.getElementById("unanswered"),
-    100
+    150
 );
 
 if (urlParams.get("score") < 60) {
@@ -84,3 +85,13 @@ if (urlParams.get("score") < 60) {
         "title"
     ).innerText = `Congratiolations, ${user.firstName}`;
 }
+
+document.getElementById("star-rating").addEventListener("click", (e) => {
+    if (e.target.value) {
+        User.setAttemptRating(
+            user.email,
+            urlParams.get("examId"),
+            +e.target.value
+        );
+    }
+});
