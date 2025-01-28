@@ -4,170 +4,209 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 * {
-  font-family: "Inter", serif;
-  box-sizing: border-box;
-  margin: 0;
+    font-family: "Inter", serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 d%3D%22M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z%22/%3E%3C/svg%3E")
+            0 0,
+        auto;
+}
+
+a:hover,
+button:hover,
+input[type="radio"]:hover + label {
+    cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 stroke-linejoin%3D%22round%22 d%3D%22M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z%22/%3E%3C/svg%3E")
+            0 0,
+        auto;
 }
 
 .input-wrapper.invalid input {
-  border-color: red;
+    border-color: red;
 }
 
 .input-wrapper span {
-  display: none;
-  color: red;
+    display: none;
+    color: red;
 }
 
 .input-wrapper.invalid span {
-  display: block;
+    display: block;
 }
 .flag {
-  border: 2px solid red;
+    border: 2px solid red;
 }
 .flag::after {
-  content: "";
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  width: 20px;
-  height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 24 24' stroke-width='1.5' stroke='red' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5'/%3E%3C/svg%3E");
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 24 24' stroke-width='1.5' stroke='red' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5'/%3E%3C/svg%3E");
 }
 
 .checkbox-wrapper-46 input[type="checkbox"] {
-  display: none;
-  visibility: hidden;
+    display: none;
+    visibility: hidden;
 }
 
 .checkbox-wrapper-46 .cbx {
-  margin: auto;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: pointer;
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
 }
 .checkbox-wrapper-46 .cbx span {
-  display: inline-block;
-  vertical-align: middle;
-  transform: translate3d(0, 0, 0);
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
 }
 .checkbox-wrapper-46 .cbx span:first-child {
-  position: relative;
-  width: 18px;
-  height: 18px;
-  border-radius: 3px;
-  transform: scale(1);
-  vertical-align: middle;
-  border: 1px solid #9098a9;
-  transition: all 0.2s ease;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098a9;
+    transition: all 0.2s ease;
 }
 .checkbox-wrapper-46 .cbx span:first-child svg {
-  position: absolute;
-  top: 3px;
-  left: 2px;
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 16px;
-  stroke-dashoffset: 16px;
-  transition: all 0.3s ease;
-  transition-delay: 0.1s;
-  transform: translate3d(0, 0, 0);
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
 }
 .checkbox-wrapper-46 .cbx span:first-child:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #8c00ff;
-  display: block;
-  transform: scale(0);
-  opacity: 1;
-  border-radius: 50%;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #8c00ff;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
 }
 .checkbox-wrapper-46 .cbx span:last-child {
-  padding-left: 8px;
+    padding-left: 8px;
 }
 .checkbox-wrapper-46 .cbx:hover span:first-child {
-  border-color: #8c00ff;
+    border-color: #8c00ff;
 }
 
 .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
-  background: #8c00ff;
-  border-color: #8c00ff;
-  animation: wave-46 0.4s ease;
+    background: #8c00ff;
+    border-color: #8c00ff;
+    animation: wave-46 0.4s ease;
 }
 .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
-  stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
 }
 .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
-  transform: scale(3.5);
-  opacity: 0;
-  transition: all 0.6s ease;
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
 }
 
 @keyframes wave-46 {
-  50% {
-    transform: scale(0.9);
-  }
+    50% {
+        transform: scale(0.9);
+    }
 }
 .exam-background {
-  --dot-bg: white;
-  --dot-color: black;
-  --dot-size: 1px;
-  --dot-space: 22px;
-  background: linear-gradient(
-        90deg,
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    linear-gradient(
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    var(--dot-color);
+    --dot-bg: white;
+    --dot-color: black;
+    --dot-size: 1px;
+    --dot-space: 22px;
+    background: linear-gradient(
+                90deg,
+                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+                transparent 1%
+            )
+            center / var(--dot-space) var(--dot-space),
+        linear-gradient(
+                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+                transparent 1%
+            )
+            center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
 }
 .activate-flag {
-  background-color: #dc2626;
-  color: white;
+    background-color: #dc2626;
+    color: white;
 }
 .activate-flag svg {
-  transform: translateY(-0.125rem);
+    transform: translateY(-0.125rem);
 }
 
 .wave {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
 }
 
 @keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  } /* Reset for the last half to pause */
-  100% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    } /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    } /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-rating input:checked ~ label {
+    color: #f5b301;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #f5b301;
 }
