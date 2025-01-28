@@ -8,48 +8,51 @@ const user = User.find(localStorage["currentUser"]);
 
 // Load nav and hero names
 if (document.querySelector("#nav-name")) {
-  document.querySelector("#nav-name").innerText = user.firstName;
+    document.querySelector("#nav-name").innerText = user.firstName;
 }
 
 if (document.querySelector("#hero-name")) {
-  document.querySelector("#hero-name").innerText = user.firstName;
+    document.querySelector("#hero-name").innerText = user.firstName;
 }
 
 // Logout button
 document.querySelector("#logout-btn").addEventListener("click", function () {
-  localStorage["currentUser"] = "";
-  window.location = "login.html";
+    localStorage["currentUser"] = "";
+    window.location = "login.html";
 });
 
 // Load exam selection
 fetch("/src/scripts/data/data.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw response;
-    }
-    return response.json();
-  })
-  .then((response) => {
-    const exams = response.exams;
-    let numOfExams = 0;
+    .then((response) => {
+        if (!response.ok) {
+            throw response;
+        }
+        return response.json();
+    })
+    .then((response) => {
+        const exams = response.exams;
+        let numOfExams = 0;
 
-    exams.forEach((exam) => {
-      const exists = user.examAttempts.find((att) => att.examId == exam.id);
-      if (!exists) {
-        const examElem = document.createElement("div");
-        examElem.classList.add(
-          "flex",
-          "flex-col",
-          "flex-1",
-          "p-3",
-          "bg-white",
-          "rounded-lg"
-        );
-        examElem.innerHTML = `
+        exams.forEach((exam) => {
+            const exists = user.examAttempts.find(
+                (att) => att.examId == exam.id
+            );
+            if (!exists) {
+                const examElem = document.createElement("div");
+                examElem.classList.add(
+                    "flex",
+                    "flex-col",
+                    // "flex-1",
+                    "md:w-1/3",
+                    "p-3",
+                    "bg-white",
+                    "rounded-lg"
+                );
+                examElem.innerHTML = `
               <div class="flex items-center justify-between w-full">
                   <i class="text-2xl fa-solid fa-code"></i>
                   <p class="text-xl text-gray-700">${Math.floor(
-                    exam.examDuration / 60
+                      exam.examDuration / 60
                   )} mins</p>
               </div>
       
@@ -66,65 +69,71 @@ fetch("/src/scripts/data/data.json")
                       <span class="relative inline-flex bg-purple-500 rounded-full size-4"></span>
                   </span>
                   <button data-id="${
-                    exam.id
+                      exam.id
                   }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg bg-primary-500 hover:bg-gray-500 hover:text-white active:bg-gray-600">
                       Start Exam
                   </button>
               </span>
   
           `;
-        numOfExams++;
-        examsContainer.append(examElem);
-      }
-    });
+                numOfExams++;
+                examsContainer.append(examElem);
+            }
+        });
 
-    if (!numOfExams) {
-      document.querySelector("#exams-empty").classList.remove("hidden");
-    }
-  })
-  .catch((error) => {
-    const errorStatus = document.getElementById("error-status");
-    const errorMessage = document.getElementById("error-message");
-    errorStatus.innerText = error.status;
-    errorMessage.innerText = error.statusText;
-    document.getElementById("exams-error").classList.remove("hidden");
-  })
-  .finally(() => {
-    document.querySelector("#exams-load").classList.add("hidden");
-  });
+        if (!numOfExams) {
+            document.querySelector("#exams-empty").classList.remove("hidden");
+        }
+    })
+    .catch((error) => {
+        const errorStatus = document.getElementById("error-status");
+        const errorMessage = document.getElementById("error-message");
+        errorStatus.innerText = error.status;
+        errorMessage.innerText = error.statusText;
+        document.getElementById("exams-error").classList.remove("hidden");
+    })
+    .finally(() => {
+        document.querySelector("#exams-load").classList.add("hidden");
+    });
 
 // Load user exam history
 const recentExamsContainer = document.querySelector("#recent-exams");
 const noRecentExams = document.querySelector("#no-recent-exams");
 
 if (user.examAttempts.length > 0) {
-  noRecentExams.classList.add("hidden");
-  recentExamsContainer.classList.remove("hidden");
-  user.examAttempts.forEach((attempt) => {
-    const row = document.createElement("div");
-    row.classList.add(
-      "flex",
-      "w-full",
-      "bg-white",
-      "border-b",
-      "border-gray-200"
-    );
+    noRecentExams.classList.add("hidden");
+    recentExamsContainer.classList.remove("hidden");
+    user.examAttempts.forEach((attempt) => {
+        const row = document.createElement("div");
+        row.classList.add(
+            "flex",
+            "w-full",
+            "bg-white",
+            "border-b",
+            "border-gray-200"
+        );
 
-    row.innerHTML = `
+        row.innerHTML = `
     <div class="flex-1 p-2">${attempt.title}</div>
     <div class="flex-1 p-2">${attempt.date}</div>
     <div class="flex-1 p-2">${attempt.grade}</div>
     <div class="flex-1 p-2">
-    <span class="p-1 text-xs text-white bg-green-500 rounded-xl">${attempt.status}</span>`;
+    <span class="p-1 text-xs text-white ${
+        attempt.status == "Passed"
+            ? "bg-green-500"
+            : attempt.status == "Timedout"
+            ? "bg-yellow-500"
+            : "bg-red-500"
+    } rounded-xl">${attempt.status}</span>`;
 
-    recentExamsContainer.append(row);
-  });
+        recentExamsContainer.append(row);
+    });
 }
 
 // Start exam
 examsContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("start-btn")) {
-    const url = `exam.html?examId=${e.target.dataset.id}`;
-    window.location = url;
-  }
+    if (e.target.classList.contains("start-btn")) {
+        const url = `exam.html?examId=${e.target.dataset.id}`;
+        window.location = url;
+    }
 });
