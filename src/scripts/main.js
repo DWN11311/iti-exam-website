@@ -11,23 +11,6 @@ export const db = {
   },
 };
 
-export function generateId() {
-  if (!localStorage.idCounter) {
-    localStorage.clear();
-    db.set("idCounter", 0);
-  }
-
-  return localStorage.idCounter++;
-}
-
-export function validate(regex, inputWrapper, errorMessage) {
-  if (!regex.test(inputWrapper[0].value)) {
-    inputWrapper[1].innerText = errorMessage;
-    inputWrapper.classList.add("invalid");
-  }
-  inputWrapper.classList.remove("invalid");
-}
-
 export function shuffle(array) {
   let originalArray = [...array];
   let shuffledArray = [];

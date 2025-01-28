@@ -51,9 +51,9 @@ loadExams()
                 <span class="absolute inline-flex w-full h-full bg-purple-600 rounded-full opacity-75 animate-ping"></span>
                 <span class="relative inline-flex bg-purple-500 rounded-full size-4"></span>
             </span>
-            <button data-exam-id="${
+            <button data-id="${
               exam.id
-            }" class="relative w-full px-4 py-2 text-white transition border rounded-lg bg-primary-500 hover:bg-gray-500 hover:text-white active:bg-gray-600">
+            }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg bg-primary-500 hover:bg-gray-500 hover:text-white active:bg-gray-600">
                 Start Exam
             </button>
         </span>
@@ -90,3 +90,11 @@ if (user.examAttempts.length > 0) {
     recentExamsContainer.append(row);
   });
 }
+
+// Start exam
+examsContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("start-btn")) {
+    const url = `exam.html?examId=${e.target.dataset.id}`;
+    window.location = url;
+  }
+});

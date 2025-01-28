@@ -19,7 +19,7 @@ loginForm.addEventListener("submit", function (e) {
     localStorage["rememberMe"] = "";
   }
 
-  // NOTE: this returns null if the account doesn't exist
+  // NOTE: User.auth returns null if the account doesn't exist
   if (!User.auth(loginForm["email"].value, loginForm["password"].value)) {
     const invalidElem = document.querySelector("#invalid");
     invalidElem.classList.remove("hidden");
