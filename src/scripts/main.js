@@ -40,3 +40,18 @@ export function shuffle(array) {
 
   return shuffledArray;
 }
+
+// Returns an array of all exams
+export async function loadExams() {
+  const url = "/src/scripts/data/data.json";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.exams;
+  } catch (error) {
+    throw new Error(error);
+  }
+}

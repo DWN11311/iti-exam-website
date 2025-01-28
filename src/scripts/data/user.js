@@ -12,6 +12,7 @@ export class User {
     this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;
+    this.examAttempts = [];
   }
 
   static add(user) {
@@ -23,6 +24,19 @@ export class User {
       users = [user];
       db.set("users", users);
     }
+  }
+
+  // Adds an exam attempt to the user in local storage
+  static addExamAttempt(userEmail, examAttempt) {
+    if (examAttempt.constructor.name !== "ExamAttempt")
+      throw new Error("Can only push objects of type ExamAttempt to user");
+    let users = db.get("users");
+    const userIndex = users.findIndex((user) => user.email === userEmail);
+    if (userIndex === -1) {
+      throw new Error(`User with email ${userEmail} does not exist`);
+    }
+    users[userIndex].examAttempts.push(examAttempt);
+    db.set("users", users);
   }
 
   static find(email) {
@@ -42,7 +56,7 @@ export class User {
 
   static auth(email, password) {
     const user = User.find(email);
-    if (user.password === password) {
+    if (user && user.password === password) {
       localStorage["currentUser"] = user.email;
       return user.email;
     }
