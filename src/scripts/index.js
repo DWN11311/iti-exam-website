@@ -23,24 +23,26 @@ document.querySelector("#logout-btn").addEventListener("click", function () {
 
 // Load exam selection
 loadExams()
-  .then((exams) => {
-    exams.forEach((exam) => {
-      const exists = user.examAttempts.find((att) => att.examId == exam.id);
-      if (!exists) {
-        const examElem = document.createElement("div");
-        examElem.classList.add(
-          "flex",
-          "flex-col",
-          "flex-1",
-          "p-3",
-          "bg-white",
-          "rounded-lg"
-        );
-        examElem.innerHTML = `
+    .then((exams) => {
+        exams.forEach((exam) => {
+            const exists = user.examAttempts.find(
+                (att) => att.examId == exam.id
+            );
+            if (!exists) {
+                const examElem = document.createElement("div");
+                examElem.classList.add(
+                    "flex",
+                    "flex-col",
+                    "p-3",
+                    "bg-white",
+                    "rounded-lg",
+                    "md:w-1/3"
+                );
+                examElem.innerHTML = `
             <div class="flex items-center justify-between w-full">
                 <i class="text-2xl fa-solid fa-code"></i>
                 <p class="text-xl text-gray-700">${Math.floor(
-                  exam.examDuration / 60
+                    exam.examDuration / 60
                 )} mins</p>
             </div>
     
@@ -57,18 +59,18 @@ loadExams()
                     <span class="relative inline-flex bg-purple-500 rounded-full size-4"></span>
                 </span>
                 <button data-id="${
-                  exam.id
+                    exam.id
                 }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg bg-primary-500 hover:bg-gray-500 hover:text-white active:bg-gray-600">
                     Start Exam
                 </button>
             </span>
 
         `;
-        examsContainer.append(examElem);
-      }
-    });
-  })
-  .catch((err) => {});
+                examsContainer.append(examElem);
+            }
+        });
+    })
+    .catch((err) => {});
 
 // Load user exam history
 const recentExamsContainer = document.querySelector("#recent-exams");
@@ -92,7 +94,7 @@ if (user.examAttempts.length > 0) {
     <div class="flex-1 p-2">${attempt.date}</div>
     <div class="flex-1 p-2">${attempt.grade}</div>
     <div class="flex-1 p-2">
-    <span class="p-1 text-xs text-white bg-green-400 rounded-xl">${attempt.status}</span>`;
+    <span class="p-1 text-xs text-white bg-green-500 rounded-xl">${attempt.status}</span>`;
 
         recentExamsContainer.append(row);
     });

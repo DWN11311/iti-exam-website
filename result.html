@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="/src/styles/output.css" />
         <style></style>
     </head>
-    <body class="bg-[#f9fafb]">
+    <body class="bg-[#f9fafb] fade-in">
         <nav
             class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
         >
@@ -136,58 +136,38 @@
         >
             <p class="text-2xl font-bold">How was your exam experience?</p>
             <div>
-                <form>
-                    <div class="star-rating">
-                        <input
-                            type="radio"
-                            id="star5"
-                            name="rating"
-                            value="5"
-                        />
-                        <label for="star5" title="5 stars"
-                            ><i class="fa-solid fa-star"></i
-                        ></label>
-                        <input
-                            type="radio"
-                            id="star4"
-                            name="rating"
-                            value="4"
-                        />
-                        <label for="star4" title="4 stars"
-                            ><i class="fa-solid fa-star"></i
-                        ></label>
-                        <input
-                            type="radio"
-                            id="star3"
-                            name="rating"
-                            value="3"
-                        />
-                        <label for="star3" title="3 stars"
-                            ><i class="fa-solid fa-star"></i
-                        ></label>
-                        <input
-                            type="radio"
-                            id="star2"
-                            name="rating"
-                            value="2"
-                        />
-                        <label for="star2" title="2 stars"
-                            ><i class="fa-solid fa-star"></i
-                        ></label>
-                        <input
-                            type="radio"
-                            id="star1"
-                            name="rating"
-                            value="1"
-                        />
-                        <label for="star1" title="1 star"
-                            ><i class="fa-solid fa-star"></i
-                        ></label>
-                    </div>
-                </form>
+                <div id="star-rating" class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label for="star5" title="5 stars"
+                        ><i class="fa-solid fa-star"></i
+                    ></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label for="star4" title="4 stars"
+                        ><i class="fa-solid fa-star"></i
+                    ></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label for="star3" title="3 stars"
+                        ><i class="fa-solid fa-star"></i
+                    ></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label for="star2" title="2 stars"
+                        ><i class="fa-solid fa-star"></i
+                    ></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label for="star1" title="1 star"
+                        ><i class="fa-solid fa-star"></i
+                    ></label>
+                </div>
             </div>
         </div>
 
+        <button>
+            <a
+                href="index.html"
+                class="w-full p-3 mt-5 text-center text-white rounded-xl bg-primary-500 hover:bg-primary-400 active:bg-primary-300"
+                >Return To Dashboard</a
+            >
+        </button>
         <!-- <button
             class="px-3 py-2 mx-auto mt-10 text-white transition hover:bg-primary-400 active:bg-primary-300 bg-primary-500 rounded-xl"
         >
