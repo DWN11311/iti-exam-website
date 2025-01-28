@@ -134,7 +134,7 @@ function timer(examDurationInSeconds) {
             remainingSeconds < 10 ? "0" : ""
         }${remainingSeconds}`;
 
-        if (examDurationInSeconds < 295) {
+        if (examDurationInSeconds < 300) {
             timer.classList.toggle("text-red-500");
         }
 
