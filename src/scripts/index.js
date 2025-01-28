@@ -117,7 +117,7 @@ if (user.examAttempts.length > 0) {
         row.innerHTML = `
     <div class="flex-1 p-2">${attempt.title}</div>
     <div class="flex-1 p-2">${attempt.date}</div>
-    <div class="flex-1 p-2">${attempt.grade}</div>
+    <div class="flex-1 p-2">${attempt.grade}%</div>
     <div class="flex-1 p-2">${attempt.attemptDuration} Seconds</div>
     <div class="flex-1 p-2">${
         attempt.rating

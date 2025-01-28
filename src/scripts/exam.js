@@ -342,7 +342,9 @@ confirmModal
 
 // Submit exam
 function submitExam() {
-    console.log(exam);
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    }
 
     // calculate result
     let correctAnswerCount = 0;
