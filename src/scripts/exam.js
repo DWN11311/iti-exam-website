@@ -1,4 +1,21 @@
-import { shuffle } from "./main.js";
+import { shuffle, checkAuth } from "./main.js";
+import { User } from "./data/user.js";
+import { ExamAttempt } from "./data/examAttempt.js";
+
+checkAuth();
+
+const user = User.find(localStorage["currentUser"]);
+
+// Redirect user back to dashboard if exam already performed
+let params = new URLSearchParams(document.location.search);
+let examId = Number(params.get("examId"));
+user.examAttempts.forEach((examAttempt) => {
+  if (examAttempt.examId == examId) {
+    console.log("fired?");
+
+    window.location = "index.html";
+  }
+});
 
 let currentQuestion = 1;
 let exam = {};
@@ -75,6 +92,8 @@ async function getExam() {
     timer(exam.examDuration);
     changeQuestion(1);
   } finally {
+    document.getElementById("remining-questions").innerText =
+      exam.questions.length;
   }
   //  catch (error) {
   //     console.error(error.message);
@@ -91,12 +110,15 @@ function shuffleExam(exam) {
   return exam;
 }
 
+let attemptDuration;
 function timer(examDurationInSeconds) {
   const timer = document.getElementById("timer");
 
   const interval = setInterval(() => {
     const remainingMinutes = Math.floor(examDurationInSeconds / 60);
     const remainingSeconds = examDurationInSeconds % 60;
+    attemptDuration =
+      exam.examDuration - (remainingMinutes * 60 + remainingSeconds);
 
     timer.innerText = `${remainingMinutes < 10 ? "0" : ""}${remainingMinutes}:${
       remainingSeconds < 10 ? "0" : ""
@@ -108,9 +130,8 @@ function timer(examDurationInSeconds) {
 
     examDurationInSeconds--;
     if (examDurationInSeconds === -1) {
-      clearInterval(interval);
-      console.log("time out");
-      window.location.href = "/fail.html";
+      addUserExamAttempt(0, true);
+      window.location.href = "/timeout.html";
     }
   }, 1000);
 }
@@ -256,7 +277,8 @@ function renderProgressUI(answeredQuestionsCount) {
   );
   document.getElementById("answered-questions").innerText =
     answeredQuestionsCount;
-  document.getElementById("remining-questions").innerText = totalQuestions;
+  document.getElementById("remining-questions").innerText =
+    totalQuestions - answeredQuestionsCount;
   document.getElementById(
     "progress-percentage"
   ).innerText = `${answeredQuestionsPercentage}%`;
@@ -278,6 +300,10 @@ document
       exam.questions.length !== answeredQuestion.length ||
       hasFlaggedQuestion
     ) {
+      document.querySelector("#confirm-unanswered").innerText =
+        exam.questions.length - answeredQuestion.length;
+      document.querySelector("#confirm-flagged").innerText =
+        document.querySelectorAll(".flag").length;
       confirmModal.classList.remove("hidden");
       confirmModal.classList.add("flex");
     } else {
@@ -318,5 +344,32 @@ function submitExam() {
     exam.questions.length - correctAnswerCount - unansweredCount
   );
 
-  window.location = "result.html?" + params.toString();
+  // push exam attempt to user on submit
+  addUserExamAttempt(score, false);
+
+  window.location.href = "result.html?" + params.toString();
+}
+
+// timeOut is a boolean to know whether the exam attempt was a timeout or a normal submit
+function addUserExamAttempt(score, timedOut) {
+  let status;
+  if (timedOut) {
+    status = "Timedout";
+  } else if (score < 60) {
+    status = "Failed";
+  } else {
+    status = "Passed";
+  }
+
+  const examAttempt = new ExamAttempt(
+    exam.id,
+    exam.title,
+    score,
+    status,
+    attemptDuration
+  );
+
+  console.log(examAttempt);
+
+  User.addExamAttempt(localStorage["currentUser"], examAttempt);
 }
