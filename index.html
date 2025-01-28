@@ -11,45 +11,11 @@
             href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
             rel="stylesheet"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
     </head>
     <body>
         <div class="flex flex-col h-screen">
-            <nav
-                class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
-            >
-                <div class="flex gap-3">
-                    <i class="text-3xl fa-solid fa-clipboard"></i>
-                    <span id="exam-title" class="text-2xl font-semibold"
-                        >Exam Website</span
-                    >
-                </div>
-                <div class="flex items-center gap-5">
-                    <div>Welcome, <span id="nav-name"></span></div>
-                    <button class="relative group">
-                        <i
-                            class="text-3xl transition fa-regular fa-circle-user hover:text-primary-500"
-                        ></i>
-                        <div
-                            id="logout-btn"
-                            class="absolute hidden m-2 overflow-hidden duration-500 bg-white border-2 border-gray-500 rounded-lg -right-2 group-hover:block -bottom-12"
-                        >
-                            <div
-                                class="flex items-center gap-2 p-2 transition hover:bg-red-300"
-                            >
-                                <i class="fa-solid fa-right-from-bracket"></i>
-                                <div>Logout</div>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </nav>
+            <div id="nav"></div>
             <div class="flex flex-grow">
                 <!-- <aside
                     class="p-3 w-96 drop-shadow-xl md:border-r-2 border-r-gray-300"
