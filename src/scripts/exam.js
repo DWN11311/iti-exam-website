@@ -55,7 +55,11 @@ document.body.addEventListener("keydown", function (e) {
   }
 });
 
+// Load exam
 async function getExam() {
+  const params = new URLSearchParams(document.location.search);
+  const examId = params.get("examId");
+
   const url = "/src/scripts/data/data.json";
   try {
     const response = await fetch(url);
@@ -63,7 +67,9 @@ async function getExam() {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    exam = shuffleExam(data);
+    const examIndex = data.exams.findIndex((exam) => exam.id === examId);
+
+    exam = shuffleExam(data.exams[examIndex]);
     document.getElementById("exam-title").innerText = exam.title;
     displayQuestionsButtons();
     timer(exam.examDuration);
@@ -260,4 +266,57 @@ function renderProgressUI(answeredQuestionsCount) {
   if (answeredQuestionsCount === totalQuestions) {
     document.getElementById("sumbit-exam-btn").classList.add("animate-pulse");
   }
+}
+
+// Exam submitting event
+const confirmModal = document.querySelector("#confirm-modal");
+document
+  .querySelector("#sumbit-exam-btn")
+  .addEventListener("click", function () {
+    const hasFlaggedQuestion = document.querySelector(".flag");
+    if (
+      exam.questions.length !== answeredQuestion.length ||
+      hasFlaggedQuestion
+    ) {
+      confirmModal.classList.remove("hidden");
+      confirmModal.classList.add("flex");
+    } else {
+      submitExam();
+    }
+  });
+
+// Confirm modal
+confirmModal
+  .querySelector(".confirm-button")
+  .addEventListener("click", submitExam);
+
+confirmModal
+  .querySelector(".cancel-button")
+  .addEventListener("click", function () {
+    confirmModal.classList.add("hidden");
+    confirmModal.classList.remove("flex");
+  });
+
+// Submit exam
+function submitExam() {
+  console.log(exam);
+
+  // calculate result
+  let correctAnswerCount = 0;
+  let unansweredCount = 0;
+  exam.questions.forEach((question) => {
+    if (question.correctAnswerId === question.userAnswer) correctAnswerCount++;
+    if (!question.userAnswer) unansweredCount++;
+  });
+  const score = parseInt((correctAnswerCount / exam.questions.length) * 100);
+  const params = new URLSearchParams();
+  params.set("score", score);
+  params.set("correctAnswers", correctAnswerCount);
+  params.set("unanswered", unansweredCount);
+  params.set(
+    "incorrectAnswers",
+    exam.questions.length - correctAnswerCount - unansweredCount
+  );
+
+  window.location = "result.html?" + params.toString();
 }

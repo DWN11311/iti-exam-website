@@ -1,310 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Exam</title>
-        <link rel="stylesheet" href="/src/styles/output.css" />
-        <!-- <link rel="stylesheet" href="/src/styles/input.css" /> -->
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    </head>
-    <body>
-        <nav
-            class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam</title>
+    <link rel="stylesheet" href="/src/styles/output.css" />
+    <link rel="stylesheet" href="src/styles/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="/src/styles/input.css" /> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  </head>
+  <body>
+    <nav
+      class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
+    >
+      <div class="flex gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-7"
         >
-            <div class="flex gap-3">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-7"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
-                    />
-                </svg>
-                <span id="exam-title" class="text-2xl font-semibold"
-                    >CSS HTML & JS Exam</span
-                >
-            </div>
-            <div class="flex items-center gap-5">
-                <div
-                    class="flex gap-4 px-3 py-2 bg-gray-200 rounded-xl drop-shadow-md"
-                >
-                    <svg
-                        xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        version="1.0"
-                        width="24px"
-                        height="24px"
-                        viewBox="0 0 128 128"
-                        xml:space="preserve"
-                    >
-                        <g>
-                            <path
-                                d="M63.88 0A63.88 63.88 0 1 1 0 63.88 63.88 63.88 0 0 1 63.88 0zm0 11.88a52 52 0 1 1-52 52 52 52 0 0 1 52-52zm0 46.2a5.8 5.8 0 1 1-5.8 5.8 5.8 5.8 0 0 1 5.8-5.8z"
-                                fill-rule="evenodd"
-                                fill="#000"
-                            />
-                            <path d="M58.25 5h11.3v59h-11.3V5z" fill="#000" />
-                            <animateTransform
-                                attributeName="transform"
-                                type="rotate"
-                                from="0 64 64"
-                                to="360 64 64"
-                                dur="1620ms"
-                                repeatCount="indefinite"
-                            />
-                        </g>
-                    </svg>
-                    <span id="timer" class="font-bold w-14">--:--</span>
-                </div>
-                <button
-                    id="sumbit-exam-btn"
-                    class="px-3 py-2 text-white rounded-xl bg-primary-600 drop-shadow-md"
-                >
-                    Submit Exam
-                </button>
-                <button id="fullscreen">
-                    <svg
-                        width="30px"
-                        height="30px"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                            id="SVGRepo_tracerCarrier"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z"
-                                fill="#0F0F0F"
-                            ></path>
-                            <path
-                                d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z"
-                                fill="#0F0F0F"
-                            ></path>
-                            <path
-                                d="M4 21H8C8.55228 21 9 21.4477 9 22C9 22.5523 8.55228 23 8 23H4C2.34315 23 1 21.6569 1 20V16C1 15.4477 1.44772 15 2 15C2.55228 15 3 15.4477 3 16V20C3 20.5523 3.44772 21 4 21Z"
-                                fill="#0F0F0F"
-                            ></path>
-                            <path
-                                d="M1 8C1 8.55228 1.44772 9 2 9C2.55228 9 3 8.55228 3 8L3 4C3 3.44772 3.44772 3 4 3H8C8.55228 3 9 2.55228 9 2C9 1.44772 8.55228 1 8 1H4C2.34315 1 1 2.34315 1 4V8Z"
-                                fill="#0F0F0F"
-                            ></path>
-                        </g>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-        <div class="flex flex-col-reverse md:flex-row">
-            <div
-                class="md:w-96 b md:h-[calc(100vh-84px)] drop-shadow-xl md:border-r-2 border-r-gray-300 p-3"
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+          />
+        </svg>
+        <span id="exam-title" class="text-2xl font-semibold"
+          >CSS HTML & JS Exam</span
+        >
+      </div>
+      <div class="flex items-center gap-5">
+        <div class="flex gap-4 px-3 py-2 bg-gray-200 rounded-xl drop-shadow-md">
+          <svg
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.0"
+            width="24px"
+            height="24px"
+            viewBox="0 0 128 128"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M63.88 0A63.88 63.88 0 1 1 0 63.88 63.88 63.88 0 0 1 63.88 0zm0 11.88a52 52 0 1 1-52 52 52 52 0 0 1 52-52zm0 46.2a5.8 5.8 0 1 1-5.8 5.8 5.8 5.8 0 0 1 5.8-5.8z"
+                fill-rule="evenodd"
+                fill="#000"
+              />
+              <path d="M58.25 5h11.3v59h-11.3V5z" fill="#000" />
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 64 64"
+                to="360 64 64"
+                dur="1620ms"
+                repeatCount="indefinite"
+              />
+            </g>
+          </svg>
+          <span id="timer" class="font-bold w-14">--:--</span>
+        </div>
+        <button
+          id="sumbit-exam-btn"
+          class="px-3 py-2 text-white rounded-xl bg-primary-600 drop-shadow-md"
+        >
+          Submit Exam
+        </button>
+        <button id="fullscreen">
+          <svg
+            width="30px"
+            height="30px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z"
+                fill="#0F0F0F"
+              ></path>
+              <path
+                d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z"
+                fill="#0F0F0F"
+              ></path>
+              <path
+                d="M4 21H8C8.55228 21 9 21.4477 9 22C9 22.5523 8.55228 23 8 23H4C2.34315 23 1 21.6569 1 20V16C1 15.4477 1.44772 15 2 15C2.55228 15 3 15.4477 3 16V20C3 20.5523 3.44772 21 4 21Z"
+                fill="#0F0F0F"
+              ></path>
+              <path
+                d="M1 8C1 8.55228 1.44772 9 2 9C2.55228 9 3 8.55228 3 8L3 4C3 3.44772 3.44772 3 4 3H8C8.55228 3 9 2.55228 9 2C9 1.44772 8.55228 1 8 1H4C2.34315 1 1 2.34315 1 4V8Z"
+                fill="#0F0F0F"
+              ></path>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      id="confirm-modal"
+      class="w-full h-screen fixed bg-black bg-opacity-40 z-10 top-0 hidden items-center justify-center"
+    >
+      <div class="w-1/3 bg-white rounded-xl shadow-xl min-w-[300px]">
+        <div class="font-bold text-lg p-4 border-b">
+          <i
+            class="fa-solid fa-triangle-exclamation text-xl mx-2 text-primary-500"
+          ></i
+          >Warning!
+        </div>
+        <div class="p-4">
+          <p>
+            You have <b>2 unanswered questions</b> and <b>1 flagged question</b>
+          </p>
+          <p>Are you sure you want to submit?</p>
+        </div>
+        <div class="flex justify-end p-4 space-x-2">
+          <button
+            class="confirm-button bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600"
+          >
+            Confirm Submit
+          </button>
+          <button
+            class="cancel-button bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="error-modal"
+      class="w-full h-screen fixed bg-black bg-opacity-40 z-10 top-0 hidden items-center justify-center"
+    >
+      <div class="w-1/3 bg-white rounded-xl shadow-xl">
+        <div class="font-bold text-lg p-4 border-b">
+          <i
+            class="fa-solid fa-triangle-exclamation text-xl mx-2 text-primary-500"
+          ></i>
+          Error
+        </div>
+        <div class="p-4">
+          <p>Failed to load exam</p>
+          <p>
+            <span id="status"></span>Status:<span id="error-message"
+              >Message</span
             >
-                <div
-                    class="px-3 py-4 transition bg-gray-100 border-2 border-gray-200 rounded-xl hover:bg-gray-200 hover:border-gray-300"
-                >
-                    <div class="flex justify-between">
-                        <p>Progress</p>
-                        <p id="progress-percentage">0%</p>
-                    </div>
-                    <div
-                        class="relative w-full h-2 mt-3 transition-all bg-gray-300 rounded-xl"
-                    >
-                        <div
-                            id="progress-bar"
-                            class="absolute bottom-0 left-0 w-full h-full transition-all max-w-0 rounded-xl bg-primary-500"
-                        ></div>
-                    </div>
-                    <div class="flex justify-between mt-3 text-gray-600">
-                        <div>
-                            <span id="answered-questions">0</span> Complete
-                        </div>
-                        <div>
-                            <span id="remining-questions">20</span> Remining
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-5">
-                    <p>Questions</p>
-                    <div
-                        id="questions-btns"
-                        class="flex flex-wrap justify-center gap-3 mt-3 md:justify-start"
-                    >
-                        <!-- <button
+          </p>
+        </div>
+        <div class="flex justify-end p-4 space-x-2">
+          <button
+            class="confirm-button bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600"
+          >
+            Reload
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col-reverse md:flex-row">
+      <div
+        class="md:w-96 b md:h-[calc(100vh-84px)] drop-shadow-xl md:border-r-2 border-r-gray-300 p-3"
+      >
+        <div
+          class="px-3 py-4 transition bg-gray-100 border-2 border-gray-200 rounded-xl hover:bg-gray-200 hover:border-gray-300"
+        >
+          <div class="flex justify-between">
+            <p>Progress</p>
+            <p id="progress-percentage">0%</p>
+          </div>
+          <div
+            class="relative w-full h-2 mt-3 transition-all bg-gray-300 rounded-xl"
+          >
+            <div
+              id="progress-bar"
+              class="absolute bottom-0 left-0 w-full h-full transition-all max-w-0 rounded-xl bg-primary-500"
+            ></div>
+          </div>
+          <div class="flex justify-between mt-3 text-gray-600">
+            <div><span id="answered-questions">0</span> Complete</div>
+            <div><span id="remining-questions">20</span> Remining</div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <p>Questions</p>
+          <div
+            id="questions-btns"
+            class="flex flex-wrap justify-center gap-3 mt-3 md:justify-start"
+          >
+            <!-- <button
                             class="relative w-16 py-2 text-center text-white bg-green-400 rounded-lg flag after:animate-bounce"
                         >
                             1
                         </button> -->
-                    </div>
-                </div>
-                <div
-                    class="p-3 mt-5 bg-gray-200 border border-gray-300 rounded-xl"
-                >
-                    <p>Quick Notes</p>
-                    <textarea
-                        placeholder="Write your notes here..."
-                        class="w-full p-2 mt-2 text-sm placeholder-gray-500 transition border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary-500"
-                        rows="4"
-                    ></textarea>
-                </div>
-                <div
-                    class="flex flex-col gap-3 p-3 mt-5 text-white rounded-lg bg-primary-300"
-                >
-                    <div class="flex items-center gap-1">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-6"
-                        >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g
-                                id="SVGRepo_tracerCarrier"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M7 9C7 9.55228 6.55228 10 6 10C5.44772 10 5 9.55228 5 9C5 8.44772 5.44772 8 6 8C6.55228 8 7 8.44772 7 9Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M10 12C10 12.5523 9.55228 13 9 13C8.44772 13 8 12.5523 8 12C8 11.4477 8.44772 11 9 11C9.55228 11 10 11.4477 10 12Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M10 9C10 9.55228 9.55228 10 9 10C8.44772 10 8 9.55228 8 9C8 8.44772 8.44772 8 9 8C9.55228 8 10 8.44772 10 9Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M13 9C13 9.55228 12.5523 10 12 10C11.4477 10 11 9.55228 11 9C11 8.44772 11.4477 8 12 8C12.5523 8 13 8.44772 13 9Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M16 9C16 9.55228 15.5523 10 15 10C14.4477 10 14 9.55228 14 9C14 8.44772 14.4477 8 15 8C15.5523 8 16 8.44772 16 9Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M16 12C16 12.5523 15.5523 13 15 13C14.4477 13 14 12.5523 14 12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M19 9C19 9.55228 18.5523 10 18 10C17.4477 10 17 9.55228 17 9C17 8.44772 17.4477 8 18 8C18.5523 8 19 8.44772 19 9Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M19 12C19 12.5523 18.5523 13 18 13C17.4477 13 17 12.5523 17 12C17 11.4477 17.4477 11 18 11C18.5523 11 19 11.4477 19 12Z"
-                                    fill="#ffffff"
-                                ></path>
-                                <path
-                                    d="M2 11C2 8.17157 2 6.75736 2.87868 5.87868C3.75736 5 5.17157 5 8 5H16C18.8284 5 20.2426 5 21.1213 5.87868C22 6.75736 22 8.17157 22 11V13C22 15.8284 22 17.2426 21.1213 18.1213C20.2426 19 18.8284 19 16 19H8C5.17157 19 3.75736 19 2.87868 18.1213C2 17.2426 2 15.8284 2 13V11Z"
-                                    stroke="#ffffff"
-                                    stroke-width="1.5"
-                                ></path>
-                                <path
-                                    d="M7 16H17"
-                                    stroke="#ffffff"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                ></path>
-                            </g>
-                        </svg>
-                        <p>Keyboard Shortcuts</p>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-300">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="size-5"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                            />
-                        </svg>
-                        <p>Next question</p>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-300">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="size-5"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                            />
-                        </svg>
+          </div>
+        </div>
+        <div class="p-3 mt-5 bg-gray-200 border border-gray-300 rounded-xl">
+          <p>Quick Notes</p>
+          <textarea
+            placeholder="Write your notes here..."
+            class="w-full p-2 mt-2 text-sm placeholder-gray-500 transition border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary-500"
+            rows="4"
+          ></textarea>
+        </div>
+        <div
+          class="flex flex-col gap-3 p-3 mt-5 text-white rounded-lg bg-primary-300"
+        >
+          <div class="flex items-center gap-1">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M7 9C7 9.55228 6.55228 10 6 10C5.44772 10 5 9.55228 5 9C5 8.44772 5.44772 8 6 8C6.55228 8 7 8.44772 7 9Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M10 12C10 12.5523 9.55228 13 9 13C8.44772 13 8 12.5523 8 12C8 11.4477 8.44772 11 9 11C9.55228 11 10 11.4477 10 12Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M10 9C10 9.55228 9.55228 10 9 10C8.44772 10 8 9.55228 8 9C8 8.44772 8.44772 8 9 8C9.55228 8 10 8.44772 10 9Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M13 9C13 9.55228 12.5523 10 12 10C11.4477 10 11 9.55228 11 9C11 8.44772 11.4477 8 12 8C12.5523 8 13 8.44772 13 9Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M16 9C16 9.55228 15.5523 10 15 10C14.4477 10 14 9.55228 14 9C14 8.44772 14.4477 8 15 8C15.5523 8 16 8.44772 16 9Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M16 12C16 12.5523 15.5523 13 15 13C14.4477 13 14 12.5523 14 12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M19 9C19 9.55228 18.5523 10 18 10C17.4477 10 17 9.55228 17 9C17 8.44772 17.4477 8 18 8C18.5523 8 19 8.44772 19 9Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M19 12C19 12.5523 18.5523 13 18 13C17.4477 13 17 12.5523 17 12C17 11.4477 17.4477 11 18 11C18.5523 11 19 11.4477 19 12Z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="M2 11C2 8.17157 2 6.75736 2.87868 5.87868C3.75736 5 5.17157 5 8 5H16C18.8284 5 20.2426 5 21.1213 5.87868C22 6.75736 22 8.17157 22 11V13C22 15.8284 22 17.2426 21.1213 18.1213C20.2426 19 18.8284 19 16 19H8C5.17157 19 3.75736 19 2.87868 18.1213C2 17.2426 2 15.8284 2 13V11Z"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M7 16H17"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+              </g>
+            </svg>
+            <p>Keyboard Shortcuts</p>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+            <p>Next question</p>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
 
-                        <p>Previous question</p>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-300">
-                        <p>F Flag question</p>
-                    </div>
-                </div>
+            <p>Previous question</p>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <p>F Flag question</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center w-full p-4 pt-16 exam-background">
+        <div class="w-full lg:w-2/3">
+          <div
+            class="flex flex-col items-center justify-between gap-3 sm:gap-0 sm:flex-row"
+          >
+            <div class="text-2xl font-bold text-primary-400">
+              Question
+              <span id="current-question">1</span>
+              of
+              <span id="total-questions">20</span>
             </div>
-            <div class="flex justify-center w-full p-4 pt-16 exam-background">
-                <div class="w-full lg:w-2/3">
-                    <div
-                        class="flex flex-col items-center justify-between gap-3 sm:gap-0 sm:flex-row"
-                    >
-                        <div class="text-2xl font-bold text-primary-400">
-                            Question
-                            <span id="current-question">1</span>
-                            of
-                            <span id="total-questions">20</span>
-                        </div>
-                        <button
-                            id="flag-question"
-                            class="flex gap-2 px-3 py-2 bg-gray-200 border border-gray-400 rounded-xl drop-shadow-md hover:bg-red-600 active:bg-red-700 group hover:text-white"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="transition-transform size-6 group-hover:-translate-y-0.5"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"
-                                />
-                            </svg>
-                            Flag Question
-                        </button>
-                    </div>
-                    <div class="p-5 mt-8 bg-white drop-shadow-2xl rounded-xl">
-                        <p class="font-bold question"></p>
-                        <div class="answers">
-                            <!-- <button
+            <button
+              id="flag-question"
+              class="flex gap-2 px-3 py-2 bg-gray-200 border border-gray-400 rounded-xl drop-shadow-md hover:bg-red-600 active:bg-red-700 group hover:text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="transition-transform size-6 group-hover:-translate-y-0.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"
+                />
+              </svg>
+              Flag Question
+            </button>
+          </div>
+          <div class="p-5 mt-8 bg-white drop-shadow-2xl rounded-xl">
+            <p class="font-bold question"></p>
+            <div class="answers">
+              <!-- <button
                                 class="flex items-center w-full p-3 mt-5 transition-colors border border-black answer bg-primary-900 rounded-xl hover:bg-primary-800 active:bg-primary-700"
                             >
                                 <input
@@ -314,53 +381,53 @@
                                 />
                                 <span>Answer</span>
                             </button> -->
-                        </div>
-                    </div>
-                    <div class="flex justify-between mt-5">
-                        <button
-                            id="previous-btn"
-                            class="flex items-center justify-center gap-1 py-4 text-white transition rounded-lg px-7 disabled:bg-gray-300 disabled:cursor-not-allowed group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                class="transition size-6 group-hover:-translate-x-1"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
-                                    clip-rule="evenodd"
-                                />
-                            </svg>
-                            Previous
-                        </button>
-                        <button
-                            id="next-btn"
-                            class="flex items-center justify-center gap-1 px-10 py-4 text-white transition rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
-                        >
-                            Next
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="white"
-                                class="transition size-6 group-hover:translate-x-1"
-                            >
-                                >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                                />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
             </div>
+          </div>
+          <div class="flex justify-between mt-5">
+            <button
+              id="previous-btn"
+              class="flex items-center justify-center gap-1 py-4 text-white transition rounded-lg px-7 disabled:bg-gray-300 disabled:cursor-not-allowed group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="transition size-6 group-hover:-translate-x-1"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Previous
+            </button>
+            <button
+              id="next-btn"
+              class="flex items-center justify-center gap-1 px-10 py-4 text-white transition rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed group active:bg-primary-400 hover:bg-primary-600 bg-primary-400"
+            >
+              Next
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="white"
+                class="transition size-6 group-hover:translate-x-1"
+              >
+                >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        <script type="module" src="./src/scripts/main.js"></script>
-        <script type="module" src="./src/scripts/exam.js"></script>
-    </body>
+      </div>
+    </div>
+    <script type="module" src="./src/scripts/main.js"></script>
+    <script type="module" src="./src/scripts/exam.js"></script>
+  </body>
 </html>
