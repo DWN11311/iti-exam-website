@@ -42,7 +42,6 @@ fetch("/src/scripts/data/data.json")
                 examElem.classList.add(
                     "flex",
                     "flex-col",
-                    // "flex-1",
                     "md:w-1/3",
                     "p-3",
                     "bg-white",
@@ -100,6 +99,8 @@ fetch("/src/scripts/data/data.json")
 const recentExamsContainer = document.querySelector("#recent-exams");
 const noRecentExams = document.querySelector("#no-recent-exams");
 
+console.log(user.examAttempts);
+
 if (user.examAttempts.length > 0) {
     noRecentExams.classList.add("hidden");
     recentExamsContainer.classList.remove("hidden");
@@ -117,6 +118,10 @@ if (user.examAttempts.length > 0) {
     <div class="flex-1 p-2">${attempt.title}</div>
     <div class="flex-1 p-2">${attempt.date}</div>
     <div class="flex-1 p-2">${attempt.grade}</div>
+    <div class="flex-1 p-2">${attempt.attemptDuration} Seconds</div>
+    <div class="flex-1 p-2">${
+        attempt.rating
+    } <i class="fa-solid fa-star text-[#f5b301]"></i></div>
     <div class="flex-1 p-2">
     <span class="p-1 text-xs text-white ${
         attempt.status == "Passed"
@@ -126,7 +131,8 @@ if (user.examAttempts.length > 0) {
             : "bg-red-500"
     } rounded-xl">${attempt.status}</span>`;
 
-        recentExamsContainer.append(row);
+        // recentExamsContainer.append(row);
+        document.getElementById("table-rows").append(row);
     });
 }
 
