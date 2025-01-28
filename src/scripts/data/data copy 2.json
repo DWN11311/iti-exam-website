@@ -1,0 +1,205 @@
+{
+  "exams": [
+    {
+      "id": "1",
+      "title": "CSS HTML & JS Exam 2",
+      "description": "This exam tests your foundational knowledge of HTML, CSS, and JavaScript. It covers basic concepts such as HTML structure, CSS styling, and JavaScript syntax.",
+      "examDuration": 6000,
+      "questions": [
+        {
+          "id": "1",
+          "title": "What does HTML stand for?",
+          "answers": [
+            { "id": "a1", "content": "Hyper Text Markup Language" },
+            { "id": "a2", "content": "Home Tool Markup Language" },
+            { "id": "a3", "content": "Hyperlinks and Text Markup Language" },
+            { "id": "a4", "content": "Hyper Text Makeup Language" }
+          ],
+          "correctAnswerId": "a1"
+        },
+        {
+          "id": "2",
+          "title": "What is the correct HTML element for inserting a line break?",
+          "answers": [
+            { "id": "a1", "content": "<break>" },
+            { "id": "a2", "content": "<lb>" },
+            { "id": "a3", "content": "<br>" },
+            { "id": "a4", "content": "<line>" }
+          ],
+          "correctAnswerId": "a3"
+        },
+        {
+          "id": "3",
+          "title": "Which CSS property is used to change the text color of an element?",
+          "answers": [
+            { "id": "a1", "content": "text-color" },
+            { "id": "a2", "content": "color" },
+            { "id": "a3", "content": "font-color" },
+            { "id": "a4", "content": "text-style" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": "4",
+          "title": "What is the correct syntax for referring to an external JavaScript file?",
+          "answers": [
+            { "id": "a1", "content": "<script href='script.js'>" },
+            { "id": "a2", "content": "<script name='script.js'>" },
+            { "id": "a3", "content": "<script src='script.js'>" },
+            { "id": "a4", "content": "<script file='script.js'>" }
+          ],
+          "correctAnswerId": "a3"
+        },
+        {
+          "id": "5",
+          "title": "Which HTML attribute is used to define inline styles?",
+          "answers": [
+            { "id": "a1", "content": "class" },
+            { "id": "a2", "content": "style" },
+            { "id": "a3", "content": "font" },
+            { "id": "a4", "content": "styles" }
+          ],
+          "correctAnswerId": "a2"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Advanced JavaScript Exam",
+      "description": "This exam focuses on advanced JavaScript concepts, including data types, strict mode, array methods, and type coercion. It is designed for developers who want to deepen their understanding of JavaScript.",
+      "examDuration": 300,
+      "questions": [
+        {
+          "id": "1",
+          "title": "What is the output of the following code? console.log(typeof null);",
+          "answers": [
+            { "id": "a1", "content": "null" },
+            { "id": "a2", "content": "object" },
+            { "id": "a3", "content": "undefined" },
+            { "id": "a4", "content": "boolean" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": "2",
+          "title": "Which method is used to add an element to the end of an array?",
+          "answers": [
+            { "id": "a1", "content": "push()" },
+            { "id": "a2", "content": "pop()" },
+            { "id": "a3", "content": "shift()" },
+            { "id": "a4", "content": "unshift()" }
+          ],
+          "correctAnswerId": "a1"
+        },
+        {
+          "id": "3",
+          "title": "What is the purpose of the 'use strict' directive in JavaScript?",
+          "answers": [
+            { "id": "a1", "content": "To enforce stricter type checking" },
+            {
+              "id": "a2",
+              "content": "To enable strict mode, which catches common coding errors and unsafe actions"
+            },
+            {
+              "id": "a3",
+              "content": "To optimize the performance of the code"
+            },
+            {
+              "id": "a4",
+              "content": "To allow the use of experimental features"
+            }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": "4",
+          "title": "What is the result of the expression '2' + '2' in JavaScript?",
+          "answers": [
+            { "id": "a1", "content": "4" },
+            { "id": "a2", "content": "22" },
+            { "id": "a3", "content": "NaN" },
+            { "id": "a4", "content": "undefined" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": "5",
+          "title": "Which of the following is not a JavaScript data type?",
+          "answers": [
+            { "id": "a1", "content": "string" },
+            { "id": "a2", "content": "number" },
+            { "id": "a3", "content": "boolean" },
+            { "id": "a4", "content": "float" }
+          ],
+          "correctAnswerId": "a4"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "CSS Advanced Techniques Exam",
+      "description": "This exam evaluates your knowledge of advanced CSS techniques, including flexbox, z-index, rounded corners, and letter spacing. It is ideal for front-end developers looking to master CSS layout and styling.",
+      "examDuration": 100,
+      "questions": [
+        {
+          "id": "1",
+          "title": "Which CSS property is used to control the spacing between letters?",
+          "answers": [
+            { "id": "a1", "content": "letter-spacing" },
+            { "id": "a2", "content": "word-spacing" },
+            { "id": "a3", "content": "line-height" },
+            { "id": "a4", "content": "text-spacing" }
+          ],
+          "correctAnswerId": "a1"
+        },
+        {
+          "id": "2",
+          "title": "What does the CSS property 'z-index' control?",
+          "answers": [
+            { "id": "a1", "content": "The horizontal position of an element" },
+            { "id": "a2", "content": "The vertical position of an element" },
+            { "id": "a3", "content": "The stacking order of elements" },
+            { "id": "a4", "content": "The opacity of an element" }
+          ],
+          "correctAnswerId": "a3"
+        },
+        {
+          "id": "3",
+          "title": "Which CSS property is used to create rounded corners?",
+          "answers": [
+            { "id": "a1", "content": "border-radius" },
+            { "id": "a2", "content": "corner-radius" },
+            { "id": "a3", "content": "round-corner" },
+            { "id": "a4", "content": "border-round" }
+          ],
+          "correctAnswerId": "a1"
+        },
+        {
+          "id": "4",
+          "title": "What is the purpose of the CSS 'flexbox' layout?",
+          "answers": [
+            { "id": "a1", "content": "To create grid-based layouts" },
+            {
+              "id": "a2",
+              "content": "To create flexible and responsive layouts"
+            },
+            { "id": "a3", "content": "To create fixed-width layouts" },
+            { "id": "a4", "content": "To create table-based layouts" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": "5",
+          "title": "Which CSS property is used to control the visibility of an element without removing it from the document flow?",
+          "answers": [
+            { "id": "a1", "content": "display" },
+            { "id": "a2", "content": "visibility" },
+            { "id": "a3", "content": "opacity" },
+            { "id": "a4", "content": "hidden" }
+          ],
+          "correctAnswerId": "a2"
+        }
+      ]
+    }
+  ]
+}

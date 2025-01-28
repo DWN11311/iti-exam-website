@@ -1,205 +1,1085 @@
 {
-  "exams": [
-    {
-      "id": "1",
-      "title": "CSS HTML & JS Exam 2",
-      "description": "This exam tests your foundational knowledge of HTML, CSS, and JavaScript. It covers basic concepts such as HTML structure, CSS styling, and JavaScript syntax.",
-      "examDuration": 6000,
-      "questions": [
+    "exams": [
         {
-          "id": "1",
-          "title": "What does HTML stand for?",
-          "answers": [
-            { "id": "a1", "content": "Hyper Text Markup Language" },
-            { "id": "a2", "content": "Home Tool Markup Language" },
-            { "id": "a3", "content": "Hyperlinks and Text Markup Language" },
-            { "id": "a4", "content": "Hyper Text Makeup Language" }
-          ],
-          "correctAnswerId": "a1"
+            "id": "1",
+            "title": "HTML Basics Exam",
+            "description": "This exam tests your foundational knowledge of HTML with medium difficulty questions. It includes topics like HTML tags, attributes, and structure.",
+            "icon": "<i class=\"fa-brands fa-html5 text-4xl\"></i>",
+            "examDuration": 60,
+            "questions": [
+                {
+                    "id": "1",
+                    "title": "Which tag is used to create the largest heading in HTML?",
+                    "answers": [
+                        { "id": "a1", "content": "<h1>" },
+                        { "id": "a2", "content": "<h6>" },
+                        { "id": "a3", "content": "<heading>" },
+                        { "id": "a4", "content": "<head>" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "2",
+                    "title": "Which attribute specifies the URL of a link in an <a> tag?",
+                    "answers": [
+                        { "id": "a1", "content": "href" },
+                        { "id": "a2", "content": "src" },
+                        { "id": "a3", "content": "link" },
+                        { "id": "a4", "content": "url" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "3",
+                    "title": "What is the purpose of the <title> tag in HTML?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To add a title to the page content"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "To specify the title of the webpage displayed on the browser tab"
+                        },
+                        { "id": "a3", "content": "To define a heading style" },
+                        {
+                            "id": "a4",
+                            "content": "To display the page's title in the footer"
+                        }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "4",
+                    "title": "What does the <em> tag do in HTML?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "Emphasizes text with bold styling"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "Emphasizes text with italic styling"
+                        },
+                        { "id": "a3", "content": "Changes text color to red" },
+                        { "id": "a4", "content": "Creates a new paragraph" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "5",
+                    "title": "Which attribute is used to set a unique identifier for an HTML element?",
+                    "answers": [
+                        { "id": "a1", "content": "id" },
+                        { "id": "a2", "content": "class" },
+                        { "id": "a3", "content": "style" },
+                        { "id": "a4", "content": "name" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "6",
+                    "title": "Which tag is used to insert an image in HTML?",
+                    "answers": [
+                        { "id": "a1", "content": "<img>" },
+                        { "id": "a2", "content": "<image>" },
+                        { "id": "a3", "content": "<picture>" },
+                        { "id": "a4", "content": "<src>" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "7",
+                    "title": "Which attribute is mandatory for the <img> tag?",
+                    "answers": [
+                        { "id": "a1", "content": "alt" },
+                        { "id": "a2", "content": "title" },
+                        { "id": "a3", "content": "src" },
+                        { "id": "a4", "content": "href" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "8",
+                    "title": "What does the <hr> tag do?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "Creates a horizontal rule or line"
+                        },
+                        { "id": "a2", "content": "Creates a line break" },
+                        { "id": "a3", "content": "Adds a heading rule" },
+                        { "id": "a4", "content": "Creates a vertical line" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "9",
+                    "title": "Which tag is used to create an ordered list in HTML?",
+                    "answers": [
+                        { "id": "a1", "content": "<ul>" },
+                        { "id": "a2", "content": "<ol>" },
+                        { "id": "a3", "content": "<li>" },
+                        { "id": "a4", "content": "<list>" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "10",
+                    "title": "What is the purpose of the <!DOCTYPE html> declaration?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To declare the HTML version and type of document"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "To define a comment in HTML"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "To create a metadata section"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "To set the document language"
+                        }
+                    ],
+                    "correctAnswerId": "a1"
+                }
+            ]
         },
         {
-          "id": "2",
-          "title": "What is the correct HTML element for inserting a line break?",
-          "answers": [
-            { "id": "a1", "content": "<break>" },
-            { "id": "a2", "content": "<lb>" },
-            { "id": "a3", "content": "<br>" },
-            { "id": "a4", "content": "<line>" }
-          ],
-          "correctAnswerId": "a3"
+            "id": "2",
+            "title": "CSS Intermediate Exam",
+            "description": "This exam evaluates your knowledge of CSS with medium difficulty questions. Topics include styling, layout techniques, and commonly used properties.",
+            "icon": "<i class=\"fa-brands fa-css3-alt text-4xl\"></i>",
+            "examDuration": 300,
+            "questions": [
+                {
+                    "id": "1",
+                    "title": "Which CSS property is used to change the background color of an element?",
+                    "answers": [
+                        { "id": "a1", "content": "color" },
+                        { "id": "a2", "content": "background" },
+                        { "id": "a3", "content": "background-color" },
+                        { "id": "a4", "content": "bg-color" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "2",
+                    "title": "What is the default position value for HTML elements in CSS?",
+                    "answers": [
+                        { "id": "a1", "content": "absolute" },
+                        { "id": "a2", "content": "relative" },
+                        { "id": "a3", "content": "static" },
+                        { "id": "a4", "content": "fixed" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "3",
+                    "title": "Which property is used to control the space between lines of text?",
+                    "answers": [
+                        { "id": "a1", "content": "letter-spacing" },
+                        { "id": "a2", "content": "line-height" },
+                        { "id": "a3", "content": "word-spacing" },
+                        { "id": "a4", "content": "text-spacing" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "4",
+                    "title": "Which of the following is not a valid CSS length unit?",
+                    "answers": [
+                        { "id": "a1", "content": "px" },
+                        { "id": "a2", "content": "em" },
+                        { "id": "a3", "content": "pt" },
+                        { "id": "a4", "content": "inch" }
+                    ],
+                    "correctAnswerId": "a4"
+                },
+                {
+                    "id": "5",
+                    "title": "What does the 'z-index' property control in CSS?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "The stacking order of elements"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "The transparency of an element"
+                        },
+                        { "id": "a3", "content": "The alignment of text" },
+                        { "id": "a4", "content": "The size of an element" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "6",
+                    "title": "Which shorthand property is used to define margin for all four sides of an element?",
+                    "answers": [
+                        { "id": "a1", "content": "padding" },
+                        { "id": "a2", "content": "margin" },
+                        { "id": "a3", "content": "border" },
+                        { "id": "a4", "content": "box-sizing" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "7",
+                    "title": "What is the correct syntax for applying multiple CSS classes to an element?",
+                    "answers": [
+                        { "id": "a1", "content": "class=\"class1, class2\"" },
+                        { "id": "a2", "content": "class=\"class1 class2\"" },
+                        { "id": "a3", "content": "class=\"class1; class2\"" },
+                        { "id": "a4", "content": "class=\"class1.class2\"" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "8",
+                    "title": "Which CSS property is used to hide an element but keep its space on the page?",
+                    "answers": [
+                        { "id": "a1", "content": "display: none;" },
+                        { "id": "a2", "content": "visibility: hidden;" },
+                        { "id": "a3", "content": "opacity: 0;" },
+                        { "id": "a4", "content": "z-index: -1;" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "9",
+                    "title": "Which pseudo-class is used to style an element when the mouse hovers over it?",
+                    "answers": [
+                        { "id": "a1", "content": ":hover" },
+                        { "id": "a2", "content": ":focus" },
+                        { "id": "a3", "content": ":active" },
+                        { "id": "a4", "content": ":checked" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "10",
+                    "title": "Which CSS property is used to specify whether an element should float to the left, right, or none?",
+                    "answers": [
+                        { "id": "a1", "content": "float" },
+                        { "id": "a2", "content": "clear" },
+                        { "id": "a3", "content": "align" },
+                        { "id": "a4", "content": "position" }
+                    ],
+                    "correctAnswerId": "a1"
+                }
+            ]
         },
         {
-          "id": "3",
-          "title": "Which CSS property is used to change the text color of an element?",
-          "answers": [
-            { "id": "a1", "content": "text-color" },
-            { "id": "a2", "content": "color" },
-            { "id": "a3", "content": "font-color" },
-            { "id": "a4", "content": "text-style" }
-          ],
-          "correctAnswerId": "a2"
+            "id": "3",
+            "title": "JavaScript Intermediate Exam",
+            "description": "This exam tests your intermediate knowledge of JavaScript. Topics include variables, functions, loops, DOM manipulation, and more. It contains 20 medium-difficulty questions.",
+            "icon": "<i class=\"fa-brands fa-js text-4xl\"></i>",
+            "examDuration": 600,
+            "questions": [
+                {
+                    "id": "1",
+                    "title": "Which keyword is used to declare a variable in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "var" },
+                        { "id": "a2", "content": "let" },
+                        { "id": "a3", "content": "const" },
+                        { "id": "a4", "content": "All of the above" }
+                    ],
+                    "correctAnswerId": "a4"
+                },
+                {
+                    "id": "2",
+                    "title": "What is the correct syntax for creating a function in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "function myFunction() {}" },
+                        { "id": "a2", "content": "def myFunction() {}" },
+                        { "id": "a3", "content": "func myFunction() {}" },
+                        { "id": "a4", "content": "myFunction() : function {}" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "3",
+                    "title": "Which operator is used to compare both value and type in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "==" },
+                        { "id": "a2", "content": "===" },
+                        { "id": "a3", "content": "!=" },
+                        { "id": "a4", "content": "!==" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "4",
+                    "title": "What does the 'typeof' operator return in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "The type of the operand" },
+                        { "id": "a2", "content": "The value of the operand" },
+                        { "id": "a3", "content": "The size of the operand" },
+                        { "id": "a4", "content": "None of the above" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "5",
+                    "title": "How can you add a comment in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "// This is a comment" },
+                        { "id": "a2", "content": "/* This is a comment */" },
+                        { "id": "a3", "content": "# This is a comment" },
+                        { "id": "a4", "content": "Both // and /* */" }
+                    ],
+                    "correctAnswerId": "a4"
+                },
+                {
+                    "id": "6",
+                    "title": "Which method is used to remove the last element from an array?",
+                    "answers": [
+                        { "id": "a1", "content": "shift()" },
+                        { "id": "a2", "content": "pop()" },
+                        { "id": "a3", "content": "slice()" },
+                        { "id": "a4", "content": "splice()" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "7",
+                    "title": "How do you declare a constant in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "var constantName" },
+                        { "id": "a2", "content": "const constantName" },
+                        { "id": "a3", "content": "constant constantName" },
+                        { "id": "a4", "content": "let constantName" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "8",
+                    "title": "What will be the output of the following code? console.log(2 + '2');",
+                    "answers": [
+                        { "id": "a1", "content": "4" },
+                        { "id": "a2", "content": "22" },
+                        { "id": "a3", "content": "NaN" },
+                        { "id": "a4", "content": "undefined" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "9",
+                    "title": "What is the correct way to write an array in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "[1, 2, 3]" },
+                        { "id": "a2", "content": "{1, 2, 3}" },
+                        { "id": "a3", "content": "(1, 2, 3)" },
+                        { "id": "a4", "content": "<1, 2, 3>" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "10",
+                    "title": "What is the purpose of the 'this' keyword in JavaScript?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "Refers to the current HTML document"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "Refers to the current object"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "Refers to the parent element"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "Refers to the global window object"
+                        }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "11",
+                    "title": "Which method is used to convert a JSON string into a JavaScript object?",
+                    "answers": [
+                        { "id": "a1", "content": "JSON.stringify()" },
+                        { "id": "a2", "content": "JSON.parse()" },
+                        { "id": "a3", "content": "JSON.objectify()" },
+                        { "id": "a4", "content": "JSON.convert()" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "12",
+                    "title": "Which method is used to find the length of an array?",
+                    "answers": [
+                        { "id": "a1", "content": "length()" },
+                        { "id": "a2", "content": ".length" },
+                        { "id": "a3", "content": ".size()" },
+                        { "id": "a4", "content": ".count()" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "13",
+                    "title": "How do you write a conditional statement in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "if (condition) { }" },
+                        { "id": "a2", "content": "if condition: { }" },
+                        { "id": "a3", "content": "if (condition) then { }" },
+                        { "id": "a4", "content": "if condition then { }" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "14",
+                    "title": "What is the result of '5' - 2 in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "52" },
+                        { "id": "a2", "content": "3" },
+                        { "id": "a3", "content": "NaN" },
+                        { "id": "a4", "content": "undefined" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "15",
+                    "title": "Which loop will execute the code block at least once?",
+                    "answers": [
+                        { "id": "a1", "content": "for loop" },
+                        { "id": "a2", "content": "while loop" },
+                        { "id": "a3", "content": "do...while loop" },
+                        { "id": "a4", "content": "for...in loop" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "16",
+                    "title": "How do you create a JavaScript object?",
+                    "answers": [
+                        { "id": "a1", "content": "let obj = {};" },
+                        { "id": "a2", "content": "let obj = [];" },
+                        { "id": "a3", "content": "let obj = 'object';" },
+                        { "id": "a4", "content": "let obj = new Object();" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "17",
+                    "title": "What does 'NaN' represent in JavaScript?",
+                    "answers": [
+                        { "id": "a1", "content": "Not a Number" },
+                        { "id": "a2", "content": "Null and Nullified" },
+                        { "id": "a3", "content": "Not an Object" },
+                        { "id": "a4", "content": "Not Available Number" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "18",
+                    "title": "Which event is triggered when the DOM has fully loaded?",
+                    "answers": [
+                        { "id": "a1", "content": "DOMContentLoaded" },
+                        { "id": "a2", "content": "load" },
+                        { "id": "a3", "content": "ready" },
+                        { "id": "a4", "content": "complete" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "19",
+                    "title": "Which function is used to delay execution of a function by a set amount of time?",
+                    "answers": [
+                        { "id": "a1", "content": "setTimeout()" },
+                        { "id": "a2", "content": "setInterval()" },
+                        { "id": "a3", "content": "delay()" },
+                        { "id": "a4", "content": "pause()" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "20",
+                    "title": "Which keyword is used to declare an asynchronous function?",
+                    "answers": [
+                        { "id": "a1", "content": "async" },
+                        { "id": "a2", "content": "await" },
+                        { "id": "a3", "content": "function" },
+                        { "id": "a4", "content": "promise" }
+                    ],
+                    "correctAnswerId": "a1"
+                }
+            ]
         },
         {
-          "id": "4",
-          "title": "What is the correct syntax for referring to an external JavaScript file?",
-          "answers": [
-            { "id": "a1", "content": "<script href='script.js'>" },
-            { "id": "a2", "content": "<script name='script.js'>" },
-            { "id": "a3", "content": "<script src='script.js'>" },
-            { "id": "a4", "content": "<script file='script.js'>" }
-          ],
-          "correctAnswerId": "a3"
+            "id": "4",
+            "title": "English Basics Exam",
+            "description": "This exam tests your basic knowledge of English grammar, vocabulary, and sentence structure. It contains 10 easy questions.",
+            "icon": "<i class=\"fa-solid fa-book text-4xl\"></i>",
+            "examDuration": 600,
+            "questions": [
+                {
+                    "id": "1",
+                    "title": "What is the plural form of 'cat'?",
+                    "answers": [
+                        { "id": "a1", "content": "cats" },
+                        { "id": "a2", "content": "catz" },
+                        { "id": "a3", "content": "cat's" },
+                        { "id": "a4", "content": "cates" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "2",
+                    "title": "Which word is a noun?",
+                    "answers": [
+                        { "id": "a1", "content": "run" },
+                        { "id": "a2", "content": "quickly" },
+                        { "id": "a3", "content": "apple" },
+                        { "id": "a4", "content": "happy" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "3",
+                    "title": "What is the opposite of 'hot'?",
+                    "answers": [
+                        { "id": "a1", "content": "cold" },
+                        { "id": "a2", "content": "warm" },
+                        { "id": "a3", "content": "cool" },
+                        { "id": "a4", "content": "hotter" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "4",
+                    "title": "What is the correct article for the word 'elephant'?",
+                    "answers": [
+                        { "id": "a1", "content": "a" },
+                        { "id": "a2", "content": "an" },
+                        { "id": "a3", "content": "the" },
+                        { "id": "a4", "content": "no article needed" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "5",
+                    "title": "Which of the following is a verb?",
+                    "answers": [
+                        { "id": "a1", "content": "sing" },
+                        { "id": "a2", "content": "blue" },
+                        { "id": "a3", "content": "beautiful" },
+                        { "id": "a4", "content": "table" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "6",
+                    "title": "Which sentence is correctly punctuated?",
+                    "answers": [
+                        { "id": "a1", "content": "I went to the store." },
+                        { "id": "a2", "content": "i went to the store." },
+                        { "id": "a3", "content": "I went to the store" },
+                        { "id": "a4", "content": "i went to the store" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "7",
+                    "title": "What is the past tense of 'run'?",
+                    "answers": [
+                        { "id": "a1", "content": "runned" },
+                        { "id": "a2", "content": "ran" },
+                        { "id": "a3", "content": "running" },
+                        { "id": "a4", "content": "run" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "8",
+                    "title": "Which word is spelled correctly?",
+                    "answers": [
+                        { "id": "a1", "content": "freind" },
+                        { "id": "a2", "content": "friend" },
+                        { "id": "a3", "content": "frend" },
+                        { "id": "a4", "content": "freend" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "9",
+                    "title": "Choose the correct form of the verb: She _____ to school every day.",
+                    "answers": [
+                        { "id": "a1", "content": "go" },
+                        { "id": "a2", "content": "goes" },
+                        { "id": "a3", "content": "going" },
+                        { "id": "a4", "content": "gone" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "10",
+                    "title": "Which word is a conjunction?",
+                    "answers": [
+                        { "id": "a1", "content": "and" },
+                        { "id": "a2", "content": "but" },
+                        { "id": "a3", "content": "or" },
+                        { "id": "a4", "content": "All of the above" }
+                    ],
+                    "correctAnswerId": "a4"
+                }
+            ]
         },
         {
-          "id": "5",
-          "title": "Which HTML attribute is used to define inline styles?",
-          "answers": [
-            { "id": "a1", "content": "class" },
-            { "id": "a2", "content": "style" },
-            { "id": "a3", "content": "font" },
-            { "id": "a4", "content": "styles" }
-          ],
-          "correctAnswerId": "a2"
+            "id": "5",
+            "title": "Extreme JavaScript Exam",
+            "description": "This exam tests your advanced knowledge of JavaScript with extremely challenging questions on topics such as closures, prototypes, async patterns, and the event loop.",
+            "icon": "<i class=\"fa-brands fa-js text-4xl\"></i>",
+            "examDuration": 300,
+            "questions": [
+                {
+                    "id": "1",
+                    "title": "What will be the output of the following code?\n```js\n(function() {\n  console.log(typeof arguments);\n})();",
+                    "answers": [
+                        { "id": "a1", "content": "'object'" },
+                        { "id": "a2", "content": "'array'" },
+                        { "id": "a3", "content": "'undefined'" },
+                        { "id": "a4", "content": "'function'" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "2",
+                    "title": "Which of the following is a feature of JavaScript 'hoisting'?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "Functions and variables are moved to the top of their scope"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "Only functions are moved to the top of their scope"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "Only variables are moved to the top of their scope"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "Nothing is hoisted in JavaScript"
+                        }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "3",
+                    "title": "What will be the output of the following code?\n```js\nconsole.log(1 < 2 < 3);\nconsole.log(3 > 2 > 1);",
+                    "answers": [
+                        { "id": "a1", "content": "true, true" },
+                        { "id": "a2", "content": "true, false" },
+                        { "id": "a3", "content": "false, true" },
+                        { "id": "a4", "content": "false, false" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "4",
+                    "title": "What is the purpose of the 'bind' method in JavaScript?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To attach a function to an object"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "To create a new function with a specific 'this' value"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "To execute a function immediately"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "To combine multiple functions into one"
+                        }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "5",
+                    "title": "What will be logged in the console?\n```js\nconst obj = { a: 1, b: 2 };\nconst clone = { ...obj, a: 3 };\nconsole.log(clone.a, clone.b);",
+                    "answers": [
+                        { "id": "a1", "content": "1, 2" },
+                        { "id": "a2", "content": "3, 2" },
+                        { "id": "a3", "content": "3, undefined" },
+                        { "id": "a4", "content": "undefined, undefined" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "6",
+                    "title": "What is the output of the following code?\n```js\nconsole.log([] + []);\nconsole.log([] + {});\nconsole.log({} + []);",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "'', '[object Object]', '[object Object]'"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "'', '[object Object]', '[object Object]'"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "Error, '[object Object]', '[object Object]'"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "'', '[object Object]', 'undefined'"
+                        }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "7",
+                    "title": "How can you make a JavaScript object immutable?",
+                    "answers": [
+                        { "id": "a1", "content": "Using `Object.freeze()`" },
+                        { "id": "a2", "content": "Using `Object.seal()`" },
+                        { "id": "a3", "content": "Using `Object.lock()`" },
+                        { "id": "a4", "content": "Using `const` keyword" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "8",
+                    "title": "What is the difference between `==` and `===` in JavaScript?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "`==` checks value only, `===` checks value and type"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "`==` checks type only, `===` checks type and value"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "`==` and `===` behave identically"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "`===` allows type coercion, `==` does not"
+                        }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "9",
+                    "title": "Which method is used to execute a function at specified intervals?",
+                    "answers": [
+                        { "id": "a1", "content": "setTimeout()" },
+                        { "id": "a2", "content": "setInterval()" },
+                        { "id": "a3", "content": "clearTimeout()" },
+                        { "id": "a4", "content": "setExecution()" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "10",
+                    "title": "What will be the output of the following code?\n```js\nconsole.log(typeof NaN);",
+                    "answers": [
+                        { "id": "a1", "content": "'number'" },
+                        { "id": "a2", "content": "'NaN'" },
+                        { "id": "a3", "content": "'undefined'" },
+                        { "id": "a4", "content": "'object'" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "11",
+                    "title": "Which of the following is true about the `Map` object?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "Keys can be any type, including objects"
+                        },
+                        { "id": "a2", "content": "Keys must be strings" },
+                        { "id": "a3", "content": "Keys must be integers" },
+                        { "id": "a4", "content": "Keys are not allowed" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "12",
+                    "title": "Which function is used to resolve promises sequentially?",
+                    "answers": [
+                        { "id": "a1", "content": "Promise.all()" },
+                        { "id": "a2", "content": "Promise.race()" },
+                        { "id": "a3", "content": "Async/Await" },
+                        { "id": "a4", "content": "Promise.chain()" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "13",
+                    "title": "What will the following code print?\n```js\nconsole.log(null == undefined);\nconsole.log(null === undefined);",
+                    "answers": [
+                        { "id": "a1", "content": "true, true" },
+                        { "id": "a2", "content": "false, true" },
+                        { "id": "a3", "content": "true, false" },
+                        { "id": "a4", "content": "false, false" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "14",
+                    "title": "What is the purpose of the `Object.create()` method?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To create an object with a specified prototype"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "To create an immutable object"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "To create a deep clone of an object"
+                        },
+                        { "id": "a4", "content": "To create an empty object" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "15",
+                    "title": "Which of the following methods will stop event propagation?",
+                    "answers": [
+                        { "id": "a1", "content": "event.preventDefault()" },
+                        { "id": "a2", "content": "event.stopPropagation()" },
+                        { "id": "a3", "content": "event.cancel()" },
+                        { "id": "a4", "content": "event.halt()" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "16",
+                    "title": "Which property is used to access the prototype of an object?",
+                    "answers": [
+                        { "id": "a1", "content": "__proto__" },
+                        { "id": "a2", "content": "prototype" },
+                        { "id": "a3", "content": "Object.getPrototypeOf()" },
+                        { "id": "a4", "content": "protoType" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "17",
+                    "title": "What is the output of the following code?\n```js\nconst a = [1, 2, 3];\nconst b = [...a];\nb[0] = 99;\nconsole.log(a[0]);",
+                    "answers": [
+                        { "id": "a1", "content": "1" },
+                        { "id": "a2", "content": "99" },
+                        { "id": "a3", "content": "undefined" },
+                        { "id": "a4", "content": "Error" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "18",
+                    "title": "What is the difference between `call()` and `apply()`?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "`call()` takes arguments individually, `apply()` takes them as an array"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "`call()` modifies `this`, `apply()` does not"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "`apply()` is faster than `call()`"
+                        },
+                        { "id": "a4", "content": "They are interchangeable" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "19",
+                    "title": "What will be the output of the following code?\n```js\nconsole.log(+'1' - -'1');",
+                    "answers": [
+                        { "id": "a1", "content": "0" },
+                        { "id": "a2", "content": "2" },
+                        { "id": "a3", "content": "11" },
+                        { "id": "a4", "content": "-2" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "20",
+                    "title": "What will happen if you add a property to a `const` object?",
+                    "answers": [
+                        { "id": "a1", "content": "It will throw an error" },
+                        {
+                            "id": "a2",
+                            "content": "The property will be added successfully"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "The property will be ignored"
+                        },
+                        { "id": "a4", "content": "The object will be frozen" }
+                    ],
+                    "correctAnswerId": "a2"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Advanced Networking Exam",
+            "description": "This exam tests your advanced knowledge of computer networking, including protocols, subnetting, routing, and network security. It contains 10 extremely challenging questions.",
+            "icon": "<i class=\"fa-solid fa-network-wired text-4xl\"></i>",
+            "examDuration": 1200,
+            "questions": [
+                {
+                    "id": "1",
+                    "title": "Which protocol is used to discover the physical address of a device in a local network?",
+                    "answers": [
+                        { "id": "a1", "content": "ICMP" },
+                        { "id": "a2", "content": "ARP" },
+                        { "id": "a3", "content": "RARP" },
+                        { "id": "a4", "content": "NDP" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "2",
+                    "title": "What is the maximum number of subnets that can be created with a /26 subnet mask?",
+                    "answers": [
+                        { "id": "a1", "content": "2" },
+                        { "id": "a2", "content": "4" },
+                        { "id": "a3", "content": "64" },
+                        { "id": "a4", "content": "16" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "3",
+                    "title": "Which of the following is a characteristic of BGP (Border Gateway Protocol)?",
+                    "answers": [
+                        { "id": "a1", "content": "Distance-vector protocol" },
+                        { "id": "a2", "content": "Link-state protocol" },
+                        { "id": "a3", "content": "Path-vector protocol" },
+                        { "id": "a4", "content": "Hybrid protocol" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "4",
+                    "title": "What is the primary purpose of the Spanning Tree Protocol (STP)?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To provide VLAN segmentation"
+                        },
+                        { "id": "a2", "content": "To prevent switching loops" },
+                        {
+                            "id": "a3",
+                            "content": "To enable multicast routing"
+                        },
+                        {
+                            "id": "a4",
+                            "content": "To encrypt data on the network"
+                        }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "5",
+                    "title": "Which IPv6 address is used to communicate with all nodes on a network segment?",
+                    "answers": [
+                        { "id": "a1", "content": "FF02::1" },
+                        { "id": "a2", "content": "FE80::1" },
+                        { "id": "a3", "content": "2001:db8::1" },
+                        { "id": "a4", "content": "::1" }
+                    ],
+                    "correctAnswerId": "a1"
+                },
+                {
+                    "id": "6",
+                    "title": "What is the purpose of a NAT (Network Address Translation) device?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To assign IP addresses dynamically"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "To translate private IP addresses to public IP addresses"
+                        },
+                        { "id": "a3", "content": "To encrypt network traffic" },
+                        { "id": "a4", "content": "To monitor network traffic" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "7",
+                    "title": "Which type of DNS record is used to map a domain name to an IPv6 address?",
+                    "answers": [
+                        { "id": "a1", "content": "A" },
+                        { "id": "a2", "content": "CNAME" },
+                        { "id": "a3", "content": "AAAA" },
+                        { "id": "a4", "content": "PTR" }
+                    ],
+                    "correctAnswerId": "a3"
+                },
+                {
+                    "id": "8",
+                    "title": "In OSPF (Open Shortest Path First), what is the purpose of an ABR (Area Border Router)?",
+                    "answers": [
+                        {
+                            "id": "a1",
+                            "content": "To connect OSPF to external routing protocols"
+                        },
+                        {
+                            "id": "a2",
+                            "content": "To connect different OSPF areas"
+                        },
+                        {
+                            "id": "a3",
+                            "content": "To calculate the shortest path"
+                        },
+                        { "id": "a4", "content": "To provide redundancy" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "9",
+                    "title": "What is the default administrative distance of OSPF routes?",
+                    "answers": [
+                        { "id": "a1", "content": "90" },
+                        { "id": "a2", "content": "110" },
+                        { "id": "a3", "content": "120" },
+                        { "id": "a4", "content": "1" }
+                    ],
+                    "correctAnswerId": "a2"
+                },
+                {
+                    "id": "10",
+                    "title": "Which tool is commonly used to capture and analyze network traffic?",
+                    "answers": [
+                        { "id": "a1", "content": "Wireshark" },
+                        { "id": "a2", "content": "Ping" },
+                        { "id": "a3", "content": "Traceroute" },
+                        { "id": "a4", "content": "Netcat" }
+                    ],
+                    "correctAnswerId": "a1"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "id": "2",
-      "title": "Advanced JavaScript Exam",
-      "description": "This exam focuses on advanced JavaScript concepts, including data types, strict mode, array methods, and type coercion. It is designed for developers who want to deepen their understanding of JavaScript.",
-      "examDuration": 300,
-      "questions": [
-        {
-          "id": "1",
-          "title": "What is the output of the following code? console.log(typeof null);",
-          "answers": [
-            { "id": "a1", "content": "null" },
-            { "id": "a2", "content": "object" },
-            { "id": "a3", "content": "undefined" },
-            { "id": "a4", "content": "boolean" }
-          ],
-          "correctAnswerId": "a2"
-        },
-        {
-          "id": "2",
-          "title": "Which method is used to add an element to the end of an array?",
-          "answers": [
-            { "id": "a1", "content": "push()" },
-            { "id": "a2", "content": "pop()" },
-            { "id": "a3", "content": "shift()" },
-            { "id": "a4", "content": "unshift()" }
-          ],
-          "correctAnswerId": "a1"
-        },
-        {
-          "id": "3",
-          "title": "What is the purpose of the 'use strict' directive in JavaScript?",
-          "answers": [
-            { "id": "a1", "content": "To enforce stricter type checking" },
-            {
-              "id": "a2",
-              "content": "To enable strict mode, which catches common coding errors and unsafe actions"
-            },
-            {
-              "id": "a3",
-              "content": "To optimize the performance of the code"
-            },
-            {
-              "id": "a4",
-              "content": "To allow the use of experimental features"
-            }
-          ],
-          "correctAnswerId": "a2"
-        },
-        {
-          "id": "4",
-          "title": "What is the result of the expression '2' + '2' in JavaScript?",
-          "answers": [
-            { "id": "a1", "content": "4" },
-            { "id": "a2", "content": "22" },
-            { "id": "a3", "content": "NaN" },
-            { "id": "a4", "content": "undefined" }
-          ],
-          "correctAnswerId": "a2"
-        },
-        {
-          "id": "5",
-          "title": "Which of the following is not a JavaScript data type?",
-          "answers": [
-            { "id": "a1", "content": "string" },
-            { "id": "a2", "content": "number" },
-            { "id": "a3", "content": "boolean" },
-            { "id": "a4", "content": "float" }
-          ],
-          "correctAnswerId": "a4"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "title": "CSS Advanced Techniques Exam",
-      "description": "This exam evaluates your knowledge of advanced CSS techniques, including flexbox, z-index, rounded corners, and letter spacing. It is ideal for front-end developers looking to master CSS layout and styling.",
-      "examDuration": 100,
-      "questions": [
-        {
-          "id": "1",
-          "title": "Which CSS property is used to control the spacing between letters?",
-          "answers": [
-            { "id": "a1", "content": "letter-spacing" },
-            { "id": "a2", "content": "word-spacing" },
-            { "id": "a3", "content": "line-height" },
-            { "id": "a4", "content": "text-spacing" }
-          ],
-          "correctAnswerId": "a1"
-        },
-        {
-          "id": "2",
-          "title": "What does the CSS property 'z-index' control?",
-          "answers": [
-            { "id": "a1", "content": "The horizontal position of an element" },
-            { "id": "a2", "content": "The vertical position of an element" },
-            { "id": "a3", "content": "The stacking order of elements" },
-            { "id": "a4", "content": "The opacity of an element" }
-          ],
-          "correctAnswerId": "a3"
-        },
-        {
-          "id": "3",
-          "title": "Which CSS property is used to create rounded corners?",
-          "answers": [
-            { "id": "a1", "content": "border-radius" },
-            { "id": "a2", "content": "corner-radius" },
-            { "id": "a3", "content": "round-corner" },
-            { "id": "a4", "content": "border-round" }
-          ],
-          "correctAnswerId": "a1"
-        },
-        {
-          "id": "4",
-          "title": "What is the purpose of the CSS 'flexbox' layout?",
-          "answers": [
-            { "id": "a1", "content": "To create grid-based layouts" },
-            {
-              "id": "a2",
-              "content": "To create flexible and responsive layouts"
-            },
-            { "id": "a3", "content": "To create fixed-width layouts" },
-            { "id": "a4", "content": "To create table-based layouts" }
-          ],
-          "correctAnswerId": "a2"
-        },
-        {
-          "id": "5",
-          "title": "Which CSS property is used to control the visibility of an element without removing it from the document flow?",
-          "answers": [
-            { "id": "a1", "content": "display" },
-            { "id": "a2", "content": "visibility" },
-            { "id": "a3", "content": "opacity" },
-            { "id": "a4", "content": "hidden" }
-          ],
-          "correctAnswerId": "a2"
-        }
-      ]
-    }
-  ]
+    ]
 }

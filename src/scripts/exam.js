@@ -11,8 +11,6 @@ let params = new URLSearchParams(document.location.search);
 let examId = Number(params.get("examId"));
 user.examAttempts.forEach((examAttempt) => {
     if (examAttempt.examId == examId) {
-        console.log("fired?");
-
         window.location = "index.html";
     }
 });
@@ -108,8 +106,6 @@ getExam();
 
 // Error modal reload button
 document.querySelector(".reload-btn").addEventListener("click", function () {
-    console.log("fired");
-
     document.location.reload();
 });
 
@@ -387,8 +383,6 @@ function addUserExamAttempt(score, timedOut) {
         status,
         attemptDuration
     );
-
-    console.log(examAttempt);
 
     User.addExamAttempt(localStorage["currentUser"], examAttempt);
 }

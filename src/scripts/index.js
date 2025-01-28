@@ -42,14 +42,13 @@ fetch("/src/scripts/data/data.json")
                 examElem.classList.add(
                     "flex",
                     "flex-col",
-                    "md:w-1/3",
                     "p-3",
                     "bg-white",
                     "rounded-lg"
                 );
                 examElem.innerHTML = `
               <div class="flex items-center justify-between w-full">
-                  <i class="text-2xl fa-solid fa-code"></i>
+              ${exam.icon}
                   <p class="text-xl text-gray-700">${Math.floor(
                       exam.examDuration / 60
                   )} mins</p>
@@ -98,8 +97,6 @@ fetch("/src/scripts/data/data.json")
 // Load user exam history
 const recentExamsContainer = document.querySelector("#recent-exams");
 const noRecentExams = document.querySelector("#no-recent-exams");
-
-console.log(user.examAttempts);
 
 if (user.examAttempts.length > 0) {
     noRecentExams.classList.add("hidden");
