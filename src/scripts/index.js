@@ -7,13 +7,18 @@ const examsContainer = document.querySelector("#exams-container");
 const user = User.find(localStorage["currentUser"]);
 
 // Load nav and hero names
-document.querySelector("#nav-name").innerText = user.firstName;
-document.querySelector("#hero-name").innerText = user.firstName;
+if (document.querySelector("#nav-name")) {
+    document.querySelector("#nav-name").innerText = user.firstName;
+}
+
+if (document.querySelector("#hero-name")) {
+    document.querySelector("#hero-name").innerText = user.firstName;
+}
 
 // Logout button
 document.querySelector("#logout-btn").addEventListener("click", function () {
-  localStorage["currentUser"] = "";
-  window.location = "login.html";
+    localStorage["currentUser"] = "";
+    window.location = "login.html";
 });
 
 // Load exam selection
@@ -31,7 +36,6 @@ loadExams()
           "bg-white",
           "rounded-lg"
         );
-
         examElem.innerHTML = `
             <div class="flex items-center justify-between w-full">
                 <i class="text-2xl fa-solid fa-code"></i>
@@ -58,6 +62,7 @@ loadExams()
                     Start Exam
                 </button>
             </span>
+
         `;
         examsContainer.append(examElem);
       }
@@ -70,33 +75,33 @@ const recentExamsContainer = document.querySelector("#recent-exams");
 const noRecentExams = document.querySelector("#no-recent-exams");
 
 if (user.examAttempts.length > 0) {
-  noRecentExams.classList.add("hidden");
-  recentExamsContainer.classList.remove("hidden");
-  user.examAttempts.forEach((attempt) => {
-    const row = document.createElement("div");
-    row.classList.add(
-      "flex",
-      "w-full",
-      "bg-white",
-      "border-b",
-      "border-gray-200"
-    );
+    noRecentExams.classList.add("hidden");
+    recentExamsContainer.classList.remove("hidden");
+    user.examAttempts.forEach((attempt) => {
+        const row = document.createElement("div");
+        row.classList.add(
+            "flex",
+            "w-full",
+            "bg-white",
+            "border-b",
+            "border-gray-200"
+        );
 
-    row.innerHTML = `
+        row.innerHTML = `
     <div class="flex-1 p-2">${attempt.title}</div>
     <div class="flex-1 p-2">${attempt.date}</div>
     <div class="flex-1 p-2">${attempt.grade}</div>
     <div class="flex-1 p-2">
     <span class="p-1 text-xs text-white bg-green-400 rounded-xl">${attempt.status}</span>`;
 
-    recentExamsContainer.append(row);
-  });
+        recentExamsContainer.append(row);
+    });
 }
 
 // Start exam
 examsContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("start-btn")) {
-    const url = `exam.html?examId=${e.target.dataset.id}`;
-    window.location = url;
-  }
+    if (e.target.classList.contains("start-btn")) {
+        const url = `exam.html?examId=${e.target.dataset.id}`;
+        window.location = url;
+    }
 });
