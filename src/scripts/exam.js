@@ -10,11 +10,11 @@ const user = User.find(localStorage["currentUser"]);
 let params = new URLSearchParams(document.location.search);
 let examId = Number(params.get("examId"));
 user.examAttempts.forEach((examAttempt) => {
-    if (examAttempt.examId == examId) {
-        console.log("fired?");
+  if (examAttempt.examId == examId) {
+    console.log("fired?");
 
-        window.location = "index.html";
-    }
+    window.location = "index.html";
+  }
 });
 
 let currentQuestion = 1;
@@ -74,7 +74,6 @@ document.body.addEventListener("keydown", function (e) {
 
 // Load exam
 async function getExam() {
-
   const params = new URLSearchParams(document.location.search);
   const examId = params.get("examId");
 
@@ -123,7 +122,6 @@ function shuffleExam(exam) {
 
 let attemptDuration;
 function timer(examDurationInSeconds) {
-
   const timer = document.getElementById("timer");
 
   const interval = setInterval(() => {
@@ -351,12 +349,14 @@ function submitExam() {
   params.set("score", score);
   params.set("correctAnswers", correctAnswerCount);
   params.set("unanswered", unansweredCount);
+  params.set("examId", exam.id);
   params.set(
     "incorrectAnswers",
     exam.questions.length - correctAnswerCount - unansweredCount
   );
 
-    window.location.href = "result.html?" + params.toString();
+  addUserExamAttempt(score, false);
+  window.location.href = "result.html?" + params.toString();
 }
 
 // timeOut is a boolean to know whether the exam attempt was a timeout or a normal submit
@@ -377,8 +377,5 @@ function addUserExamAttempt(score, timedOut) {
     status,
     attemptDuration
   );
-
-  console.log(examAttempt);
-
   User.addExamAttempt(localStorage["currentUser"], examAttempt);
 }
