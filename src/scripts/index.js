@@ -1,51 +1,53 @@
-import { checkAuth } from './main.js'
-import { User } from './data/user.js'
+import { checkAuth, shuffleExam } from './main.js';
+import { User } from './data/user.js';
+import { db } from './main.js';
 
-checkAuth()
+checkAuth();
 
-const examsContainer = document.querySelector('#exams-container')
-const user = User.find(localStorage['currentUser'])
+const examsContainer = document.querySelector('#exams-container');
+const user = User.find(localStorage['currentUser']);
 
 // Load nav and hero names
 if (document.querySelector('#nav-name')) {
-    document.querySelector('#nav-name').innerText = user.firstName
+    document.querySelector('#nav-name').innerText = user.firstName;
 }
 
 if (document.querySelector('#hero-name')) {
-    document.querySelector('#hero-name').innerText = user.firstName
+    document.querySelector('#hero-name').innerText = user.firstName;
 }
 
 // Logout button
 document.querySelector('#logout-btn').addEventListener('click', function () {
-    localStorage['currentUser'] = ''
-    window.location = 'login.html'
-})
+    localStorage['currentUser'] = '';
+    window.location = 'login.html';
+});
 
+let exams = [];
 // Load exam selection
 fetch('/src/scripts/data/data.json')
     .then((response) => {
         if (!response.ok) {
-            throw response
+            throw response;
         }
-        return response.json()
+        return response.json();
     })
     .then((response) => {
-        const exams = response.exams
-        let numOfExams = 0
+        exams = response.exams;
+        let numOfExams = 0;
 
         exams.forEach((exam) => {
             const exists = user.examAttempts.find(
                 (att) => att.examId == exam.id
-            )
+            );
             if (!exists) {
-                const examElem = document.createElement('div')
+                const examElem = document.createElement('div');
                 examElem.classList.add(
                     'flex',
                     'flex-col',
                     'p-3',
                     'bg-white',
                     'rounded-lg'
-                )
+                );
                 examElem.innerHTML = `
               <div class="flex items-center w-full">
               ${exam.icon}
@@ -73,43 +75,43 @@ fetch('/src/scripts/data/data.json')
                   </button>
               </span>
   
-          `
-                numOfExams++
-                examsContainer.append(examElem)
+          `;
+                numOfExams++;
+                examsContainer.append(examElem);
             }
-        })
+        });
 
         if (!numOfExams) {
-            document.querySelector('#exams-empty').classList.remove('hidden')
+            document.querySelector('#exams-empty').classList.remove('hidden');
         }
     })
     .catch((error) => {
-        const errorStatus = document.getElementById('error-status')
-        const errorMessage = document.getElementById('error-message')
-        errorStatus.innerText = error.status
-        errorMessage.innerText = error.statusText
-        document.getElementById('exams-error').classList.remove('hidden')
+        const errorStatus = document.getElementById('error-status');
+        const errorMessage = document.getElementById('error-message');
+        errorStatus.innerText = error.status;
+        errorMessage.innerText = error.statusText;
+        document.getElementById('exams-error').classList.remove('hidden');
     })
     .finally(() => {
-        document.querySelector('#exams-load').classList.add('hidden')
-    })
+        document.querySelector('#exams-load').classList.add('hidden');
+    });
 
 // Load user exam history
-const recentExamsContainer = document.querySelector('#recent-exams')
-const noRecentExams = document.querySelector('#no-recent-exams')
+const recentExamsContainer = document.querySelector('#recent-exams');
+const noRecentExams = document.querySelector('#no-recent-exams');
 
 if (user.examAttempts.length > 0) {
-    noRecentExams.classList.add('hidden')
-    recentExamsContainer.classList.remove('hidden')
+    noRecentExams.classList.add('hidden');
+    recentExamsContainer.classList.remove('hidden');
     user.examAttempts.forEach((attempt) => {
-        const row = document.createElement('div')
+        const row = document.createElement('div');
         row.classList.add(
             'flex',
             'w-full',
             'bg-white',
             'border-b',
             'border-gray-200'
-        )
+        );
 
         row.innerHTML = `
     <div class="flex-1 p-2">${attempt.title}</div>
@@ -126,17 +128,30 @@ if (user.examAttempts.length > 0) {
             : attempt.status == 'Timedout'
               ? 'bg-yellow-500'
               : 'bg-red-500'
-    } rounded-xl">${attempt.status}</span>`
+    } rounded-xl">${attempt.status}</span>`;
 
         // recentExamsContainer.append(row);
-        document.getElementById('table-rows').append(row)
-    })
+        document.getElementById('table-rows').append(row);
+    });
 }
 
 // Start exam
 examsContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('start-btn')) {
-        const url = `exam.html?examId=${e.target.dataset.id}`
-        window.location = url
+        let currentExam = exams.filter(
+            (exam) => exam.id == e.target.dataset.id
+        )[0];
+
+        if (!db.get('currentExam')) {
+            let examExpirationTime =
+                Date.now() + currentExam.examDuration * 1000;
+
+            currentExam.expiresAt = examExpirationTime;
+
+            currentExam = shuffleExam(currentExam);
+            db.set('currentExam', currentExam);
+        }
+
+        window.location = 'exam.html';
     }
-})
+});
