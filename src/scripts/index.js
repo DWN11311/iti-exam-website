@@ -47,14 +47,14 @@ fetch('/src/scripts/data/data.json')
                     'rounded-lg'
                 )
                 examElem.innerHTML = `
-              <div class="flex items-center justify-between w-full">
+              <div class="flex items-center w-full">
               ${exam.icon}
-                  <p class="text-xl text-gray-700">${Math.floor(
-                      exam.examDuration / 60
-                  )} mins</p>
+              <p class="ml-4 text-lg font-bold">${exam.title}</p>
+              <p class="text-xl ml-auto text-gray-700">${Math.floor(
+                  exam.examDuration / 60
+              )} mins</p>
               </div>
       
-              <p class="mt-3 font-bold">${exam.title}</p>
       
               <p class="flex-grow mt-3 text-gray-600">
                   ${exam.description}
