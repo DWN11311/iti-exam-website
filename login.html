@@ -1,157 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles/output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Document</title>
-  </head>
-  <body class="font-[Inter] text-text-50">
-    <div
-      class="min-h-screen w-full flex items-center justify-center bg-background-950 relative py-4"
-    >
-      <img
-        src="src/images/register/background.webp"
-        class="md:w-[31%] lg:w-[34%] xl:w-[38%] h-full object-cover z-0 left-0 absolute hidden md:block"
-        alt=""
-      />
-      <div
-        class="w-full lg:w-[80%] xl:w-[60%] z-10 relative flex rounded-xl shadow-2xl mx-8 min-h-[75vh]"
-      >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/styles/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>Document</title>
+    </head>
+    <body class="font-[Inter] text-text-50">
         <div
-          class="md:w-[30%] rounded-l-xl backdrop-blur-md bg-opacity-10 bg-background-900 hidden md:flex flex-col gap-8 justify-center md:p-8 text-text-900"
+            class="min-h-screen w-full flex items-center justify-center bg-background-950 relative py-4"
         >
-          <h1 class="text-2xl font-bold mb-4">Lorem Ipsum</h1>
-          <div>
-            <h3 class="text-lg font-semibold">Take Exams Effortlessly</h3>
-            <p class="text-text-800">
-              test your knowledge with just a few clicks.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Track Your Progress Instantly</h3>
-            <p class="text-text-800">
-              Get real-time results and performance insights.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Your Exam Journey Starts Here</h3>
-            <p class="text-text-800">
-              Join us today to explore smarter testing.
-            </p>
-          </div>
-        </div>
-        <form
-          class="bg-background-900 grow flex flex-col items-center justify-center py-12 rounded-xl md:rounded-r-xl md:rounded-l-none p-2"
-        >
-          <div
-            class="flex flex-col justify-center w-[90%] sm:w-[80%] md:w-[60%]"
-          >
-            <h1 class="mb-4 text-3xl font-bold text-text-300">Lorem Ipsum</h1>
-            <p class="mb-2 text-text-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <p id="invalid" class="hidden mb-2 bg-accent-800 text-text-400 rounded-md p-2">
-              <i
-                class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-              ></i
-              >Invalid email or password
-            </p>
-            <div class="relative w-full mt-2">
-              <!-- <span class="text-text-200 px-4 my-1 block">Email</span> -->
-              <input
-              name="email"
-              autocomplete="off"
-                type="text"
-                class="w-full p-3 px-4 pl-10 outline-none rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950"
-                placeholder="email@example.com"
-              />
-              <span
-                class="absolute top-3 left-4 text-lg text-primary-800 peer-focus:text-primary-500"
-                ><i class="fa-regular fa-envelope"></i
-              ></span>
-              <span id="email-error" class="hidden gap-1 mt-1.5 ml-4 items-center text-text-300"
-                ><span
-                  class="bg-red-500 justify-center items-center flex w-5 h-5 rounded-full text-red-100 text-sm shrink-0"
-                  ><i class="fa-solid fa-exclamation"></i></span
-                >Please enter a valid email address.</span
-              >
+            <img
+                src="src/images/register/background.webp"
+                class="md:w-[31%] lg:w-[34%] xl:w-[38%] h-full object-cover z-0 left-0 absolute hidden md:block"
+                alt=""
+            />
+            <div
+                class="w-full lg:w-[80%] xl:w-[60%] z-10 relative flex rounded-xl shadow-2xl mx-8 min-h-[75vh]"
+            >
+                <div
+                    class="md:w-[30%] rounded-l-xl backdrop-blur-md bg-opacity-10 bg-background-900 hidden md:flex flex-col gap-8 justify-center md:p-8 text-text-900"
+                >
+                    <h1 class="text-2xl font-bold mb-4">Lorem Ipsum</h1>
+                    <div>
+                        <h3 class="text-lg font-semibold">
+                            Take Exams Effortlessly
+                        </h3>
+                        <p class="text-text-800">
+                            test your knowledge with just a few clicks.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">
+                            Track Your Progress Instantly
+                        </h3>
+                        <p class="text-text-800">
+                            Get real-time results and performance insights.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">
+                            Your Exam Journey Starts Here
+                        </h3>
+                        <p class="text-text-800">
+                            Join us today to explore smarter testing.
+                        </p>
+                    </div>
                 </div>
-            <div class="relative w-full mt-2 mb-1.5 flex items-center flex-wrap">
-              <!-- <span class="text-text-200 px-4 my-1 block">Password</span> -->
-              <input
-              name="password"
-                type="password"
-                autocomplete="off"
-                class="w-full p-3 pr-16 px-4 pl-10 outline-none rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950"
-                placeholder="**********"
-              />
-              <button
-              id="toggle-password-btn"
-              type="button"   
-                class="absolute mr-1 top-[1.15rem] right-3 border-primary-900 text-primary-800 flex items-center justify-center"
-              >
-                <i class="fa-solid fa-eye-slash"></i>
-              </button>
-              <span
-                class="absolute left-4 text-lg top-3 text-primary-800 peer-focus:text-primary-500"
-                ><i class="fa-solid fa-lock"></i
-              ></span>
-              <span id="pw-error" class="hidden gap-1 mt-1.5 ml-4 items-center text-text-300"
-                ><span
-                  class="bg-red-500 justify-center items-center flex w-5 h-5 rounded-full text-red-100 text-sm shrink-0"
-                  ><i class="fa-solid fa-exclamation"></i></span
-                >Password must be 8-16 characters long</span
-              >
+                <form
+                    class="bg-background-900 grow flex flex-col items-center justify-center py-12 rounded-xl md:rounded-r-xl md:rounded-l-none p-2"
+                >
+                    <div
+                        class="flex flex-col justify-center w-[90%] sm:w-[80%] md:w-[60%]"
+                    >
+                        <h1 class="mb-4 text-3xl font-bold text-text-300">
+                            Lorem Ipsum
+                        </h1>
+                        <p class="mb-2 text-text-500">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </p>
+                        <p
+                            id="invalid"
+                            class="hidden mb-2 bg-accent-800 text-text-400 rounded-md p-2"
+                        >
+                            <i
+                                class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                            ></i
+                            >Invalid email or password
+                        </p>
+                        <div class="relative w-full mt-2">
+                            <!-- <span class="text-text-200 px-4 my-1 block">Email</span> -->
+                            <input
+                                name="email"
+                                autocomplete="off"
+                                type="text"
+                                class="w-full p-3 px-4 pl-10 outline-none rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950"
+                                placeholder="email@example.com"
+                            />
+                            <span
+                                class="absolute top-3 left-4 text-lg text-primary-800 peer-focus:text-primary-500"
+                                ><i class="fa-regular fa-envelope"></i
+                            ></span>
+                            <span
+                                id="email-error"
+                                class="hidden gap-1 mt-1.5 ml-4 items-center text-text-300"
+                                ><span
+                                    class="bg-red-500 justify-center items-center flex w-5 h-5 rounded-full text-red-100 text-sm shrink-0"
+                                    ><i
+                                        class="fa-solid fa-exclamation"
+                                    ></i></span
+                                >Please enter a valid email address.</span
+                            >
+                        </div>
+                        <div
+                            class="relative w-full mt-2 mb-1.5 flex items-center flex-wrap"
+                        >
+                            <!-- <span class="text-text-200 px-4 my-1 block">Password</span> -->
+                            <input
+                                name="password"
+                                type="password"
+                                autocomplete="off"
+                                class="w-full p-3 pr-16 px-4 pl-10 outline-none rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950"
+                                placeholder="**********"
+                            />
+                            <button
+                                id="toggle-password-btn"
+                                type="button"
+                                class="absolute mr-1 top-[1.15rem] right-3 border-primary-900 text-primary-800 flex items-center justify-center"
+                            >
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </button>
+                            <span
+                                class="absolute left-4 text-lg top-3 text-primary-800 peer-focus:text-primary-500"
+                                ><i class="fa-solid fa-lock"></i
+                            ></span>
+                            <span
+                                id="pw-error"
+                                class="hidden gap-1 mt-1.5 ml-4 items-center text-text-300"
+                                ><span
+                                    class="bg-red-500 justify-center items-center flex w-5 h-5 rounded-full text-red-100 text-sm shrink-0"
+                                    ><i
+                                        class="fa-solid fa-exclamation"
+                                    ></i></span
+                                >Password must be 8-16 characters long</span
+                            >
+                        </div>
+                        <div class="checkbox-wrapper-46 pl-2">
+                            <input
+                                class="inp-cbx"
+                                id="cbx-46"
+                                name="remember-me"
+                                type="checkbox"
+                            />
+                            <label class="cbx" for="cbx-46"
+                                ><span>
+                                    <svg
+                                        width="12px"
+                                        height="10px"
+                                        viewbox="0 0 12 10"
+                                    >
+                                        <polyline
+                                            points="1.5 6 4.5 9 10.5 1"
+                                        ></polyline></svg></span
+                                ><span class="text-text-300">Remember me</span>
+                            </label>
+                        </div>
+                        <button
+                            type="submit"
+                            class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg enabled:hover:bg-primary-700 group disabled:bg-primary-800"
+                            disabled
+                        >
+                            Login
+                            <i
+                                class="fa-solid fa-arrow-right pl-2 enabled:group-hover:translate-x-2 transition-transform"
+                            ></i>
+                        </button>
+                        <p
+                            class="self-center my-8 font-bold text-text-300 flex gap-4 items-center after:w-24 md:after:w-32 after:h-1 after:bg-primary-800 after:content-[' '] after:rounded-full before:w-24 md:before:w-32 before:h-1 before:bg-primary-800 before:content-[' '] before:rounded-full"
+                        >
+                            or
+                        </p>
+                        <a
+                            href="register.html"
+                            class="self-center underline text-secondary-400 hover:text-text-600"
+                            >Create a new account</a
+                        >
+                    </div>
+                </form>
             </div>
-            <div class="checkbox-wrapper-46 pl-2">
-              <input class="inp-cbx" id="cbx-46" name="remember-me" type="checkbox" />
-              <label class="cbx" for="cbx-46"
-                ><span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline
-                      points="1.5 6 4.5 9 10.5 1"
-                    ></polyline></svg></span
-                ><span class="text-text-300">Remember me</span>
-              </label>
-            </div>
-            <button
-            type="submit"
-              class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg enabled:hover:bg-primary-700 group disabled:bg-primary-800"
-              disabled
-            >
-              Login
-              <i
-                class="fa-solid fa-arrow-right pl-2 enabled:group-hover:translate-x-2 transition-transform"
-              ></i>
-            </button>
-            <p
-              class="self-center my-8 font-bold text-text-300 flex gap-4 items-center after:w-24 md:after:w-32 after:h-1 after:bg-primary-800 after:content-[' '] after:rounded-full before:w-24 md:before:w-32 before:h-1 before:bg-primary-800 before:content-[' '] before:rounded-full"
-            >
-              or
-            </p>
-            <a
-              href="register.html"
-              class="self-center underline text-secondary-400 hover:text-text-600"
-              >Create a new account</a
-            >
-          </form>
         </div>
-      </div>
-    </div>
-    <script type="module" src="src/scripts/login.js"></script>
-  </body>
+        <script type="module" src="src/scripts/login.js"></script>
+    </body>
 </html>
