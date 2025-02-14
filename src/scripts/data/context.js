@@ -1,6 +1,6 @@
-const users = [];
-const exams = [];
+const users = []
+const exams = []
 
 function loadData() {
-  // fill users and exams
+    // fill users and exams
 }
