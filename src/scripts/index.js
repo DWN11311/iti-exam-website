@@ -1,6 +1,7 @@
 import { checkAuth, shuffleExam } from './main.js';
 import { User } from './data/user.js';
 import { db } from './main.js';
+import { ExamAttempt } from './data/examAttempt.js';
 
 checkAuth();
 
@@ -18,9 +19,47 @@ if (document.querySelector('#hero-name')) {
 
 // Logout button
 document.querySelector('#logout-btn').addEventListener('click', function () {
+    if (db.get('currentExam')) {
+        const examAttempt = new ExamAttempt(
+            db.get('currentExam').id,
+            db.get('currentExam').title,
+            0,
+            'Timedout',
+            0
+        );
+
+        User.addExamAttempt(localStorage['currentUser'], examAttempt);
+        localStorage['currentExam'] = '';
+    }
     localStorage['currentUser'] = '';
     window.location = 'login.html';
 });
+
+let isExamRunning = !!db.get('currentExam');
+let runningExamId = db.get('currentExam')?.id;
+
+function examButtonText(examId) {
+    if (isExamRunning) {
+        if (examId == runningExamId) {
+            return 'Continue Exam';
+        } else {
+            return 'Another Exam Is Running';
+        }
+    } else {
+        return 'Start Exam';
+    }
+}
+function examButtonColor(examId) {
+    if (isExamRunning) {
+        if (examId == runningExamId) {
+            return 'bg-primary-500';
+        } else {
+            return 'bg-gray-500';
+        }
+    } else {
+        return 'bg-primary-500';
+    }
+}
 
 let exams = [];
 // Load exam selection
@@ -35,7 +74,7 @@ fetch('/src/scripts/data/data.json')
         exams = response.exams;
         let numOfExams = 0;
 
-        exams.forEach((exam) => {
+        exams.forEach((exam, index) => {
             const exists = user.examAttempts.find(
                 (att) => att.examId == exam.id
             );
@@ -64,18 +103,17 @@ fetch('/src/scripts/data/data.json')
       
               <span class="relative inline-block w-full mt-3">
                   <span
-                      class="absolute right-[-5px] top-[-5px] z-50 flex size-4">
+                      class="absolute right-[-5px] top-[-5px] z-50 flex size-4 ${runningExamId == index + 1 ? 'block' : 'hidden'}">
                       <span class="absolute inline-flex w-full h-full bg-purple-600 rounded-full opacity-75 animate-ping"></span>
                       <span class="relative inline-flex bg-purple-500 rounded-full size-4"></span>
                   </span>
                   <button data-id="${
                       exam.id
-                  }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg bg-primary-500 hover:bg-gray-500 hover:text-white active:bg-gray-600">
-                      Start Exam
+                  }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg ${examButtonColor(index + 1)} hover:bg-gray-500 hover:text-white active:bg-gray-600">
+                    ${examButtonText(index + 1)}
                   </button>
               </span>
-  
-          `;
+`;
                 numOfExams++;
                 examsContainer.append(examElem);
             }
@@ -142,6 +180,10 @@ examsContainer.addEventListener('click', function (e) {
             (exam) => exam.id == e.target.dataset.id
         )[0];
 
+        if (runningExamId == e.target.dataset.id) {
+            window.location = 'exam.html';
+        }
+
         if (!db.get('currentExam')) {
             let examExpirationTime =
                 Date.now() + currentExam.examDuration * 1000;
@@ -150,8 +192,8 @@ examsContainer.addEventListener('click', function (e) {
 
             currentExam = shuffleExam(currentExam);
             db.set('currentExam', currentExam);
-        }
 
-        window.location = 'exam.html';
+            window.location = 'exam.html';
+        }
     }
 });

@@ -11,6 +11,8 @@ link.referrerPolicy = 'no-referrer';
 // Append the link tag to the <head> of the document
 document.head.appendChild(link);
 
+console.log('main');
+
 export const db = {
     get(key) {
         try {

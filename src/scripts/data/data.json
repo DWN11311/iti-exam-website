@@ -5,7 +5,7 @@
             "title": "HTML Basics Exam",
             "description": "This exam tests your foundational knowledge of HTML with medium difficulty questions. It includes topics like HTML tags, attributes, and structure.",
             "icon": "<i class=\"fa-brands fa-html5 text-4xl\"></i>",
-            "examDuration": 60,
+            "examDuration": 5,
             "questions": [
                 {
                     "id": "1",

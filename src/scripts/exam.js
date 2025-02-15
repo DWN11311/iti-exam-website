@@ -88,6 +88,10 @@ async function startExam() {
         // const data = await response.json();
         // const examIndex = data.exams.findIndex((exam) => exam.id === examId);
 
+        if (!db.get('currentExam')) {
+            window.location = '/';
+        }
+
         const currentExam = db.get('currentExam');
         // exam = shuffleExam(currentExam);
         exam = currentExam;
@@ -125,16 +129,20 @@ function timer(expiresAt) {
         const remainingSeconds = remainingTime % 60;
         attemptDuration =
             exam.examDuration - (remainingMinutes * 60 + remainingSeconds);
-        timer.innerText = `${
-            remainingMinutes < 10 ? '0' : ''
-        }${remainingMinutes}:${
-            remainingSeconds < 10 ? '0' : ''
-        }${remainingSeconds}`;
-        if (remainingTime < 295) {
-            timer.classList.toggle('text-red-500');
+        console.log(remainingTime);
+        if (remainingTime >= 0) {
+            timer.innerText = `${
+                remainingMinutes < 10 ? '0' : ''
+            }${remainingMinutes}:${
+                remainingSeconds < 10 ? '0' : ''
+            }${remainingSeconds}`;
+            if (remainingTime < 295) {
+                timer.classList.toggle('text-red-500');
+            }
         }
         remainingTime--;
-        if (remainingTime === -1) {
+        if (remainingTime < 0) {
+            localStorage.currentExam = '';
             addUserExamAttempt(0, true);
             window.location.href = '/timeout.html?' + examId;
         }
