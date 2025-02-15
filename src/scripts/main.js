@@ -61,16 +61,10 @@ if (navContainer) {
         <nav
             class="flex flex-col items-center justify-between gap-5 px-5 py-5 border-2 md:flex-row border-b-primary-700 drop-shadow-lg"
         >
-            <a href="index.html" class="flex gap-3" id="logo">
-                <lord-icon
-                    src="https://cdn.lordicon.com/fikcyfpp.json"
-                    trigger="hover"
-                    stroke="bold"
-                    target="#logo"
-                    colors="primary:#121331,secondary:#000000"
-                ></lord-icon>
+            <a href="index.html" class="flex gap-3 items-center" id="logo">
+                <img src='src/images/exam-result-svgrepo-com.svg' class='w-10 h-10'>
                 <span id="exam-title" class="text-2xl font-semibold">
-                    Exam Guru
+                    inQorrect
                 </span>
             </a>
             <div class="flex items-center gap-5">

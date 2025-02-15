@@ -154,7 +154,7 @@
             "title": "CSS Intermediate Exam",
             "description": "This exam evaluates your knowledge of CSS with medium difficulty questions. Topics include styling, layout techniques, and commonly used properties.",
             "icon": "<i class=\"fa-brands fa-css3-alt text-4xl\"></i>",
-            "examDuration": 300,
+            "examDuration": 15,
             "questions": [
                 {
                     "id": "1",
@@ -279,7 +279,7 @@
             "title": "JavaScript Intermediate Exam",
             "description": "This exam tests your intermediate knowledge of JavaScript. Topics include variables, functions, loops, DOM manipulation, and more. It contains 20 medium-difficulty questions.",
             "icon": "<i class=\"fa-brands fa-js text-4xl\"></i>",
-            "examDuration": 600,
+            "examDuration": 5,
             "questions": [
                 {
                     "id": "1",

@@ -8,10 +8,8 @@ checkAuth();
 const user = User.find(localStorage['currentUser']);
 
 // Redirect user back to dashboard if exam already performed
-let params = new URLSearchParams(document.location.search);
-let examId = Number(params.get('examId'));
 user.examAttempts.forEach((examAttempt) => {
-    if (examAttempt.examId == examId) {
+    if (examAttempt.examId == localStorage['currentExam'].examId) {
         window.location = 'index.html';
     }
 });
@@ -106,6 +104,7 @@ document.querySelector('.reload-btn').addEventListener('click', function () {
 });
 
 let attemptDuration;
+let submitted = false;
 function timer(expiresAt) {
     const timer = document.getElementById('timer');
     let currentTime = Date.now();
@@ -126,11 +125,13 @@ function timer(expiresAt) {
                 timer.classList.toggle('text-red-500');
             }
         }
-        remainingTime--;
-        if (remainingTime < 0) {
+        if (remainingTime < 0 && !submitted) {
+            localStorage.currentExam = '';
+            submitted = true;
             addUserExamAttempt(0, true);
-            window.location.href = '/timeout.html?' + examId;
+            window.location.href = '/timeout.html?' + exam.id;
         }
+        remainingTime--;
     }, 1000);
 }
 

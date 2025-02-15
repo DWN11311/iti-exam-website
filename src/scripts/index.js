@@ -109,7 +109,7 @@ fetch('/src/scripts/data/data.json')
                   </span>
                   <button data-id="${
                       exam.id
-                  }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg ${examButtonColor(index + 1)} hover:bg-gray-500 hover:text-white active:bg-gray-600">
+                  }" class="start-btn relative w-full px-4 py-2 text-white transition border rounded-lg cursor-not-allowed ${examButtonColor(index + 1)} hover:bg-gray-500 hover:text-white active:bg-gray-600">
                     ${examButtonText(index + 1)}
                   </button>
               </span>

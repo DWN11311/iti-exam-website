@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="./src/images/favicon.ico" />
-        <title>Exam Guru</title>
+        <title>inQorrect</title>
         <link rel="stylesheet" href="src/styles/output.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,7 +69,7 @@
                         id="exams-container"
                         class="grid gap-4 sm:grid-cols-2 md:grid-cols-3"
                     >
-                        <div id="exams-load" class="m-auto">
+                        <div id="exams-load" class="m-auto col-span-full">
                             <svg
                                 class="w-24 animate-spin"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -130,13 +130,13 @@
                         </div>
                         <div
                             id="exams-empty"
-                            class="hidden w-full p-4 text-lg text-center bg-white rounded-lg shadow-xl shrink-0"
+                            class="hidden w-full p-4 text-lg text-center bg-white rounded-lg shadow-xl shrink-0 col-span-full"
                         >
                             <p>No upcoming exams at the moment.</p>
                         </div>
                         <div
                             id="exams-error"
-                            class="hidden w-full p-4 text-lg text-center bg-red-200 rounded-lg shadow-xl shrink-0"
+                            class="hidden w-full p-4 text-lg text-center bg-red-200 rounded-lg shadow-xl shrink-0 col-span-full"
                         >
                             <p>
                                 <i

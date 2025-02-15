@@ -1,5 +1,5 @@
 import { User } from './data/user.js';
-localStorage.currentExam = '';
+// localStorage.currentExam = '';
 const user = User.find(localStorage['currentUser']);
 
 // Load nav and hero names
