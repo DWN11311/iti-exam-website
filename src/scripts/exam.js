@@ -76,24 +76,12 @@ document.body.addEventListener('keydown', function (e) {
 
 // Load exam
 async function startExam() {
-    // const params = new URLSearchParams(document.location.search);
-    // const examId = params.get('examId');
-
-    // const url = '/src/scripts/data/data.json';
     try {
-        // const response = await fetch(url);
-        // if (!response.ok) {
-        //     throw response;
-        // }
-        // const data = await response.json();
-        // const examIndex = data.exams.findIndex((exam) => exam.id === examId);
-
         if (!db.get('currentExam')) {
             window.location = '/';
         }
 
         const currentExam = db.get('currentExam');
-        // exam = shuffleExam(currentExam);
         exam = currentExam;
         document.getElementById('exam-title').innerText = exam.title;
         displayQuestionsButtons();
@@ -142,7 +130,6 @@ function timer(expiresAt) {
         }
         remainingTime--;
         if (remainingTime < 0) {
-            localStorage.currentExam = '';
             addUserExamAttempt(0, true);
             window.location.href = '/timeout.html?' + examId;
         }
@@ -351,7 +338,7 @@ function submitExam() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
     }
-
+    localStorage.currentExam = '';
     // calculate result
     let correctAnswerCount = 0;
     let unansweredCount = 0;
