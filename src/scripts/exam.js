@@ -187,24 +187,19 @@ function changeQuestion(questionNumber) {
             'mt-5',
             'transition-colors',
             'border',
-            'border-black',
+            'border-primary-700',
             'answer',
-            'bg-primary-900',
+            'bg-background-950',
             'rounded-xl',
-            'hover:bg-primary-800',
-            'active:bg-primary-700'
+            'hover:bg-primary-900',
+            'active:bg-primary-800'
         );
-        const radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.classList.add('w-5', 'h-5', 'mr-3');
-        radio.name = 'answer';
-        const span = document.createElement('span');
-        span.innerText = question.answers[i].content;
+        answer.innerHTML = `
+            <input type="radio" data-answer-id="${question.answers[i].id}" class="w-5 h-5 mr-3" name="answer"/>
+            <span data-answer-id="${question.answers[i].id}">${question.answers[i].content}</span>
+        `;
+
         answer.setAttribute('data-answer-id', question.answers[i].id);
-        span.setAttribute('data-answer-id', question.answers[i].id);
-        radio.setAttribute('data-answer-id', question.answers[i].id);
-        answer.appendChild(radio);
-        answer.appendChild(span);
         answers.appendChild(answer);
     }
 
@@ -231,7 +226,7 @@ function displayQuestionsButtons() {
         const button = document.createElement('button');
         button.classList.add(
             'relative',
-            'w-16',
+            'basis-16',
             'h-10',
             'py-2',
             'flex',
