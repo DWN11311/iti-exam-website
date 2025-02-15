@@ -110,14 +110,12 @@ function timer(expiresAt) {
     const timer = document.getElementById('timer');
     let currentTime = Date.now();
     let remainingTime = Math.floor((expiresAt - currentTime) / 1000);
-    console.log(remainingTime);
 
     const interval = setInterval(() => {
         const remainingMinutes = Math.floor(remainingTime / 60);
         const remainingSeconds = remainingTime % 60;
         attemptDuration =
             exam.examDuration - (remainingMinutes * 60 + remainingSeconds);
-        console.log(remainingTime);
         if (remainingTime >= 0) {
             timer.innerText = `${
                 remainingMinutes < 10 ? '0' : ''

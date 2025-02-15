@@ -11,8 +11,6 @@ link.referrerPolicy = 'no-referrer';
 // Append the link tag to the <head> of the document
 document.head.appendChild(link);
 
-console.log('main');
-
 export const db = {
     get(key) {
         try {
@@ -72,7 +70,7 @@ if (navContainer) {
                     colors="primary:#121331,secondary:#000000"
                 ></lord-icon>
                 <span id="exam-title" class="text-2xl font-semibold">
-                    Exam Website
+                    Exam Guru
                 </span>
             </a>
             <div class="flex items-center gap-5">
