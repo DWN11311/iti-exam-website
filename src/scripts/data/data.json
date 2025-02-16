@@ -5,7 +5,7 @@
             "title": "HTML Basics Exam",
             "description": "This exam tests your foundational knowledge of HTML with medium difficulty questions. It includes topics like HTML tags, attributes, and structure.",
             "icon": "<i class=\"fa-brands fa-html5 text-4xl\"></i>",
-            "examDuration": 10,
+            "examDuration": 60,
             "questions": [
                 {
                     "id": "1",
@@ -154,7 +154,7 @@
             "title": "CSS Intermediate Exam",
             "description": "This exam evaluates your knowledge of CSS with medium difficulty questions. Topics include styling, layout techniques, and commonly used properties.",
             "icon": "<i class=\"fa-brands fa-css3-alt text-4xl\"></i>",
-            "examDuration": 15,
+            "examDuration": 120,
             "questions": [
                 {
                     "id": "1",
