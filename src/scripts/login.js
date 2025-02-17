@@ -1,8 +1,13 @@
 import { User } from './data/user.js';
+import { checkAuth } from './main.js';
 const loginForm = document.querySelector('form');
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex = /^.{8,16}$/;
 const submitBtn = document.querySelector('button[type="submit"]');
+
+if (localStorage['currentUser']) {
+    window.location = 'index.html';
+}
 
 // check if remember me is checked then fill email if true
 if (localStorage['rememberMe']) {

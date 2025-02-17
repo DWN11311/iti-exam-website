@@ -81,7 +81,7 @@ if (urlParams.get('score') < 60) {
         `Don't be discouraged! Keep pushing, and success will follow.`;
 } else {
     document.getElementById('title').innerText =
-        `Congratiolations, ${user.firstName}`;
+        `Congratulations, ${user.firstName}`;
 }
 
 document.getElementById('star-rating').addEventListener('click', (e) => {

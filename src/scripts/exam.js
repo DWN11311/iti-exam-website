@@ -16,6 +16,7 @@ user.examAttempts.forEach((examAttempt) => {
 
 let currentQuestion = 1;
 let exam = {};
+let submitted = false;
 
 let flagBtn = document.getElementById('flag-question');
 let nextBtn = document.getElementById('next-btn');
@@ -104,7 +105,6 @@ document.querySelector('.reload-btn').addEventListener('click', function () {
 });
 
 let attemptDuration;
-let submitted = false;
 function timer(expiresAt) {
     const timer = document.getElementById('timer');
     let currentTime = Date.now();
@@ -332,6 +332,8 @@ function submitExam() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
     }
+    if (submitted) return;
+    submitted = true;
     localStorage.currentExam = '';
     // calculate result
     let correctAnswerCount = 0;
