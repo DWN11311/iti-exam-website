@@ -195,10 +195,18 @@ function changeQuestion(questionNumber) {
             'hover:bg-primary-900',
             'active:bg-primary-800'
         );
-        answer.innerHTML = `
-            <input type="radio" data-answer-id="${question.answers[i].id}" class="w-5 h-5 mr-3" name="answer"/>
-            <span data-answer-id="${question.answers[i].id}">${question.answers[i].content}</span>
-        `;
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.setAttribute('data-answer-id', question.answers[i].id);
+        radio.classList.add('w-5', 'h-5', 'mr-3');
+        radio.name = 'answer';
+
+        const answerText = document.createElement('span');
+        answerText.setAttribute('data-answer-id', question.answers[i].id);
+        answerText.textContent = question.answers[i].content;
+
+        answer.appendChild(radio);
+        answer.appendChild(answerText);
 
         answer.setAttribute('data-answer-id', question.answers[i].id);
         answers.appendChild(answer);
