@@ -1,25 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 * {
-    font-family: "Inter", serif;
+    font-family: 'Inter', serif;
     box-sizing: border-box;
     margin: 0;
 }
 
 body {
-    cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 d%3D%22M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z%22/%3E%3C/svg%3E")
+    cursor:
+        url('data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 d%3D%22M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z%22/%3E%3C/svg%3E')
             0 0,
         auto;
 }
 
 a:hover,
 button:hover,
-input[type="radio"]:hover + label,
-input[type="radio"]:hover {
-    cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 stroke-linejoin%3D%22round%22 d%3D%22M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z%22/%3E%3C/svg%3E")
+input[type='radio']:hover + label,
+input[type='radio']:hover {
+    cursor:
+        url('data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFF%22 stroke%3D%22%23000%22 stroke-width%3D%222%22 stroke-linejoin%3D%22round%22 d%3D%22M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z%22/%3E%3C/svg%3E')
             0 0,
         auto;
 }
@@ -54,7 +55,7 @@ input[type="radio"]:hover {
     border: 2px solid red;
 }
 .flag::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -5px;
     right: -10px;
@@ -63,7 +64,7 @@ input[type="radio"]:hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 24 24' stroke-width='1.5' stroke='red' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5'/%3E%3C/svg%3E");
 }
 
-.checkbox-wrapper-46 input[type="checkbox"] {
+.checkbox-wrapper-46 input[type='checkbox'] {
     display: none;
     visibility: hidden;
 }
@@ -105,7 +106,7 @@ input[type="radio"]:hover {
     transform: translate3d(0, 0, 0);
 }
 .checkbox-wrapper-46 .cbx span:first-child:before {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     background: #8c00ff;
@@ -135,6 +136,29 @@ input[type="radio"]:hover {
     transition: all 0.6s ease;
 }
 
+input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #9140bf;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type='radio']:checked {
+    border-color: #8c00ff;
+    background-color: #8c00ff;
+}
+
+input[type='radio']:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 @keyframes wave-46 {
     50% {
         transform: scale(0.9);
@@ -145,7 +169,8 @@ input[type="radio"]:hover {
     --dot-color: black;
     --dot-size: 1px;
     --dot-space: 22px;
-    background: linear-gradient(
+    background:
+        linear-gradient(
                 90deg,
                 var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
                 transparent 1%
@@ -159,7 +184,7 @@ input[type="radio"]:hover {
         var(--dot-color);
 }
 .activate-flag {
-    background-color: #dc2626;
+    background-color: #8c00ff;
     color: white;
 }
 .activate-flag svg {

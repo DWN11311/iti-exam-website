@@ -1,356 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles/output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Document</title>
-  </head>
-  <body class="font-[Inter] text-text-50">
-    <div
-      class="min-h-screen w-full flex items-center justify-center bg-background-950 relative py-4"
-    >
-      <img
-        src="src/images/register/background.webp"
-        class="md:w-[31%] lg:w-[34%] xl:w-[38%] h-full object-cover z-0 left-0 absolute hidden md:block"
-        alt=""
-      />
-      <div
-        class="w-full lg:w-[80%] xl:w-[60%] z-10 relative flex rounded-xl shadow-2xl mx-8 min-h-[75vh]"
-      >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/styles/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="icon" type="image/x-icon" href="./src/images/favicon.ico" />
+        <title>inQorrect</title>
+    </head>
+    <body class="font-[Inter] text-text-50">
         <div
-          class="md:w-[30%] rounded-l-xl backdrop-blur-md bg-opacity-10 bg-background-900 hidden md:flex flex-col gap-8 justify-center md:p-8 text-text-900 shrink-0"
+            class="min-h-screen w-full flex items-center justify-center bg-background-950 relative py-4"
         >
-          <h1 class="text-2xl font-bold mb-4">Lorem Ipsum</h1>
-          <div>
-            <h3 class="text-lg font-semibold">Take Exams Effortlessly</h3>
-            <p class="text-text-800">
-              test your knowledge with just a few clicks.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Track Your Progress Instantly</h3>
-            <p class="text-text-800">
-              Get real-time results and performance insights.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Your Exam Journey Starts Here</h3>
-            <p class="text-text-800">
-              Join us today to explore smarter testing.
-            </p>
-          </div>
+            <img
+                src="src/images/register/background.webp"
+                class="md:w-[31%] lg:w-[34%] xl:w-[38%] h-full object-cover z-0 left-0 absolute hidden md:block"
+                alt=""
+            />
+            <div
+                class="w-full lg:w-[80%] xl:w-[60%] z-10 relative flex rounded-xl shadow-2xl mx-8 min-h-[75vh]"
+            >
+                <div
+                    class="md:w-[30%] rounded-l-xl backdrop-blur-md bg-opacity-10 bg-background-900 hidden md:flex flex-col gap-8 justify-center md:p-8 text-text-900 shrink-0"
+                >
+                    <div>
+                        <h3 class="text-lg font-semibold">
+                            Take Exams Effortlessly
+                        </h3>
+                        <p class="text-text-800">
+                            test your knowledge with just a few clicks.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">
+                            Track Your Progress Instantly
+                        </h3>
+                        <p class="text-text-800">
+                            Get real-time results and performance insights.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">
+                            Your Exam Journey Starts Here
+                        </h3>
+                        <p class="text-text-800">
+                            Join us today to explore smarter testing.
+                        </p>
+                    </div>
+                </div>
+                <form
+                    id="register-form"
+                    class="bg-background-900 grow flex flex-col items-center justify-center py-12 rounded-xl md:rounded-r-xl md:rounded-l-none p-2"
+                >
+                    <div
+                        class="flex flex-col justify-center w-[90%] sm:w-[80%] md:w-[60%]"
+                    >
+                        <h1 class="mb-4 text-3xl font-bold text-text-300">
+                            inQorrect
+                        </h1>
+                        <p class="mb-2 text-text-500">
+                            Your gateway to success. create an account to start
+                            your exam journey.
+                        </p>
+                        <p
+                            id="already-exists"
+                            class="mb-4 bg-accent-800 text-text-400 rounded-md p-2 hidden"
+                        >
+                            <i
+                                class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                            ></i
+                            >Email is already registered!
+                        </p>
+
+                        <div class="flex sm:gap-4 flex-col sm:flex-row">
+                            <div class="relative grow">
+                                <input
+                                    type="text"
+                                    name="fname"
+                                    class="w-full p-2 pr-10 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
+                                    placeholder="John"
+                                />
+                                <span
+                                    class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
+                                    ><i class="fa-solid fa-user"></i
+                                ></span>
+                                <span
+                                    class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
+                                    >First Name</span
+                                >
+                                <span
+                                    class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
+                                    ><i class="fa-solid fa-xmark"></i
+                                ></span>
+
+                                <div
+                                    class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
+                                >
+                                    <span
+                                        id="fname-letters-tag"
+                                        class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                        ><i
+                                            class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                        ></i
+                                        >Only letters</span
+                                    >
+                                    <span
+                                        id="fname-spaces-tag"
+                                        class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                        ><i
+                                            class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                        ></i
+                                        >No spaces</span
+                                    >
+                                    <span
+                                        id="fname-length-tag"
+                                        class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                        ><i
+                                            class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                        ></i
+                                        >2+ characters</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="relative grow">
+                                <input
+                                    type="text"
+                                    name="lname"
+                                    class="w-full p-2 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
+                                    placeholder="Doe"
+                                />
+                                <span
+                                    class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
+                                    ><i class="fa-solid fa-user"></i
+                                ></span>
+                                <span
+                                    class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
+                                    >Last Name</span
+                                >
+                                <span
+                                    class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
+                                    ><i class="fa-solid fa-xmark"></i
+                                ></span>
+                                <div
+                                    class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
+                                >
+                                    <span
+                                        id="lname-letters-tag"
+                                        class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                        ><i
+                                            class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                        ></i
+                                        >Only letters</span
+                                    >
+                                    <span
+                                        id="lname-spaces-tag"
+                                        class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                        ><i
+                                            class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                        ></i
+                                        >No spaces</span
+                                    >
+                                    <span
+                                        id="lname-length-tag"
+                                        class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                        ><i
+                                            class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                        ></i
+                                        >2+ characters</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <input
+                                type="text"
+                                name="email"
+                                class="w-full p-2 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
+                                placeholder="email@example.com"
+                            />
+                            <span
+                                class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
+                                ><i class="fa-regular fa-envelope"></i
+                            ></span>
+                            <span
+                                class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
+                                >Email</span
+                            >
+                            <span
+                                class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
+                                ><i class="fa-solid fa-xmark"></i
+                            ></span>
+                            <div
+                                class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
+                            >
+                                <span
+                                    id="email-at-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >includes @</span
+                                >
+                                <span
+                                    id="email-dot-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >includes .</span
+                                >
+                                <span
+                                    id="email-spaces-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >no spaces</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <input
+                                type="password"
+                                name="password"
+                                class="w-full p-2 pt-6 pr-16 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
+                                placeholder="************"
+                            />
+                            <span
+                                class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
+                                ><i class="fa-solid fa-lock"></i
+                            ></span>
+                            <span
+                                class="absolute left-8 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
+                                >Password</span
+                            >
+                            <span
+                                class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-10"
+                                ><i class="fa-solid fa-xmark"></i
+                            ></span>
+                            <button
+                                id="toggle-password-btn"
+                                type="button"
+                                class="absolute right-2 top-3.5 p-1 w-8 h-8 border-primary-900 text-primary-800 flex items-center justify-center"
+                            >
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </button>
+                            <div
+                                class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
+                            >
+                                <span
+                                    id="pw-length-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >8-16 characters</span
+                                >
+                                <span
+                                    id="pw-upper-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >1 uppercase (A-Z)</span
+                                >
+                                <span
+                                    id="pw-lower-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >1 lowercase (a-z)</span
+                                >
+                                <span
+                                    id="pw-num-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >1 number (0-9)</span
+                                >
+                                <span
+                                    id="pw-special-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >1 special (!, @, #, etc.)</span
+                                >
+                                <span
+                                    id="pw-spaces-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >No spaces</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <input
+                                type="password"
+                                name="confirm-password"
+                                class="w-full p-2 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
+                                placeholder="************"
+                            />
+                            <span
+                                class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
+                                ><i class="fa-solid fa-lock"></i
+                            ></span>
+                            <span
+                                class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
+                                >Confirm Password</span
+                            >
+                            <span
+                                class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
+                                ><i class="fa-solid fa-xmark"></i
+                            ></span>
+                            <div
+                                class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
+                            >
+                                <span
+                                    id="confirm-match-tag"
+                                    class="pr-2 bg-secondary-800 rounded-full text-text-200"
+                                    ><i
+                                        class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
+                                    ></i
+                                    >Matches Password</span
+                                >
+                            </div>
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled
+                            class="my-4 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg hover:bg-primary-700 group disabled:bg-primary-800"
+                        >
+                            Register
+                            <i
+                                class="fa-solid fa-arrow-right pl-2 enabled:group-hover:translate-x-2 transition-transform"
+                            ></i>
+                        </button>
+
+                        <a
+                            href="login.html"
+                            class="self-center underline text-secondary-400 hover:text-text-600 mt-4"
+                            >Already have an account</a
+                        >
+                    </div>
+                </form>
+            </div>
         </div>
-        <form
-          id="register-form"
-          class="bg-background-900 grow flex flex-col items-center justify-center py-12 rounded-xl md:rounded-r-xl md:rounded-l-none p-2"
-        >
-          <div
-            class="flex flex-col justify-center w-[90%] sm:w-[80%] md:w-[60%]"
-          >
-            <h1 class="mb-4 text-3xl font-bold text-text-300">Lorem Ipsum</h1>
-            <p class="mb-2 text-text-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <p
-              id="already-exists"
-              class="mb-4 bg-accent-800 text-text-400 rounded-md p-2 hidden"
-            >
-              <i
-                class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-              ></i
-              >Email is already registered!
-            </p>
-
-            <div class="flex sm:gap-4 flex-col sm:flex-row">
-              <div class="relative grow">
-                <input
-                  type="text"
-                  name="fname"
-                  class="w-full p-2 pr-10 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
-                  placeholder="John"
-                />
-                <span
-                  class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
-                  ><i class="fa-solid fa-user"></i
-                ></span>
-                <span
-                  class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
-                  >First Name</span
-                >
-                <span
-                  class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
-                  ><i class="fa-solid fa-xmark"></i
-                ></span>
-
-                <div
-                  class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
-                >
-                  <span
-                    id="fname-letters-tag"
-                    class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                    ><i
-                      class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                    ></i
-                    >Only letters</span
-                  >
-                  <span
-                    id="fname-spaces-tag"
-                    class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                    ><i
-                      class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                    ></i
-                    >No spaces</span
-                  >
-                  <span
-                    id="fname-length-tag"
-                    class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                    ><i
-                      class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                    ></i
-                    >2+ characters</span
-                  >
-                </div>
-              </div>
-              <div class="relative grow">
-                <input
-                  type="text"
-                  name="lname"
-                  class="w-full p-2 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
-                  placeholder="Doe"
-                />
-                <span
-                  class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
-                  ><i class="fa-solid fa-user"></i
-                ></span>
-                <span
-                  class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
-                  >Last Name</span
-                >
-                <span
-                  class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
-                  ><i class="fa-solid fa-xmark"></i
-                ></span>
-                <div
-                  class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
-                >
-                  <span
-                    id="lname-letters-tag"
-                    class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                    ><i
-                      class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                    ></i
-                    >Only letters</span
-                  >
-                  <span
-                    id="lname-spaces-tag"
-                    class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                    ><i
-                      class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                    ></i
-                    >No spaces</span
-                  >
-                  <span
-                    id="lname-length-tag"
-                    class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                    ><i
-                      class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                    ></i
-                    >2+ characters</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="relative">
-              <input
-                type="text"
-                name="email"
-                class="w-full p-2 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
-                placeholder="email@example.com"
-              />
-              <span
-                class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
-                ><i class="fa-regular fa-envelope"></i
-              ></span>
-              <span
-                class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
-                >Email</span
-              >
-              <span
-                class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
-                ><i class="fa-solid fa-xmark"></i
-              ></span>
-              <div
-                class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
-              >
-                <span
-                  id="email-at-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >includes @</span
-                >
-                <span
-                  id="email-dot-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >includes .</span
-                >
-                <span
-                  id="email-spaces-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >no spaces</span
-                >
-              </div>
-            </div>
-
-            <div class="relative">
-              <input
-                type="password"
-                name="password"
-                class="w-full p-2 pt-6 pr-16 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
-                placeholder="************"
-              />
-              <span
-                class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
-                ><i class="fa-solid fa-lock"></i
-              ></span>
-              <span
-                class="absolute left-8 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
-                >Password</span
-              >
-              <span
-                class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-10"
-                ><i class="fa-solid fa-xmark"></i
-              ></span>
-              <button
-                id="toggle-password-btn"
-                type="button"
-                class="absolute right-2 top-3.5 p-1 w-8 h-8 border-primary-900 text-primary-800 flex items-center justify-center"
-              >
-                <i class="fa-solid fa-eye-slash"></i>
-              </button>
-              <div
-                class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
-              >
-                <span
-                  id="pw-length-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >8-16 characters</span
-                >
-                <span
-                  id="pw-upper-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >1 uppercase (A-Z)</span
-                >
-                <span
-                  id="pw-lower-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >1 lowercase (a-z)</span
-                >
-                <span
-                  id="pw-num-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >1 number (0-9)</span
-                >
-                <span
-                  id="pw-special-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >1 special (!, @, #, etc.)</span
-                >
-                <span
-                  id="pw-spaces-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >No spaces</span
-                >
-              </div>
-            </div>
-
-            <div class="relative">
-              <input
-                type="password"
-                name="confirm-password"
-                class="w-full p-2 pt-6 rounded-lg border-2 border-background-800 focus:border-primary-500 peer bg-background-950 outline-none pl-10 peer"
-                placeholder="************"
-              />
-              <span
-                class="absolute text-primary-800 left-3 top-4 text-lg peer-focus:text-primary-500"
-                ><i class="fa-solid fa-lock"></i
-              ></span>
-              <span
-                class="absolute left-10 top-2 text-sm text-primary-700 peer-focus:text-primary-500 font-semibold"
-                >Confirm Password</span
-              >
-              <span
-                class="input-valid hidden items-center justify-center absolute text-lg w-6 h-6 rounded-full text-red-500 top-[1.15rem] right-2.5"
-                ><i class="fa-solid fa-xmark"></i
-              ></span>
-              <div
-                class="my-2 gap-1 lg:gap-2 flex-wrap max-h-0 peer-focus:max-h-40 overflow-hidden flex transition-all text-sm duration-300"
-              >
-                <span
-                  id="confirm-match-tag"
-                  class="pr-2 bg-secondary-800 rounded-full text-text-400"
-                  ><i
-                    class="fa-solid fa-xmark bg-red-200 text-red-500 rounded-full p-1 block w-6 h-6 text-center text-sm/6 mr-1"
-                  ></i
-                  >Matches Password</span
-                >
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled
-              class="mt-8 bg-primary-500 text-text-950 text-base font-bold py-2 w-full rounded-lg hover:bg-primary-700 group disabled:bg-primary-800"
-            >
-              Register
-              <i
-                class="fa-solid fa-arrow-right pl-2 enabled:group-hover:translate-x-2 transition-transform"
-              ></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <script type="module" src="src/scripts/register.js"></script>
-  </body>
+        <script type="module" src="src/scripts/register.js"></script>
+    </body>
 </html>
